@@ -1,8 +1,8 @@
+import ApplicationBar from '../components/AppBar'
+
 const HomePage = () => {
    return (
-    <div>
-        Hello This is Home Page
-    </div>
+    <ApplicationBar />
    ) 
 }
 
