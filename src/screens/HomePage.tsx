@@ -1,4 +1,5 @@
 import ApplicationBar from "../components/ApplicationBar";
+import CustomButton from "../components/common/Button";
 import TextInputField from "../components/common/TextInputField";
 
 const HomePage = () => {
@@ -7,6 +8,9 @@ const HomePage = () => {
       <ApplicationBar />
       <TextInputField
          label="Hello"
+      />
+      <CustomButton
+         label="Submit"
       />
     </div>
   );
