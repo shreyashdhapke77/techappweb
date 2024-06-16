@@ -1,9 +1,15 @@
-import ApplicationBar from '../components/ApplicationBar'
+import ApplicationBar from "../components/ApplicationBar";
+import TextInputField from "../components/common/TextInputField";
 
 const HomePage = () => {
-   return (
-    <ApplicationBar />
-   ) 
-}
+  return (
+    <div>
+      <ApplicationBar />
+      <TextInputField
+         label="Hello"
+      />
+    </div>
+  );
+};
 
-export default HomePage
+export default HomePage;
