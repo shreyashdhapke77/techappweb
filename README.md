@@ -52,3 +52,9 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 4. Need to implement Snackbar component
 5. Need to implement Drawer component
 6. Need to implement Menu component
+7. Need to implement Date Picker component
+8. Need to implement Time Picker component
+9. Need to implement chip component
+10. Need to implement ratings component
+11. Need to implement Radio Group component
+12. Need to implement icon component
