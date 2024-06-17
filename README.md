@@ -44,3 +44,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+## TO DOs
+1. Need to implement Select component
+2. Need to implement Check box component
+3. Need to implement Switch component
+4. Need to implement Snackbar component
+5. Need to implement Drawer component
+6. Need to implement Menu component
