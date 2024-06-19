@@ -7,10 +7,8 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Avatar from "@mui/material/Avatar";
-import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
-import AdbIcon from "@mui/icons-material/Adb";
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
@@ -25,6 +23,9 @@ import StarBorder from '@mui/icons-material/StarBorder';
 import QuestionMark from '@mui/icons-material/QuestionMark';
 import HelpOutline from '@mui/icons-material/HelpOutline';
 import PermPhoneMsg from '@mui/icons-material/PermPhoneMsg';
+import { useNavigate } from "react-router-dom";
+// import logo from '../components/assets/toilers-logos/png/logo-no-background-black.png'
+import logo from '../components/assets/logo-no-background-white.png';
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -70,7 +71,10 @@ function ApplicationBar() {
       setState({ ...state, [anchor]: open });
     };
 
+  const navigate = useNavigate()
   const list = (anchor: Anchor) => (
+    // Somewhere in your code, e.g. inside a handler:
+    
     <Box
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
       role="presentation"
@@ -78,10 +82,10 @@ function ApplicationBar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {[{text: 'Find a worker', icon: Handshake},
-         {text: 'Become a worker', icon: WorkOutline}].map((object, index) => (
+        {[{text: 'Find a worker', icon: Handshake, path: '/findWorker' },
+         {text: 'Become a worker', icon: WorkOutline, path: '/becomeWorker'}].map((object, index) => (
           <ListItem key={object.text} disablePadding>
-            <ListItemButton>
+            <ListItemButton onClick={()=>navigate(object.path)}>
               <ListItemIcon>
               <object.icon></object.icon>
               </ListItemIcon>
@@ -92,13 +96,13 @@ function ApplicationBar() {
       </List>
       <Divider />
       <List>
-        {[{text: 'About Us', icon: HelpOutline},
-        {text: 'Terms & Condition', icon:QuestionMark},
-        {text: 'Contact Us', icon:PermPhoneMsg },
-        {text: 'Rate Us', icon: StarBorder},
-        {text: 'Leave a Feedback', icon: AddReaction}].map((object, index) => (
+        {[{text: 'About Us', icon: HelpOutline, path: '/about'},
+        {text: 'Terms & Condition', icon:QuestionMark, path: '/termsConditions'},
+        {text: 'Contact Us', icon:PermPhoneMsg, path: '/contactUs' },
+        {text: 'Rate Us', icon: StarBorder, path: '/rateUs'},
+        {text: 'Leave a Feedback', icon: AddReaction, path: '/leaveFeedback'}].map((object, index) => (
           <ListItem key={object.text} disablePadding>
-            <ListItemButton>
+            <ListItemButton onClick={()=>navigate(object.path)}>
               <ListItemIcon>
                 {<object.icon />}
               </ListItemIcon>
@@ -113,29 +117,11 @@ function ApplicationBar() {
 
   return (
     <AppBar position="static">
-      <Toolbar disableGutters sx={{ mx: 1 }}>
-        <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
-        <Typography
-          variant="h6"
-          noWrap
-          component="a"
-          href="#app-bar-with-responsive-menu"
-          sx={{
-            mr: 2,
-            display: { xs: "none", md: "flex" },
-            fontFamily: "monospace",
-            fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "inherit",
-            textDecoration: "none",
-          }}
-        >
-          LOGO
-        </Typography>
+      <Toolbar disableGutters style={{backgroundColor: '#135D66'}}>
         <Box
           sx={{
             flexGrow: 1,
-            display: { xs: "flex", md: "none" },
+            display: { xs: "flex", md: "flex" },
           }}
         >
           <IconButton
@@ -148,24 +134,8 @@ function ApplicationBar() {
           >
             <MenuIcon />
           </IconButton>
-          {/* <Menu
-            id="basic-menu"
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              'aria-labelledby': 'basic-button',
-            }}
-          >
-            <MenuItem onClick={handleClose}>Find a worker</MenuItem>
-            <MenuItem onClick={handleClose}>Become a worker</MenuItem>
-            <MenuItem onClick={handleClose}>About Us</MenuItem>
-            <MenuItem onClick={handleClose}>Terms and Conditions</MenuItem>
-            <MenuItem onClick={handleClose}>Contact Us</MenuItem>
-            <MenuItem onClick={handleClose}>Leave a Feedback</MenuItem>
-          </Menu> */}
           {(['left'] as const).map((anchor) => (
             <React.Fragment key={anchor}>
-              <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
               <Drawer
                 anchor={anchor}
                 open={state[anchor]}
@@ -177,7 +147,7 @@ function ApplicationBar() {
           ))}
         </Box>
         {/* <Alert severity="warning">The site is under construction.</Alert> */}
-        <AdbIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
+        <img src={logo} alt="Toilers" style={{ width:'50px'}}/>
         <Typography
           variant="h5"
           noWrap
@@ -185,7 +155,7 @@ function ApplicationBar() {
           href="#app-bar-with-responsive-menu"
           sx={{
             mr: 2,
-            display: { xs: "flex", md: "none" },
+            display: { xs: "flex", md: "flex" },
             flexGrow: 1,
             fontFamily: "monospace",
             fontWeight: 700,
@@ -194,9 +164,9 @@ function ApplicationBar() {
             textDecoration: "none",
           }}
         >
-          LOGO
+          Toilers
         </Typography>
-        <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+        {/* <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "flex" } }}>
           {pages.map((page) => (
             <Button
               key={page}
@@ -206,7 +176,7 @@ function ApplicationBar() {
               {page}
             </Button>
           ))}
-        </Box>
+        </Box> */}
 
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Open settings">

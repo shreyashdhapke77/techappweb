@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import ApplicationBar from '../components/ApplicationBar';
 // import { Document, Page } from 'react-pdf'
 
 // const init = async () => {      
@@ -18,6 +19,7 @@ const TermsCondition = () => {
 
     return (
         <div>
+            <ApplicationBar/>
         {/* <Document file="../components/assets/termsandcondtions.pdf" onLoadSuccess={onDocumentLoadSuccess}>
             <Page pageNumber={pageNumber} />
         </Document> */}
