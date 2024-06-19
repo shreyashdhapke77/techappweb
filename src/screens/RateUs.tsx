@@ -1,66 +1,58 @@
 import * as React from "react";
-import Rating from '@mui/material/Rating';
-import Dialog from '@mui/material/Dialog';
-import Slide from '@mui/material/Slide';
-import { TransitionProps } from '@mui/material/transitions';
-import ApplicationBar from '../components/ApplicationBar';
+import Rating from "@mui/material/Rating";
+import ApplicationBar from "../components/ApplicationBar";
 import { Box } from "@mui/material";
+import CustomText from "../components/common/Text"
+import CustomButton from "../components/common/Button";
 
-// const RateUs = () => {
-//   return (
-//     <div>
-//       This is Rate Us
-//     </div>
-//   )
-// }
 const RateUs = () => {
-    const [value, setValue] = React.useState<number | null>(2);
-    const [open, setOpen] = React.useState(true);
+  const [value, setValue] = React.useState<number | null>(2);
 
-    const Transition = React.forwardRef(function Transition(
-        props: TransitionProps & {
-          children: React.ReactElement;
-        },
-        ref: React.Ref<unknown>,
-      ) {
-        return <Slide direction="up" ref={ref} {...props} />;
-    });
-      
-    const handleClose = () => {
-      setOpen(false);
-    };
-    return (
-      <Box style={{flexGrow: 1, height: '100%'}}>
-        <ApplicationBar/>
-        <Box className="about-section" style={{flexGrow: 1, height: '100%'}}>
-          <h1>Please Rate Us</h1>
-            <small className="d-inline-block fw-bold text-dark text-uppercase bg-light border border-primary rounded-pill px-4 py-1 mb-4 animated bounceInDown">Welcome to CaterServ</small>
-            <p>Your opinion matters to us!</p>
-            <p>We work super hard to make Toilers better for you, and would love to know how would you rate our app?</p>
-            <Rating
-              size='large'
-              name="rating-controller"
-              value={value}
-              onChange={(event, newValue) => {
-              setValue(newValue);
-              }}
-            />
-            { (value != null && value > 4) ? <h1>Mind Blowing!</h1> : (value != null && value > 3) ? <h1>Excellent!</h1> : (value != null && value > 2) ? <h1>Fantastic!</h1> : <h1>Average!</h1> }
-            <div>
-              <button style={{ border: 'none', outline: '0', display: 'inline-block', padding: '8px', color: 'white', backgroundColor: '#1cd651', textAlign: 'center', width: '250px'}}>Submit</button>
-            </div>
-            <div><button style={{ marginTop: '10px', border: 'none', outline: '0', display: 'inline-block', padding: '8px', color: 'white', backgroundColor: 'gray', textAlign: 'center', width: '250px'}}>No Thanks</button></div>
-            <p>Love from Toilers</p>
-            </Box>
+  return (
+    <Box>
+      <Box style={{ position: "sticky", top: 0 }}>
+        <ApplicationBar />
       </Box>
-    // </Dialog>
-  )
-}
+      <Box className="about-section">
+        <CustomText label="Please Rate Us" variant="h3" isBold={true} />
+        <CustomText label="Welcome to Toilers" variant="body2" />
+        <CustomText label="Your opinion matters to us!" variant="h6" sx={{mt: 2}} />
+        <CustomText
+          label="We work super hard to make Toilers better for you, and would love to
+          know how would you rate our app?"
+          variant="h6"
+        />
+        <Rating
+          size="large"
+          name="rating-controller"
+          value={value}
+          onChange={(event, newValue) => {
+            setValue(newValue);
+          }}
+          sx={{my: 2}}
+        />
+        {value != null && value > 4 ? (
+          <CustomText label="Mind Blowing!" variant="h4" isBold={true} />
+        ) : value != null && value > 3 ? (
+          <CustomText label="Excellent!" variant="h4" isBold={true} />
+        ) : value != null && value > 2 ? (
+          <CustomText label="Fantastic!" variant="h4" isBold={true} />
+        ) : (
+          <CustomText label="Average!" variant="h4" isBold={true} />
+        )}
+        <CustomButton
+          label="Submit"
+          sx={{width: '220px', my: 1}}
+        />
+        <CustomButton
+          label="No Thanks"
+          variant='outlined'
+          sx={{width: '220px'}}
+        />
+        <CustomText label="Love from Toilers" variant="body1" sx={{my: 2}} />
+      </Box>
+    </Box>
+  );
+};
 
-{/* // <Dialog
-//   fullScreen
-//   open={open}
-//   onClose={handleClose}
-//   TransitionComponent={Transition}
-//   > */}
-export default RateUs
+export default RateUs;

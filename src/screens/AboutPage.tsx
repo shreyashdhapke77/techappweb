@@ -6,6 +6,7 @@ import logo from "../components/assets/toilers-logos/png/logo-no-background-blac
 import ApplicationBar from "../components/ApplicationBar";
 import { Box, Link } from "@mui/material";
 import CustomText from "../components/common/Text";
+import CustomButton from "../components/common/Button";
 
 const teamMemberDetails = [
   {
@@ -34,7 +35,9 @@ const teamMemberDetails = [
 const AboutPage = () => {
   return (
     <Box>
-      <ApplicationBar />
+      <Box style={{position: 'sticky', top: 0}}>
+        <ApplicationBar />
+      </Box>
       <Box className="about-section">
         <img src={logo} alt="Toilers" style={{ width: "300px" }} />
         <CustomText label="About Us" variant="h2" isBold={true} />
@@ -78,9 +81,10 @@ const AboutPage = () => {
                       sx={{ my: 2 }}
                     />
                     <Link>{teamMember.email}</Link>
-                    <p>
-                      <button className="button">Contact</button>
-                    </p>
+                    <CustomButton
+                      label="Contact"
+                      sx={{my: 2, backgroundColor: '#233565'}}
+                    />
                   </Box>
                 </Box>
               </Box>
