@@ -46,15 +46,15 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 
 ## TO DOs
-1. Need to implement Select component
-2. Need to implement Check box component
+1. Need to implement Select component - To Do
+2. Need to implement Check box component - To Do
 3. Need to implement Switch component
-4. Need to implement Snackbar component
-5. Need to implement Drawer component
+4. Need to implement Snackbar component - To Do
+5. Need to implement Drawer component - To Do
 6. Need to implement Menu component
 7. Need to implement Date Picker component
 8. Need to implement Time Picker component
 9. Need to implement chip component
-10. Need to implement ratings component
+10. Need to implement ratings component - To Do
 11. Need to implement Radio Group component
-12. Need to implement icon component
+12. Need to implement icon component - To Do
