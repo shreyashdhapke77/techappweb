@@ -39,16 +39,17 @@ const AboutPage = () => {
         <ApplicationBar />
       </Box>
       <Box className="about-section">
-        <img src={logo} alt="Toilers" style={{ width: "300px" }} />
         <CustomText label="About Us" variant="h2" isBold={true} />
+        <img src={logo} alt="Toilers" style={{ width: "300px" }} />
         <CustomText
           label="We are Workers. We provide work and service. We are group of workers.
             We provide all services related to your indoor outdoor any kind of
             work. We provided best worker based on your location."
+            variant="h5"
         />
       </Box>
       <Box className="about-section">
-        <CustomText label="Our Team" variant="h5" isBold={true} />
+        <CustomText label="Our Team" variant="h4" isBold={true} />
         <Box className="row">
           {teamMemberDetails.map((teamMember) => {
             return (
