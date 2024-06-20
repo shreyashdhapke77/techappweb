@@ -9,14 +9,14 @@ import { Call, Place, MailOutline } from '@mui/icons-material';
 
 const ContactUs = () => {
     return (
-        <Box className="about-section">
+        <Box style={{backgroundColor: '#88d8bc'}}>
             <Box style={{position: 'sticky', top: 0}}>
                 <ApplicationBar />
             </Box>
-            <Box>
+            <Box className="about-section">
                 <img src={logo} alt="Toilers" style={{ width: "300px" }} />
                 <CustomText
-                    label="The contact form is to get customer details."
+                    label="Please fill in your details below."
                 />
                 <Box sx={{ flexDirection: 'column', display: "flex", alignContent: 'center', justifyContent: 'center', width: '50%', marginTop: '20px' }}>
                     <TextInputField label="Enter Your Name"/>
@@ -29,7 +29,7 @@ const ContactUs = () => {
                     />
                 </Box>
             </Box>
-            <Box sx={{ flexDirection: 'column', display: "flex", alignContent: 'center', justifyContent: 'center', width: '50%', marginTop: '20px' }}>
+            <Box className="about-section" sx={{ flexDirection: 'column', display: "flex", alignContent: 'center', justifyContent: 'center', width: '50%', marginTop: '20px' }}>
                 <CustomText isBold={true}
                     label="Address"
                 />
@@ -44,22 +44,28 @@ const ContactUs = () => {
                     label="Nagpur 440003"
                 />
             </Box> 
-            <Box sx={{ flexDirection: 'column', display: "flex", alignContent: 'center', justifyContent: 'center', width: '50%', marginTop: '20px' }}>
-                
-                <CustomText isBold={true}
-                    label="Mail Us"
-                />
-                <Link style={{marginTop: '5px'}} underline="hover"><MailOutline/>info@toilers.com</Link>
-                <Link style={{marginTop: '5px'}} underline="hover"><MailOutline/>info@toilers.com</Link>
-                
-            </Box>
-            <Box sx={{ flexDirection: 'column', display: "flex", alignContent: 'center', justifyContent: 'center', width: '50%', marginTop: '20px' }}>
-                <CustomText isBold={true}
-                    label="Telephone"
-                />
-                <Link style={{marginTop: '5px'}} underline="hover"><Call/>(+91) 78879 07023"</Link>
-                <Link style={{marginTop: '5px'}} underline="hover"><Call/>(+91) 93716 43142"</Link>
-                <Link style={{marginTop: '5px'}} underline="hover"><Call/>(+91) 83084 32734"</Link>
+            <Box sx={{ flexDirection: 'row', display: "flex", alignContent: 'center', justifyContent: 'center', width: '50%', marginTop: '20px' }}>
+                <Box sx={{ flexDirection: 'column', display: "flex", alignContent: 'center', justifyContent: 'center', width: '50%', marginTop: '20px' }}>
+                    <Box>
+                        <MailOutline/>
+                        <CustomText isBold={true}
+                            label="Mail Us"
+                        />
+                        <Link style={{marginTop: '5px'}} underline="hover">info@toilers.com</Link>
+                        <Link style={{marginTop: '5px'}} underline="hover">info@toilers.com</Link>
+                    </Box>
+                </Box>
+                <Box>
+                    <Box sx={{ flexDirection: 'column', display: "flex", alignContent: 'center', justifyContent: 'center', width: '50%', marginTop: '20px' }}>
+                    <Call/>
+                    <CustomText isBold={true}
+                        label="Telephone"
+                    />
+                    <Link style={{marginTop: '5px'}} underline="hover"><Call/>(+91) 78879 07023"</Link>
+                    <Link style={{marginTop: '5px'}} underline="hover"><Call/>(+91) 93716 43142"</Link>
+                    <Link style={{marginTop: '5px'}} underline="hover"><Call/>(+91) 83084 32734"</Link>
+                </Box>
+                </Box>
             </Box>
         </Box>
     )

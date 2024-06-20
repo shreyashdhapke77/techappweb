@@ -1,16 +1,17 @@
 import { useState } from 'react';
 import ApplicationBar from '../components/ApplicationBar';
-// import { Document, Page } from 'react-pdf'
+import { Box } from '@mui/material';
+import CustomText from '../components/common/Text'
+import { Document, Page, pdfjs } from 'react-pdf'
+import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
+// import worker from 'pdfjs-dist/webpack'
 
-// const init = async () => {      
-//     const pdfjs = await import('pdfjs-dist/build/pdf');
-//     const pdfjsWorker = await import('pdfjs-dist/build/pdf.worker.entry');
-//     pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker; 
-// }
+// pdfjs.GlobalWorkerOptions.workerSrc = worker
+
 // window.onload = () => {init()}
 
 const TermsCondition = () => {
-    const [numPages, setNumPages] = useState<number>();
+    const [numPages, setNumPages] = useState<number>(10);
     const [pageNumber, setPageNumber] = useState<number>(1);
 
     function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
@@ -18,16 +19,17 @@ const TermsCondition = () => {
     }
 
     return (
-        <div>
-            <ApplicationBar/>
-        {/* <Document file="../components/assets/termsandcondtions.pdf" onLoadSuccess={onDocumentLoadSuccess}>
-            <Page pageNumber={pageNumber} />
-        </Document> */}
-        <p>
-        <h1>Terms and Conditions</h1>
-            Page {pageNumber} of {numPages}
-        </p>
-        </div>
+        <Box style={{backgroundColor: '#88d8bc'}}>
+            <Box style={{position: 'sticky', top: 0}}>
+                <ApplicationBar />
+            </Box>
+            {/* <Document file="../components/assets/termsandcondtions.pdf" onLoadSuccess={onDocumentLoadSuccess}> */}
+                {/* <Page pageNumber={pageNumber} /> */}
+            {/* </Document> */}
+            <img src={logo} alt="Toilers" style={{ width: "300px" }} />
+            <CustomText label="Terms and Conditions" variant="h2" isBold={true} />
+            <CustomText label={`Page ${pageNumber} of ${numPages}`}></CustomText>
+        </Box>
     );
 }
 
