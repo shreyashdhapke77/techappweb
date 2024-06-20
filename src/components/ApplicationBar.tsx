@@ -12,6 +12,7 @@ import MenuItem from "@mui/material/MenuItem";
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
+import Link from '@mui/material/Link';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -26,9 +27,15 @@ import PermPhoneMsg from '@mui/icons-material/PermPhoneMsg';
 import { useNavigate } from "react-router-dom";
 // import logo from '../components/assets/toilers-logos/png/logo-no-background-black.png'
 import logo from '../components/assets/logo-no-background-white.png';
+import { Dashboard, ManageAccounts, AccountCircle, Logout } from "@mui/icons-material";
 
 const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const settingsMenu = [
+                  {label: "Profile", path: "/userProfile", icon: AccountCircle},
+                  {label: "Account", path: '/userAccount', icon: ManageAccounts}, 
+                  {label: "Dashboard", path: '/dashboard', icon: Dashboard},
+                  {label: "Logout", path: '/logout', icon: Logout}
+                ];
 
 function ApplicationBar() {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
@@ -41,9 +48,15 @@ function ApplicationBar() {
     left: false,
   });
 
-  const handleCloseUserMenu = () => {
+  const handleCloseUserMenu = (key: any) => {
+    console.log('key -> ', key);
     setAnchorElUser(null);
   };
+  
+  const handleMenuAction = (path: string) => {
+    console.log('path -=> ', path.toLowerCase())
+    navigate(path)
+  }
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -74,7 +87,9 @@ function ApplicationBar() {
   const navigate = useNavigate()
   const list = (anchor: Anchor) => (
     // Somewhere in your code, e.g. inside a handler:
-    
+    <Box
+      sx={{ flexDirection: 'column', display: "flex", alignContent: 'space-between', justifyContent: 'space-between', height: '100%' }}
+  >
     <Box
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
       role="presentation"
@@ -97,7 +112,6 @@ function ApplicationBar() {
       <Divider />
       <List>
         {[{text: 'About Us', icon: HelpOutline, path: '/about'},
-        {text: 'Terms & Condition', icon:QuestionMark, path: '/termsConditions'},
         {text: 'Contact Us', icon:PermPhoneMsg, path: '/contactUs' },
         {text: 'Rate Us', icon: StarBorder, path: '/rateUs'},
         {text: 'Leave a Feedback', icon: AddReaction, path: '/leaveFeedback'}].map((object, index) => (
@@ -111,10 +125,27 @@ function ApplicationBar() {
           </ListItem>
         ))}
       </List>
+      </Box>
+        <Box
+        sx={{ alignItems: 'center', alignContent: 'center', justifyContent: 'center' }}
+        role="presentation"
+        onClick={toggleDrawer(anchor, false)}
+        onKeyDown={toggleDrawer(anchor, false)}
+      >
+        <Link
+          sx={{ marginX: '50px', marginBottom: '20px' }}
+          underline="hover"
+          component="button"
+          variant="body2"
+          onClick={() => {
+            navigate('/termsCondition')
+          }}
+        >
+          Terms & Conditions
+        </Link>
+      </Box>
     </Box>
   );
-
-
   return (
     <AppBar position="static">
       <Toolbar disableGutters style={{backgroundColor: '#135D66'}}>
@@ -200,9 +231,10 @@ function ApplicationBar() {
             open={Boolean(anchorElUser)}
             onClose={handleCloseUserMenu}
           >
-            {settings.map((setting) => (
-              <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                <Typography textAlign="center">{setting}</Typography>
+            {settingsMenu.map((menu) => (
+              <MenuItem key={menu.label} onClick={handleCloseUserMenu}>
+               <menu.icon style={{ marginRight: '5px'}}/>
+                <Typography onClick={()=>handleMenuAction(menu.path)}>{menu.label}</Typography>
               </MenuItem>
             ))}
           </Menu>
