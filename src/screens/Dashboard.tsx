@@ -1,12 +1,19 @@
-import ApplicationBar from "../components/ApplicationBar"
+import { Box } from "@mui/material";
+import { APP_BG_LIGHT } from "../utils/colors";
 
 const Dashboard = () => {
-    return (
-        <div>
-            <ApplicationBar/>
-            <h1>This is Dashboard Page</h1>
-        </div>
-    )
-}
+  return (
+    <Box
+      sx={{
+        backgroundColor: APP_BG_LIGHT,
+        paddingTop: "50px",
+        paddingBottom: "20px",
+      }}
+    >
+      <h1>This is Dashboard Page</h1>
+      <h1>Coming Soon ....</h1>
+    </Box>
+  );
+};
 
-export default Dashboard
+export default Dashboard;

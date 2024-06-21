@@ -1,21 +1,17 @@
-import CustomButton from "../components/common/Button";
-import TextInputField from "../components/common/TextInputField";
-import CustomText from "../components/common/Text";
-import ApplicationBar from '../components/ApplicationBar';
+import { Box } from "@mui/material";
+import { APP_BG_LIGHT } from "../utils/colors";
 const HomePage = () => {
   return (
-    <div>
-    <ApplicationBar/>
-      <TextInputField
-         label="Hello"
-      />
-      <CustomButton
-         label="Submit"
-      />
-      <CustomText
-        label="My Text"
-      />
-    </div>
+    <Box
+      sx={{
+        backgroundColor: APP_BG_LIGHT,
+        paddingTop: "50px",
+        paddingBottom: "20px",
+      }}
+    >
+      <h1>This is Home Page</h1>
+      <h1>Coming Soon ....</h1>
+    </Box>
   );
 };
 

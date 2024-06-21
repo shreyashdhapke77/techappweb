@@ -34,7 +34,13 @@ const teamMemberDetails = [
 
 const AboutPage = () => {
   return (
-    <Box style={{backgroundColor: APP_BG_LIGHT}}>
+    <Box
+      style={{
+        backgroundColor: APP_BG_LIGHT,
+        paddingTop: "50px",
+        paddingBottom: "20px",
+      }}
+    >
       <Box>
         <CustomText label="About Us" variant="h2" isBold={true} />
         <img src={logo} alt="Toilers" style={{ width: "300px" }} />
@@ -42,7 +48,7 @@ const AboutPage = () => {
           label="We are Workers. We provide work and service. We are group of workers.
             We provide all services related to your indoor outdoor any kind of
             work. We provided best worker based on your location."
-            variant="h5"
+          variant="h5"
         />
       </Box>
       <Box>
@@ -81,7 +87,7 @@ const AboutPage = () => {
                     <Link>{teamMember.email}</Link>
                     <CustomButton
                       label="Contact"
-                      sx={{my: 2, backgroundColor: '#233565'}}
+                      sx={{ my: 2, backgroundColor: "#233565" }}
                     />
                   </Box>
                 </Box>
@@ -90,11 +96,11 @@ const AboutPage = () => {
           })}
         </Box>
       </Box>
-        <CustomText
-          label="Copyright © 2023 - 2024 TermsFeed®. All rights reserved."
-          variant="body1"
-          sx={{ my: 2 }}
-        />
+      <CustomText
+        label="Copyright © 2023 - 2024 TermsFeed®. All rights reserved."
+        variant="body1"
+        sx={{ my: 2 }}
+      />
     </Box>
   );
 };

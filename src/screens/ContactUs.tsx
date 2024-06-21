@@ -8,8 +8,15 @@ import { APP_BG_DARK, APP_BG_LIGHT } from "../utils/colors";
 
 const ContactUs = () => {
   return (
-    <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
+    <Box
+      sx={{
+        backgroundColor: APP_BG_LIGHT,
+        paddingTop: "50px",
+        paddingBottom: "20px",
+      }}
+    >
       <Box sx={{ width: "100%" }}>
+        <CustomText label="Contact Us" variant="h2" isBold={true} />
         <img src={logo} alt="Toilers" style={{ width: "300px" }} />
         <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
           <TextInputField
@@ -32,7 +39,7 @@ const ContactUs = () => {
             sx={{
               width: { xs: "80%", sm: "70%", lg: "60%", xl: "50%" },
               my: 2,
-              backgroundColor: APP_BG_DARK
+              backgroundColor: APP_BG_DARK,
             }}
           />
         </Box>
@@ -92,7 +99,7 @@ const ContactUs = () => {
               flexDirection: "column",
               alignContent: "center",
               justifyContent: "center",
-              mb: 2
+              mb: 2,
             }}
           >
             <Box>
@@ -109,9 +116,9 @@ const ContactUs = () => {
         </Box>
       </Box>
       <CustomText
-          label="Copyright © 2023 - 2024 TermsFeed®. All rights reserved."
-          variant="body1"
-
+        label="Copyright © 2023 - 2024 TermsFeed®. All rights reserved."
+        variant="body1"
+        sx={{ mt: 2 }}
       />
     </Box>
   );

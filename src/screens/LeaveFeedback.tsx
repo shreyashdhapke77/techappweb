@@ -1,12 +1,19 @@
-import ApplicationBar from "../components/ApplicationBar"
+import { Box } from "@mui/material";
+import { APP_BG_LIGHT } from "../utils/colors";
 
 const LeaveFeedback = () => {
-    return (
-        <div>
-            <ApplicationBar/>
-            <h1>This is LeaveFeedback Page</h1>
-        </div>
-    )
-}
+  return (
+    <Box
+      sx={{
+        backgroundColor: APP_BG_LIGHT,
+        paddingTop: "50px",
+        paddingBottom: "20px",
+      }}
+    >
+      <h1>This is LeaveFeedback Page</h1>
+      <h1>Coming Soon ....</h1>
+    </Box>
+  );
+};
 
-export default LeaveFeedback
+export default LeaveFeedback;
