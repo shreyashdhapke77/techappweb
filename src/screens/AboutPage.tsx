@@ -34,11 +34,11 @@ const teamMemberDetails = [
 
 const AboutPage = () => {
   return (
-    <Box>
+    <Box style={{backgroundColor: '#88d8bc'}}>
       <Box style={{position: 'sticky', top: 0}}>
         <ApplicationBar />
       </Box>
-      <Box className="about-section">
+      <Box>
         <CustomText label="About Us" variant="h2" isBold={true} />
         <img src={logo} alt="Toilers" style={{ width: "300px" }} />
         <CustomText
@@ -48,7 +48,7 @@ const AboutPage = () => {
             variant="h5"
         />
       </Box>
-      <Box className="about-section">
+      <Box>
         <CustomText label="Our Team" variant="h4" isBold={true} />
         <Box className="row">
           {teamMemberDetails.map((teamMember) => {
@@ -92,12 +92,12 @@ const AboutPage = () => {
             );
           })}
         </Box>
+      </Box>
         <CustomText
           label="Copyright © 2023 - 2024 TermsFeed®. All rights reserved."
           variant="body1"
           sx={{ my: 2 }}
         />
-      </Box>
     </Box>
   );
 };
