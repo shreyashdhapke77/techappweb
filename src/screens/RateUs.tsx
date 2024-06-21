@@ -1,20 +1,17 @@
 import * as React from "react";
 import Rating from "@mui/material/Rating";
-import ApplicationBar from "../components/ApplicationBar";
 import { Box } from "@mui/material";
 import CustomText from "../components/common/Text"
 import CustomButton from "../components/common/Button";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import { Favorite } from '@mui/icons-material';
+import { APP_BG_LIGHT } from "../utils/colors";
 
 const RateUs = () => {
   const [value, setValue] = React.useState<number | null>(2);
 
   return (
-    <Box style={{backgroundColor: '#88d8bc'}}>
-      <Box style={{ position: "sticky", top: 0 }}>
-        <ApplicationBar />
-      </Box>
+    <Box style={{backgroundColor: APP_BG_LIGHT}}>
       <Box>
         <CustomText label="Please Rate Us" variant="h2" isBold={true} />
         <img src={logo} alt="Toilers" style={{ width: "300px" }} />

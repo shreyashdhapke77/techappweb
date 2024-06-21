@@ -21,21 +21,19 @@ import AddReaction from '@mui/icons-material/AddReaction';
 import WorkOutline from '@mui/icons-material/WorkOutline';
 import Handshake from '@mui/icons-material/Handshake';
 import StarBorder from '@mui/icons-material/StarBorder';
-import QuestionMark from '@mui/icons-material/QuestionMark';
 import HelpOutline from '@mui/icons-material/HelpOutline';
 import PermPhoneMsg from '@mui/icons-material/PermPhoneMsg';
 import { useNavigate } from "react-router-dom";
-// import logo from '../components/assets/toilers-logos/png/logo-no-background-black.png'
 import logo from '../components/assets/logo-no-background-white.png';
 import { Dashboard, ManageAccounts, AccountCircle, Logout } from "@mui/icons-material";
+import { APP_BG_DARK } from "../utils/colors";
 
-const pages = ["Products", "Pricing", "Blog"];
 const settingsMenu = [
-                  {label: "Profile", path: "/userProfile", icon: AccountCircle},
-                  {label: "Account", path: '/userAccount', icon: ManageAccounts}, 
-                  {label: "Dashboard", path: '/dashboard', icon: Dashboard},
-                  {label: "Logout", path: '/logout', icon: Logout}
-                ];
+  {label: "Profile", path: "/userProfile", icon: AccountCircle},
+  {label: "Account", path: '/userAccount', icon: ManageAccounts}, 
+  {label: "Dashboard", path: '/dashboard', icon: Dashboard},
+  {label: "Logout", path: '/logout', icon: Logout}
+]
 
 function ApplicationBar() {
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
@@ -49,30 +47,18 @@ function ApplicationBar() {
   });
 
   const handleCloseUserMenu = (key: any) => {
-    console.log('key -> ', key);
     setAnchorElUser(null);
   };
   
   const handleMenuAction = (path: string) => {
-    console.log('path -=> ', path.toLowerCase())
     navigate(path)
   }
 
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
-
-  const [open, setOpen] = React.useState(false);
   type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
   const toggleDrawer =
     (anchor: Anchor, open: boolean) =>
     (event: React.KeyboardEvent | React.MouseEvent) => {
-      console.log('anchor - ', anchor, ' Open - ', open, ' Event - ', event)
       if (
         event.type === 'keydown' &&
         ((event as React.KeyboardEvent).key === 'Tab' ||
@@ -146,8 +132,8 @@ function ApplicationBar() {
     </Box>
   );
   return (
-    <AppBar position="static">
-      <Toolbar disableGutters style={{backgroundColor: '#135D66'}}>
+    <AppBar position="fixed">
+      <Toolbar disableGutters style={{backgroundColor: APP_BG_DARK}}>
         <Box
           sx={{
             flexGrow: 1,

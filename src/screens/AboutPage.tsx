@@ -3,10 +3,10 @@ import pravin from "../components/assets/pravin.jpeg";
 import shreyash from "../components/assets/shreyash.jpeg";
 import ashish from "../components/assets/ashish.jpeg";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
-import ApplicationBar from "../components/ApplicationBar";
 import { Box, Link } from "@mui/material";
 import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
+import { APP_BG_LIGHT } from "../utils/colors";
 
 const teamMemberDetails = [
   {
@@ -34,10 +34,7 @@ const teamMemberDetails = [
 
 const AboutPage = () => {
   return (
-    <Box style={{backgroundColor: '#88d8bc'}}>
-      <Box style={{position: 'sticky', top: 0}}>
-        <ApplicationBar />
-      </Box>
+    <Box style={{backgroundColor: APP_BG_LIGHT}}>
       <Box>
         <CustomText label="About Us" variant="h2" isBold={true} />
         <img src={logo} alt="Toilers" style={{ width: "300px" }} />

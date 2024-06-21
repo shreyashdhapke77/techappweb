@@ -10,12 +10,14 @@ import RateUs from './screens/RateUs';
 import UserProfile from './screens/UserProfile';
 import UserAccount from './screens/UserAccount';
 import Dashboard from './screens/Dashboard';
+import { Box } from '@mui/material';
+import ApplicationBar from './components/ApplicationBar';
 
 function App() {
   return (
-    <div className="App">
-      
-      <BrowserRouter>
+    <BrowserRouter>
+      <ApplicationBar />
+      <Box sx={{marginTop: '30px',textAlign: 'center'}}>
         <Routes>
           <Route index={true} element={<HomePage />}></Route>
           <Route index={true} path={'findWorker'} element={<FindWorker />}></Route>
@@ -28,8 +30,8 @@ function App() {
           <Route index={true} path={'userAccount'} element={<UserAccount />}></Route>
           <Route index={true} path={'dashboard'} element={<Dashboard />}></Route>
         </Routes>
-      </BrowserRouter>
-    </div>
+      </Box>
+    </BrowserRouter>
   );
 }
 

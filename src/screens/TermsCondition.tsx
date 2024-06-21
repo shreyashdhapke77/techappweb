@@ -20,9 +20,6 @@ const TermsCondition = () => {
 
     return (
         <Box style={{backgroundColor: '#88d8bc'}}>
-            <Box style={{position: 'sticky', top: 0}}>
-                <ApplicationBar />
-            </Box>
             {/* <Document file="../components/assets/termsandcondtions.pdf" onLoadSuccess={onDocumentLoadSuccess}> */}
                 {/* <Page pageNumber={pageNumber} /> */}
             {/* </Document> */}
