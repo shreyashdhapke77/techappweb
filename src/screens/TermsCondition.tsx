@@ -1,18 +1,22 @@
 import { useState } from 'react';
-import ApplicationBar from '../components/ApplicationBar';
 import { Box } from '@mui/material';
 import CustomText from '../components/common/Text'
 import { Document, Page, pdfjs } from 'react-pdf'
+import conditions from '../components/assets/conditions.pdf'
+
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
-// import worker from 'pdfjs-dist/webpack'
 
-// pdfjs.GlobalWorkerOptions.workerSrc = worker
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+    'pdfjs-dist/build/pdf.worker.min.mjs',
+    import.meta.url,
+  ).toString();
 
-// window.onload = () => {init()}
+type PDFFile = string | File | null;
 
 const TermsCondition = () => {
-    const [numPages, setNumPages] = useState<number>(10);
+    const [numPages, setNumPages] = useState<number>(12);
     const [pageNumber, setPageNumber] = useState<number>(1);
+    const [file, setFile] = useState<PDFFile>(conditions);
 
     function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
         setNumPages(numPages);
@@ -20,12 +24,18 @@ const TermsCondition = () => {
 
     return (
         <Box style={{backgroundColor: '#88d8bc'}}>
-            {/* <Document file="../components/assets/termsandcondtions.pdf" onLoadSuccess={onDocumentLoadSuccess}> */}
-                {/* <Page pageNumber={pageNumber} /> */}
-            {/* </Document> */}
             <img src={logo} alt="Toilers" style={{ width: "300px" }} />
             <CustomText label="Terms and Conditions" variant="h2" isBold={true} />
             <CustomText label={`Page ${pageNumber} of ${numPages}`}></CustomText>
+            <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+            {Array.from(new Array(numPages), (el, index) => (
+              <Page
+                key={`page_${index + 1}`}
+                pageNumber={index + 1}
+                width={1500}
+              />
+            ))}
+          </Document>
         </Box>
     );
 }

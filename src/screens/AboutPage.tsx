@@ -12,6 +12,8 @@ import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
 import { APP_BG_LIGHT } from "../utils/colors";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { SocialIcon } from 'react-social-icons'
+import { faTwitter, faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const teamMemberDetails = [
   {
@@ -133,24 +135,28 @@ const AboutPage = () => {
                         label={teamMember.name}
                         variant="h5"
                         isBold={true}
-                        sx={{ my: 2, color: 'white' }}
+                        sx={{ my: 1, color: 'white' }}
                       />
                       <CustomText
+                        isBold
                         label={teamMember.position}
                         variant="body1"
-                        sx={{ my: 2, color: 'white' }}
+                        sx={{ my: 1, color: 'white' }}
                       />
                       <CustomText
                         label={teamMember.designation}
                         align="left"
                         variant="body1"
-                        sx={{ my: 2, color: 'white', height: '180px'}}
+                        sx={{ my: 1, color: 'white', height: '180px'}}
                       />
-                      <FontAwesomeIcon icon={['fab', 'twitter']} />
-                      <FontAwesomeIcon icon={['fab', 'facebook']} />
-                      <FontAwesomeIcon icon={['fab', 'linkedin']} />
-                      <FontAwesomeIcon icon={['fab', 'github']} />
-                      <Link onClick={() => window.open(`mailto:${teamMember.email}?subject=Subject&body=Body%20goes%20here`)} sx={{ my: 2, color: 'white' }}>{teamMember.email}</Link>
+                      <Box sx={{ my: 1}}>
+                        <SocialIcon style={{ marginRight: '5px'}} url="https://x.com/toilersapp" />
+                        <SocialIcon style={{ marginRight: '5px'}} url="https://www.facebook.com/people/Toilers-App/pfbid0uCTtCqSFBHtAqyRjeCPvrGKknR2WVYR45EoixRTwRo3n6vDQJEsVUMu44c3tcW7pl/" title='facebook' type='facebook'/>
+                        <SocialIcon style={{ marginRight: '5px'}} url="https://share.com/toilers" title='Sign In With instagram' type='instagram'/>
+                        <SocialIcon style={{ marginRight: '5px'}} url="https://instagram.com/toilers" title='instagram' type='facebook'/>
+                        <SocialIcon url="https://www.linkedin.com/in/toilers-app-331551315/" title='linkedIn' type='linkedin' />
+                      </Box>
+                      <Link style={{marginTop: '25px', marginBottom: '25px'}} onClick={() => window.open(`mailto:${teamMember.email}?subject=Subject&body=Body%20goes%20here`)} sx={{ my: 2, color: 'white' }}>{teamMember.email}</Link>
                     </Box>
                       <CustomButton
                         label="Contact"
@@ -174,19 +180,19 @@ const AboutPage = () => {
         <Box sx={{mb: 2, display: 'flex', flexDirection: 'column'}}>
           <Box sx={{mb: 2, display: 'flex', flexDirection: 'row', alignContent: 'space-evenly', justifyContent: 'space-evenly', alignItems: 'space-evenly'}}>
             <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
-              <CustomText sx={{mb: 2}} label="Nishant Rangari"/>
+              <CustomText sx={{mb: 2}}  variant="h6" label="Nishant Rangari"/>
               <Avatar alt="Nishant Rangari" sx={{ width: 100, height: 100 }} src={nishant}/>
-              <CustomText sx={{mb: 2}} label="Urban Theka"/>
+              <CustomText sx={{mt: 2}} variant="h7" label="Urban Theka"/>
             </Box>
             <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
-              <CustomText sx={{mb: 2}} label="Yogesh Lolusare"/>
+              <CustomText sx={{mb: 2}}  variant="h6" label="Yogesh Lolusare"/>
               <Avatar alt="Yogesh Lolusare" sx={{ width: 100, height: 100 }} src={yogesh} />
-              <CustomText sx={{mb: 2}} label="Enjoy Programming"/>
+              <CustomText sx={{mt: 2}} variant="h7" label="Enjoy Programming"/>
             </Box>
             <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
-              <CustomText sx={{mb: 2}} label="Yash Mahajan"/>
+              <CustomText sx={{mb: 2}}  variant="h6" label="Yash Mahajan"/>
               <Avatar alt="Yash Mahajan" sx={{ width: 100, height: 100 }} src={yash} />
-              <CustomText sx={{mb: 2}} label="Green Farms"/>
+              <CustomText sx={{mt: 2}} variant="h7" label="Green Farms"/>
             </Box>
           </Box>
         <CustomText
