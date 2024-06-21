@@ -1,16 +1,16 @@
 import { Box } from "@mui/material";
 import { APP_BG_LIGHT } from "../utils/colors";
+import { AutoPlaySwipeView } from "../components/AutoPlaySwipeView";
 const HomePage = () => {
   return (
     <Box
       sx={{
         backgroundColor: APP_BG_LIGHT,
-        paddingTop: "50px",
-        paddingBottom: "20px",
+        // paddingTop: "20px",
+        // paddingBottom: "20px",
       }}
     >
-      <h1>This is Home Page</h1>
-      <h1>Coming Soon ....</h1>
+      <AutoPlaySwipeView />
     </Box>
   );
 };
