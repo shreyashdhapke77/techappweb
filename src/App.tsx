@@ -7,7 +7,6 @@ import BecomeWorker from './screens/BecomeWorker';
 import TermsCondition from './screens/TermsCondition';
 import ContactUs from './screens/ContactUs';
 import RateUs from './screens/RateUs';
-import LeaveFeedback from './screens/LeaveFeedback';
 import UserProfile from './screens/UserProfile';
 import UserAccount from './screens/UserAccount';
 import Dashboard from './screens/Dashboard';
@@ -27,7 +26,6 @@ function App() {
           <Route index={true} path={'termsCondition'} element={<TermsCondition />}></Route>
           <Route index={true} path={'contactUs'} element={<ContactUs />}></Route>
           <Route index={true} path={'rateUs'} element={<RateUs />}></Route>
-          <Route index={true} path={'leaveFeedback'} element={<LeaveFeedback />}></Route>
           <Route index={true} path={'userProfile'} element={<UserProfile />}></Route>
           <Route index={true} path={'userAccount'} element={<UserAccount />}></Route>
           <Route index={true} path={'dashboard'} element={<Dashboard />}></Route>

@@ -3,10 +3,10 @@ import pravin from "../components/assets/pravin.jpeg";
 import shreyash from "../components/assets/shreyash.jpeg";
 import ashish from "../components/assets/ashish.jpeg";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
-import ApplicationBar from "../components/ApplicationBar";
 import { Box, Link } from "@mui/material";
 import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
+import { APP_BG_LIGHT } from "../utils/colors";
 
 const teamMemberDetails = [
   {
@@ -34,8 +34,8 @@ const teamMemberDetails = [
 
 const AboutPage = () => {
   return (
-    <Box>
-      <Box className="about-section">
+    <Box style={{backgroundColor: APP_BG_LIGHT}}>
+      <Box>
         <CustomText label="About Us" variant="h2" isBold={true} />
         <img src={logo} alt="Toilers" style={{ width: "300px" }} />
         <CustomText
@@ -45,7 +45,7 @@ const AboutPage = () => {
             variant="h5"
         />
       </Box>
-      <Box className="about-section">
+      <Box>
         <CustomText label="Our Team" variant="h4" isBold={true} />
         <Box className="row">
           {teamMemberDetails.map((teamMember) => {
@@ -89,12 +89,12 @@ const AboutPage = () => {
             );
           })}
         </Box>
+      </Box>
         <CustomText
           label="Copyright © 2023 - 2024 TermsFeed®. All rights reserved."
           variant="body1"
           sx={{ my: 2 }}
         />
-      </Box>
     </Box>
   );
 };
