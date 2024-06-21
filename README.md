@@ -58,3 +58,6 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 10. Need to implement ratings component - To Do
 11. Need to implement Radio Group component
 12. Need to implement icon component - To Do
+
+<!-- Slogan -->
+## Home services at your doorstep

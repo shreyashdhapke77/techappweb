@@ -7,6 +7,11 @@ import { Call, Place, MailOutline } from "@mui/icons-material";
 import { APP_BG_DARK, APP_BG_LIGHT } from "../utils/colors";
 
 const ContactUs = () => {
+  const contactDetails = {
+    name: '',
+    email: '',
+    message: ''
+  }
   return (
     <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
       <Box sx={{ width: "100%" }}>
@@ -14,19 +19,31 @@ const ContactUs = () => {
         <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
           <TextInputField
             label="Enter Your Name"
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              contactDetails.name = e.target.value
+            }}
             sx={{ width: { xs: "80%", sm: "70%", lg: "60%", xl: "50%" } }}
           />
           <TextInputField
             label="Enter Your Email"
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              contactDetails.email = e.target.value
+            }}
             sx={{ width: { xs: "80%", sm: "70%", lg: "60%", xl: "50%" } }}
           />
           <TextInputField
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              contactDetails.message = e.target.value
+              console.log('contactDetails - ', contactDetails)
+              console.log('>>> ', contactDetails.name.length === 0, contactDetails.email.length === 0, contactDetails.message.length === 0, ' >>> == >> ', !(contactDetails.name.length === 0 && contactDetails.email.length === 0 && contactDetails.message.length === 0))
+            }}
             multiline={true}
             rows={5}
             label="How can we help you serve better ?"
             sx={{ width: { xs: "80%", sm: "70%", lg: "60%", xl: "50%" } }}
           />
           <CustomButton
+            disabled={!(contactDetails.name.length === 0 && contactDetails.email.length === 0 && contactDetails.message.length === 0)}
             label="Submit"
             size="large"
             sx={{
@@ -49,16 +66,17 @@ const ContactUs = () => {
             <Place style={{ color: "#ff0000" }} />
             <CustomText isBold={true} label="Address" />
           </Box>
-          <Link style={{ marginTop: "5px" }} underline="hover">
+          <Link onClick={() => window.open("https://maps.google.com?q="+21.134167+','+79.075890 )} style={{ marginTop: "5px" }} underline="hover">
             Akashan Apartment, Busiplex, Above ICICI Bank,
           </Link>
-          <Link style={{ marginTop: "5px" }} underline="hover">
+          <Link onClick={() => window.open("https://maps.google.com?q="+21.134167+','+79.075890 )} style={{ marginTop: "5px" }} underline="hover">
             Ramdaspeth, Near Lokmat Square
           </Link>
-          <Link style={{ marginTop: "5px" }} underline="hover">
+          <Link onClick={() => window.open("https://maps.google.com?q="+21.134167+','+79.075890 )} style={{ marginTop: "5px" }} underline="hover">
             Nagpur, 440003
           </Link>
         </Box>
+        {/* window.open("https://maps.google.com?q="+your_lat+","+your_lng ) */}
         <Box
           sx={{
             flexDirection: "row",
@@ -84,13 +102,14 @@ const ContactUs = () => {
               info@toilers.com
             </Link>
             <Link style={{ marginTop: "5px" }} underline="hover">
-              info@toilers.com
+              support@toilers.com
             </Link>
           </Box>
           <Box
             sx={{
               flexDirection: "column",
-              alignContent: "center",
+              display: "flex",
+              alignContent: "flex-start",
               justifyContent: "center",
               mb: 2
             }}
@@ -99,12 +118,12 @@ const ContactUs = () => {
               <Call style={{ color: "#00A36C" }} />
               <CustomText isBold={true} label="Telephone" />
             </Box>
-            <Link style={{ marginTop: "5px" }} underline="hover">
-              (+91) 78879 07023
-            </Link>
-            <Link style={{ marginTop: "5px" }} underline="hover">
-              (+91) 93716 43142
-            </Link>
+              <Link style={{ marginTop: "5px" }} underline="hover">
+                (+91) 78879 07023
+              </Link>
+              <Link style={{ marginTop: "5px" }} underline="hover">
+                (+91) 93716 43142
+              </Link>
           </Box>
         </Box>
       </Box>

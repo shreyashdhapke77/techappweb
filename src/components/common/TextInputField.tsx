@@ -15,7 +15,7 @@ interface Props {
     inputStyle?: any
     style?: any
     fullWidth?: boolean,
-    onChange?: () => {},
+    onChange?: any,
     color?: any,
     size?: any,
     margin?: any,
