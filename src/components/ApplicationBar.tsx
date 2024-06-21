@@ -182,19 +182,8 @@ function ApplicationBar() {
         >
           Toilers
         </Typography>
-        {/* <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "flex" } }}>
-          {pages.map((page) => (
-            <Button
-              key={page}
-              onClick={handleDrawerClose}
-              sx={{ my: 2, color: "white", display: "block" }}
-            >
-              {page}
-            </Button>
-          ))}
-        </Box> */}
 
-        <Box sx={{ flexGrow: 0 }}>
+        {/* <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
               <Avatar alt="Shreyash Dhapke" src="/static/images/avatar/2.jpg" />
@@ -223,7 +212,7 @@ function ApplicationBar() {
               </MenuItem>
             ))}
           </Menu>
-        </Box>
+        </Box> */}
       </Toolbar>
     </AppBar>
   );
