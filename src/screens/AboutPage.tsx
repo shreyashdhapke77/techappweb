@@ -35,9 +35,6 @@ const teamMemberDetails = [
 const AboutPage = () => {
   return (
     <Box>
-      <Box style={{position: 'sticky', top: 0}}>
-        <ApplicationBar />
-      </Box>
       <Box className="about-section">
         <CustomText label="About Us" variant="h2" isBold={true} />
         <img src={logo} alt="Toilers" style={{ width: "300px" }} />
