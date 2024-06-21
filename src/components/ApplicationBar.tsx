@@ -113,8 +113,7 @@ function ApplicationBar() {
       <List>
         {[{text: 'About Us', icon: HelpOutline, path: '/about'},
         {text: 'Contact Us', icon:PermPhoneMsg, path: '/contactUs' },
-        {text: 'Rate Us', icon: StarBorder, path: '/rateUs'},
-        {text: 'Leave a Feedback', icon: AddReaction, path: '/leaveFeedback'}].map((object, index) => (
+        {text: 'Rate Us', icon: StarBorder, path: '/rateUs'}].map((object, index) => (
           <ListItem key={object.text} disablePadding>
             <ListItemButton onClick={()=>navigate(object.path)}>
               <ListItemIcon>

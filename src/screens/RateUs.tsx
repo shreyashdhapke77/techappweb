@@ -5,16 +5,17 @@ import { Box } from "@mui/material";
 import CustomText from "../components/common/Text"
 import CustomButton from "../components/common/Button";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
+import { Favorite } from '@mui/icons-material';
 
 const RateUs = () => {
   const [value, setValue] = React.useState<number | null>(2);
 
   return (
-    <Box>
+    <Box style={{backgroundColor: '#88d8bc'}}>
       <Box style={{ position: "sticky", top: 0 }}>
         <ApplicationBar />
       </Box>
-      <Box className="about-section">
+      <Box>
         <CustomText label="Please Rate Us" variant="h2" isBold={true} />
         <img src={logo} alt="Toilers" style={{ width: "300px" }} />
         <CustomText label="Welcome to Toilers" variant="h4" isBold={true} sx={{mt: 2}} />
@@ -61,8 +62,16 @@ const RateUs = () => {
           variant='outlined'
           sx={{width: '220px'}}
         />
-        <CustomText label="Love from Toilers" variant="body1" sx={{my: 3}} />
+        <Box sx={{ flexDirection: 'row', display: "flex", alignContent: 'center', justifyContent: 'center', marginBottom: '20px', paddingTop: '100px' }}>
+          <Favorite style={{color: '#ff0000'}}/>
+          <CustomText label="Love from Toilers" />
+        </Box>
       </Box>
+      <CustomText
+          label="Copyright © 2023 - 2024 TermsFeed®. All rights reserved."
+          variant="body1"
+          sx={{ my: 2 }}
+        />
     </Box>
   );
 };
