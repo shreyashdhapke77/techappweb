@@ -7,7 +7,7 @@ import logo from "../components/assets/toilers-logos/png/logo-no-background-blac
 const BecomeWorker = () => {
     return (
         <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
-            <img src={logo} alt="Toilers" style={{ width: "300px" }} />
+            <img src={logo} alt="Toilers" style={{ width: "200px" }} />
             <CustomText label="Join Toilers to change your life" variant="h3" isBold={true} />
             <CustomText
                 sx={{margin: '25px', marginX: '50px'}}

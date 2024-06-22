@@ -15,7 +15,7 @@ const ContactUs = () => {
   return (
     <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
       <Box sx={{ width: "100%" }}>
-        <img src={logo} alt="Toilers" style={{ width: "300px" }} />
+        <img src={logo} alt="Toilers" style={{ width: "200px" }} />
         <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
           <CustomText label="Please Contact Us" variant="h3" isBold={true} />
           <TextInputField

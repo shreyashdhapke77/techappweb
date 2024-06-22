@@ -3,7 +3,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { AppBar, Menu, Box, Toolbar, IconButton, Avatar, Tooltip, MenuItem, Drawer, Divider, Link, ListItem, List, ListItemIcon, ListItemButton, ListItemText } from '@mui/material/';
 import { useNavigate } from "react-router-dom";
 import logo from '../components/assets/toilers-logos/png/logo-no-background.png';
-import { Dashboard, ManageAccounts, AccountCircle, Logout, ViewList, People, AddReaction, WorkOutline, Handshake, StarBorder, HelpOutline, PermPhoneMsg  } from "@mui/icons-material";
+import { Dashboard, ManageAccounts, AccountCircle, Logout, ViewList, People, SettingsSuggest, HomeRepairService, HandshakeTwoTone, StarPurple500, Feed, PermPhoneMsg  } from "@mui/icons-material";
 import { APP_BG_LIGHT, APP_BG_DARK } from "../utils/colors";
 import CustomText from "../components/common/Text";
 import CustomButton from "./common/Button";
@@ -73,8 +73,8 @@ function ApplicationBar() {
       </Box>
       <Divider />
       <List>
-        {[{text: 'Find a worker', icon: Handshake, path: '/findWorker' },
-         {text: 'Become a worker', icon: WorkOutline, path: '/becomeWorker'}].map((object, index) => (
+        {[{text: 'Find a worker', icon: HandshakeTwoTone, path: '/findWorker' },
+         {text: 'Become a worker', icon: HomeRepairService, path: '/becomeWorker'}].map((object, index) => (
           <ListItem key={object.text} disablePadding>
             <ListItemButton onClick={()=>navigate(object.path)}>
               <ListItemIcon>
@@ -88,9 +88,9 @@ function ApplicationBar() {
       </List>
       <Divider />
       <List>
-        {[{text: 'About Us', icon: HelpOutline, path: '/about'},
+        {[{text: 'About Us', icon: Feed, path: '/about'},
         {text: 'Contact Us', icon:PermPhoneMsg, path: '/contactUs' },
-        {text: 'Rate Us', icon: StarBorder, path: '/rateUs'}].map((object, index) => (
+        {text: 'Rate Us', icon: StarPurple500, path: '/rateUs'}].map((object, index) => (
           <ListItem key={object.text} disablePadding>
             <ListItemButton onClick={()=>navigate(object.path)}>
               <ListItemIcon>
@@ -188,7 +188,7 @@ function ApplicationBar() {
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <AddReaction sx={{width: '50px', height: '50px', mr: 2, color: 'white'}}></AddReaction>
+              <SettingsSuggest sx={{width: '50px', height: '50px', mr: 2, color: 'white'}}></SettingsSuggest>
             </IconButton>
           </Tooltip>
           <Menu
