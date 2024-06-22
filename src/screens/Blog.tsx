@@ -1,4 +1,4 @@
-import { Box } from "@mui/material"
+import { Box, Grow } from "@mui/material"
 import { APP_BG_LIGHT } from "../utils/colors";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import CustomText from "../components/common/Text";
@@ -23,52 +23,52 @@ const Blog = () => {
     <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
       {/* <img src={logo} alt="Toilers" style={{ width: "200px" }} /> */}
       <CustomText label="Our Blogs" variant="h3" isBold={true} />
+      <Grow in={true} style={{ transitionDelay: true ? '500ms' : '0ms', transitionDuration: '1000ms' }}>
+        <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
+            <ImageList
+            sx={{
+                width: '99%',
+                // Promote the list into its own layer in Chrome. This costs memory, but helps keeping high FPS.
+                transform: 'translateZ(0)',
+            }}
+            rowHeight={600}
+            gap={1}
+            >
+            {itemData.map((item) => {
+                const cols = item.featured ? 2 : 1;
+                const rows = item.featured ? 2 : 1;
 
-
-      <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
-          <ImageList
-          sx={{
-              width: '99%',
-              // Promote the list into its own layer in Chrome. This costs memory, but helps keeping high FPS.
-              transform: 'translateZ(0)',
-          }}
-          rowHeight={600}
-          gap={1}
-          >
-          {itemData.map((item) => {
-              const cols = item.featured ? 2 : 1;
-              const rows = item.featured ? 2 : 1;
-
-              return (
-              <ImageListItem key={item.img} cols={cols} rows={rows}>
-                  <img
-                  {...srcset(item.img, 450, 350, rows, cols)}
-                  alt={item.title}
-                  loading="lazy"
-                  />
-                  <ImageListItemBar
-                      sx={{
-                          background:
-                          'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-                          'rgba(0,0,0,0.4) 70%, rgba(0,0,0,0) 100%)',
-                      }}
-                      title={item.title}
-                      position='top'
-                      actionIcon={
-                          <IconButton
-                              sx={{ color: 'white' }}
-                              aria-label={`star ${item.title}`}
-                          >
-                          <StarBorderIcon sx={{ color: 'white', width: '50px', height: '50px' }}/>
-                          </IconButton>
-                      }
-                      actionPosition="left"
-                  />
-              </ImageListItem>
-              );
-          })}
-          </ImageList>
-      </Box>
+                return (
+                <ImageListItem key={item.img} cols={cols} rows={rows}>
+                    <img
+                    {...srcset(item.img, 450, 350, rows, cols)}
+                    alt={item.title}
+                    loading="lazy"
+                    />
+                    <ImageListItemBar
+                        sx={{
+                            background:
+                            'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
+                            'rgba(0,0,0,0.4) 70%, rgba(0,0,0,0) 100%)',
+                        }}
+                        title={item.title}
+                        position='top'
+                        actionIcon={
+                            <IconButton
+                                sx={{ color: 'white' }}
+                                aria-label={`star ${item.title}`}
+                            >
+                            <StarBorderIcon sx={{ color: 'white', width: '50px', height: '50px' }}/>
+                            </IconButton>
+                        }
+                        actionPosition="left"
+                    />
+                </ImageListItem>
+                );
+            })}
+            </ImageList>
+        </Box>
+      </Grow>
     </Box>
   );
 }

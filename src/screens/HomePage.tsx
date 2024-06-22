@@ -1,22 +1,11 @@
 import CustomButton from "../components/common/Button";
 import CustomText from "../components/common/Text";
 import { APP_BG_DARK, APP_BG_LIGHT } from "../utils/colors";
-import { Box, Checkbox, FormControlLabel } from "@mui/material";
+import { Box, Checkbox, FormControlLabel, Dialog, DialogActions, DialogContent, Slide, DialogTitle, DialogContentText, Grid, Paper, Fade } from "@mui/material";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import * as React from 'react';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
-import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
 import { styled } from '@mui/material/styles';
-import Grid from '@mui/material/Grid';
-import Paper from '@mui/material/Paper';
-import Typography from '@mui/material/Typography';
-import ButtonBase from '@mui/material/ButtonBase';
-
 import pravin from "../components/assets/pravin.jpeg";
 import shreyash from "../components/assets/shreyash1.jpg";
 import shreyash1 from "../components/assets/shreyash.jpeg";
@@ -267,27 +256,28 @@ const HomePage = () => {
     <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
       <img src={logo} alt="Toilers" style={{ width: "200px" }} />
       <CustomText label="Join Toilers to change your life" variant="h2" isBold={true} />
-      <Box sx={{ display: 'block', justifyContent: "center", alignContent: "center", alignItems: 'center', mt: 2 }}>
-        {teamMemberDetails.map((teamMember) => {
-          return (
-          <Paper
-            sx={{
-              p: 2,
-              margin: 'auto',
-              maxWidth: 500,
-              float: 'left',
-              flexGrow: 1,
-              backgroundColor: (theme) =>
-                theme.palette.mode === 'dark' ? '#1A2027' : '#1A202711',
-            }}
-          >
-              <Grid container style={{margin: '1px'}} item>
-                <FormRow teamMember={teamMember}/>
-              </Grid>
-          </Paper>
-          )
-        })}
-        </Box>
+        <Fade in style={{ transitionDelay: true ? '1000ms' : '0ms', transitionDuration: '1000ms' }}>
+          <Box sx={{ display: 'block', justifyContent: "center", alignContent: "center", alignItems: 'center', mt: 2 }}>
+            {teamMemberDetails.map((teamMember) => {
+              return (
+              <Paper
+                sx={{
+                  p: 2,
+                  margin: 'auto',
+                  maxWidth: 500,
+                  float: 'left',
+                  flexGrow: 1,
+                  backgroundColor: (theme) =>
+                    theme.palette.mode === 'dark' ? '#1A2027' : '#1A202711',
+                }}
+              >
+                  <Grid container style={{margin: '1px'}} item>
+                    <FormRow teamMember={teamMember}/>
+                  </Grid>
+              </Paper>)
+            })}
+          </Box>
+        </Fade>
         <Dialog
           open={open}
           TransitionComponent={Transition}
