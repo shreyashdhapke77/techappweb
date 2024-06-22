@@ -15,39 +15,16 @@ const RateUs = () => {
     <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
       <Box>
         <img src={logo} alt="Toilers" style={{ width: "200px" }} />
-        <CustomText label="Please Rate Us" variant="h3" isBold={true} />
-        <CustomText label="Your opinion matters to us!" variant="h5" sx={{mt: 2}} />
-        <CustomText
+        <CustomText label="Please Rate Us" variant="h4" isBold={true} />
+        {/* <CustomText
           label="Welcome to Toilers"
           variant="h4"
           isBold={true}
           sx={{ mt: 2 }}
-        />
-        <CustomText
-          label="Your opinion matters to us!"
-          variant="h5"
-          sx={{ mt: 2 }}
-        />
-        <CustomText
-          label={
-            "Our Goal is to provide workers that can you help you get your work done."
-          }
-          variant="h5"
-          sx={{ my: 2 }}
-        />
-        <CustomText
-          label={
-            "Our Powerful tool supports the individuals to get the workers as well the workers to get the work."
-          }
-          variant="h5"
-          sx={{ mb: 2 }}
-        />
-        <CustomText
-          label={
-            "Weather you are a beginner or experienced, we're excited to help you and your journey."
-          }
-          variant="h5"
-          sx={{ mb: 2 }}
+        /> */}
+        <CustomText label={"Our Goal is to provide workers that can you help you get your work done."} variant="h6" sx={{ my: 2 }}/>
+        <CustomText label={"Our Powerful tool supports the individuals to get the workers as well the workers to get the work."} variant="h6" sx={{ mb: 2 }}/>
+        <CustomText label={"Weather you are a beginner or experienced, we're excited to help you and your journey."}variant="h6"sx={{ mb: 2 }}
         />
         <Rating
           size="large"
@@ -67,6 +44,7 @@ const RateUs = () => {
         ) : (
           <CustomText label="Average!" variant="h4" isBold={true} />
         )}
+        <CustomText label="Your opinion matters to us!" variant="h5" sx={{mt: 2}} />
         <TextInputField
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
               setMessage(e.target.value)
@@ -76,15 +54,8 @@ const RateUs = () => {
             label="Please leave a feedback?"
             sx={{ width: { xs: "80%", sm: "70%", lg: "50%", xl: "40%", backgroundColor: 'white' } }}
           />
-        <CustomButton
-          label="Submit"
-          sx={{width: '300px', mb: 1, mt: 3, backgroundColor: APP_BG_DARK}}
-        />
-        <CustomButton
-          label="No Thanks"
-          variant='outlined'
-          sx={{width: '300px', color: APP_BG_DARK}}
-        />
+        <CustomButton label="Submit" sx={{width: '300px', mb: 1, mt: 3, backgroundColor: APP_BG_DARK}}/>
+        <CustomButton label="No Thanks" variant='outlined' sx={{width: '300px', color: APP_BG_DARK}}/>
         <Box
           sx={{
             flexDirection: "row",
@@ -95,15 +66,11 @@ const RateUs = () => {
             paddingTop: "50px",
           }}
         >
-          <Favorite style={{ color: "#ff0000" }} />
+          <Favorite sx={{mr: 1, color: "#ff0000" }} />
           <CustomText label="Love from Toilers" />
         </Box>
       </Box>
-      <CustomText
-        label="Copyright © 2023 - 2024 TermsFeed®. All rights reserved."
-        variant="body1"
-        sx={{ my: 2 }}
-      />
+      <CustomText label="Toilers™ Copyright © 2023 - 2024 TermsFeed®. All rights reserved." variant="body1" sx={{ my: 2 }}/>
     </Box>
   );
 };

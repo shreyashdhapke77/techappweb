@@ -55,9 +55,9 @@ const AboutPage = () => {
         <Zoom in={true} style={{ transitionDelay: true ? '1000ms' : '0ms', transitionDuration: '1000ms' }}>
           <img src={logo} alt="Toilers" style={{ width: "200px" }} />
         </Zoom>
-        <CustomText label="About Us" variant="h3" isBold={true} />
+        <CustomText label="About Us" variant="h4" isBold={true} />
         <CustomText
-          sx={{margin: '25px', marginX: '50px'}}
+          sx={{margin: '25px', marginX: '50px', my: 2}}
           label="We are Workers. We provide work and service. We are group of workers.
             We provide all services related to your indoor outdoor any kind of
             work. We provided best worker based on your location. Toilers is a online platform offering a variety of services at home. 
@@ -67,34 +67,16 @@ const AboutPage = () => {
              we work closely with our hand-picked service partners, enabling them with technology, training, products, tools,
              financing, insurance and brand, helping them succeed and deliver on this promise.
             Our Vision: Empower millions of professionals worldwide to deliver services at home like never experienced before"
-            variant="h5"
+            variant="h6"
         />
-        <CustomText
-          sx={{margin: '25px'}}
-          isBold
-          label="How We help you"
-            variant="h4"
-        />
-        <CustomText
-          sx={{margin: '25px', marginX: '50px'}}
-          label="Toilers provides a platform that allows skilled and experienced professionals to connect with users looking for specific services.
-          Once on the platform, our match-making algorithm identifies professionals who are closest to the users’ requirements and available at the requested time and date."
-            variant="h5"
+        <CustomText sx={{margin: '25px'}} isBold label="How We help you" variant="h4" />
+        <CustomText sx={{margin: '25px', marginX: '50px'}} label="Toilers provides a platform that allows skilled and experienced professionals to connect with users looking for specific services.
+          Once on the platform, our match-making algorithm identifies professionals who are closest to the users’ requirements and available at the requested time and date." variant="h6"
         />
         <Box sx={{mb: 2, display: 'flex', flexDirection: 'row', alignContent: 'space-evenly', justifyContent: 'space-evenly', alignItems: 'space-evenly'}}>
           <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
-            <CustomText
-              sx={{margin: '25px'}}
-              isBold
-              label="45,000+"
-                variant="h4"
-            />
-            <CustomText
-              sx={{margin: '25px'}}
-              label="Trained Professionals"
-                variant="h5"
-            />
-            
+            <CustomText sx={{margin: '25px'}} isBold label="45,000+" variant="h4" />
+            <CustomText sx={{margin: '25px'}} label="Trained Professionals" variant="h5" />
           </Box>
           <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
           <CustomText
@@ -123,7 +105,7 @@ const AboutPage = () => {
                     src={teamMember.image}
                     alt={teamMember.name}
                     style={{
-                      marginTop: "30px",
+                      marginTop: "10px",
                       width: "200px",
                       height: "200px",
                       borderRadius: "100px",
@@ -143,12 +125,6 @@ const AboutPage = () => {
                         variant="body1"
                         sx={{ my: 1, color: 'white' }}
                       />
-                      <CustomText
-                        label={teamMember.designation}
-                        align="left"
-                        variant="body1"
-                        sx={{ my: 1, color: 'white', height: '180px'}}
-                      />
                       <Box sx={{ my: 1}}>
                         <SocialIcon style={{ marginRight: '5px'}} url="https://x.com/toilersapp" />
                         <SocialIcon style={{ marginRight: '5px'}} url="https://www.facebook.com/people/Toilers-App/pfbid0uCTtCqSFBHtAqyRjeCPvrGKknR2WVYR45EoixRTwRo3n6vDQJEsVUMu44c3tcW7pl/" title='facebook' type='facebook'/>
@@ -156,7 +132,13 @@ const AboutPage = () => {
                         <SocialIcon style={{ marginRight: '5px'}} url="https://instagram.com/toilers" title='instagram' type='facebook'/>
                         <SocialIcon url="https://www.linkedin.com/in/toilers-app-331551315/" title='linkedIn' type='linkedin' />
                       </Box>
-                      <Link style={{marginTop: '25px', marginBottom: '25px'}} onClick={() => window.open(`mailto:${teamMember.email}?subject=Subject&body=Body%20goes%20here`)} sx={{ my: 2, color: 'white' }}>{teamMember.email}</Link>
+                      <CustomText
+                        label={teamMember.designation}
+                        align="left"
+                        variant="body1"
+                        sx={{ my: 1, color: 'white', height: '180px'}}
+                      />
+                      <Link style={{ color: 'white', marginBottom: '25px'}} onClick={() => window.open(`mailto:${teamMember.email}?subject=Subject&body=Body%20goes%20here`)}>{teamMember.email}</Link>
                     </Box>
                       <CustomButton
                         label="Contact"
@@ -204,11 +186,7 @@ const AboutPage = () => {
       </Box>
       </Slide>
       <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
-        <CustomText
-          label="Copyright © 2023 - 2024 TermsFeed®. All rights reserved."
-          variant="body1"
-          sx={{ my: 2 }}
-        />
+        <CustomText  label="Toilers™ Copyright © 2023 - 2024 TermsFeed®. All rights reserved." variant="body1" sx={{ my: 2 }} />
       </Box>
     </Box>
   );
