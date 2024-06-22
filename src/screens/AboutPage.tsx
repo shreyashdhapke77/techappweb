@@ -12,8 +12,6 @@ import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
 import { APP_BG_LIGHT } from "../utils/colors";
 import { SocialIcon } from 'react-social-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter, faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const teamMemberDetails = [
   {

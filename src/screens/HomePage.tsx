@@ -24,6 +24,9 @@ import yash from "../components/assets/yash.jpeg";
 import nishant from "../components/assets/nishant.jpeg";
 import yogesh from "../components/assets/yogesh.jpg";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTwitter, faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
     children: React.ReactElement<any, any>;
@@ -224,34 +227,36 @@ const HomePage = () => {
 
   const FormRow = ({teamMember}: any) => {
     return (
-      <Grid style={{ display: 'flex', backgroundColor: '#01010111'}} item xs={44}>
-        <Grid item xs={25} sm container>
+      <Grid spacing={2} style={{ display: 'flex', backgroundColor: '#01010111'}} item xs={12} sx={{
+        background:
+        'linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, ' +
+        'rgba(0,0,0,0.1) 99%, rgba(0,0,0,0) 100%)',
+    }}>
+        <Grid item xs={12} sm container>
           <Grid item>
             <ButtonBase sx={{ width: 128, height: 128 }}>
               <Img alt="complex" src={teamMember.image} />
             </ButtonBase>
           </Grid>
           <Grid item xs container direction="column">
-            <Box style={{margin: '5px',  display: 'flex', flexDirection: "column", alignContent: 'flex-start', alignItems: 'flex-start', justifyContent: 'flex-start'}}>
-              <Typography gutterBottom variant="subtitle1" component="div">
-              {teamMember.name}
-              </Typography>
-              <Typography variant="body2" gutterBottom>
-              {teamMember.profession}
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-              {teamMember.contact}
-              </Typography>
+            <Box style={{margin: '5px', display: 'flex', flexDirection: "column", alignContent: 'flex-start', alignItems: 'flex-start', justifyContent: 'flex-start' }}>
+              <CustomText sx={{color: APP_BG_DARK}} variant="h6" label={teamMember.name} isBold/>
+              <CustomText variant="subtitle1" label={teamMember.profession} isBold/>
+              <CustomText variant="body1" label={teamMember.contact}/>
+              <Box style={{margin: '5px',  display: 'flex', flexDirection: "row", alignContent: 'flex-start', alignItems: 'flex-start', justifyContent: 'flex-start'}}>
+                <FontAwesomeIcon size='2x' style={{margin: '5px', color: APP_BG_DARK}} icon={faFacebook} />
+                <FontAwesomeIcon size='2x' style={{margin: '5px', color: APP_BG_DARK}} icon={faInstagram} />
+                <FontAwesomeIcon size='2x' style={{margin: '5px', color: APP_BG_DARK}} icon={faTwitter} />
+                <FontAwesomeIcon size='2x' style={{margin: '5px', color: APP_BG_DARK}} icon={faLinkedin} />
+              </Box>
             </Box>
           </Grid>
           <Grid item sx={{margin: '5px', display: 'flex', flexDirection: "column", justifyContent: 'space-between'}}>
-            <Typography variant="subtitle1" component="div">
-               {'Cost: ' + teamMember.charges + '/Hrs'}
-            </Typography>
-            <CustomButton
-              label="Connect"
-              sx={{ backgroundColor: APP_BG_DARK}}
-            />
+            <Box style={{margin: '5px',  display: 'flex', flexDirection: "row", alignContent: 'flex-start', alignItems: 'flex-start', justifyContent: 'space-between'}}>
+              <CustomText variant="body2" label={'Cost: '} isBold/>
+              <CustomText  sx={{color: APP_BG_DARK, ml: 1}} variant="body2" label={teamMember.charges + '/Hrs'} isBold/>
+            </Box>
+            <CustomButton label="Connect" sx={{ backgroundColor: APP_BG_DARK}}/>
           </Grid>
         </Grid>
       </Grid>
@@ -275,9 +280,9 @@ const HomePage = () => {
                 theme.palette.mode === 'dark' ? '#1A2027' : '#1A202711',
             }}
           >
-            <Grid container style={{margin: '1px'}} item>
-              <FormRow teamMember={teamMember}/>
-            </Grid>
+              <Grid container style={{margin: '1px'}} item>
+                <FormRow teamMember={teamMember}/>
+              </Grid>
           </Paper>
           )
         })}
