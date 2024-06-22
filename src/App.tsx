@@ -12,12 +12,14 @@ import UserAccount from './screens/UserAccount';
 import Dashboard from './screens/Dashboard';
 import { Box } from '@mui/material';
 import ApplicationBar from './components/ApplicationBar';
+import Community from './screens/Community';
+import Blog from './screens/Blog';
 
 function App() {
   return (
     <BrowserRouter>
       <ApplicationBar />
-      <Box sx={{marginTop: '30px',textAlign: 'center'}}>
+      <Box sx={{mt: 4, textAlign: 'center'}}>
         <Routes>
           <Route index={true} element={<HomePage />}></Route>
           <Route index={true} path={'findWorker'} element={<FindWorker />}></Route>
@@ -29,6 +31,8 @@ function App() {
           <Route index={true} path={'userProfile'} element={<UserProfile />}></Route>
           <Route index={true} path={'userAccount'} element={<UserAccount />}></Route>
           <Route index={true} path={'dashboard'} element={<Dashboard />}></Route>
+          <Route index={true} path={'blog'} element={<Blog />}></Route>
+          <Route index={true} path={'community'} element={<Community />}></Route>
         </Routes>
       </Box>
     </BrowserRouter>

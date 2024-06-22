@@ -5,17 +5,17 @@ import CustomText from "../components/common/Text"
 import CustomButton from "../components/common/Button";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import { Favorite } from '@mui/icons-material';
-import { APP_BG_LIGHT } from "../utils/colors";
+import { APP_BG_DARK, APP_BG_LIGHT } from "../utils/colors";
+import TextInputField from "../components/common/TextInputField";
 
 const RateUs = () => {
   const [value, setValue] = React.useState<number | null>(2);
-
+  const [message, setMessage] = React.useState<string| null>();
   return (
-    <Box style={{backgroundColor: APP_BG_LIGHT}}>
+    <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
       <Box>
-        <CustomText label="Please Rate Us" variant="h2" isBold={true} />
         <img src={logo} alt="Toilers" style={{ width: "300px" }} />
-        <CustomText label="Welcome to Toilers" variant="h4" isBold={true} sx={{mt: 2}} />
+        <CustomText label="Please Rate Us" variant="h3" isBold={true} />
         <CustomText label="Your opinion matters to us!" variant="h5" sx={{mt: 2}} />
         <CustomText
           label={"Our Goal is to provide workers that can you help you get your work done."}
@@ -50,14 +50,23 @@ const RateUs = () => {
         ) : (
           <CustomText label="Average!" variant="h4" isBold={true} />
         )}
+        <TextInputField
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+              setMessage(e.target.value)
+            }}
+            multiline={true}
+            rows={5}
+            label="Please leave a feedback?"
+            sx={{ width: { xs: "80%", sm: "70%", lg: "50%", xl: "40%", backgroundColor: 'white' } }}
+          />
         <CustomButton
           label="Submit"
-          sx={{width: '220px', mb: 1, mt: 3}}
+          sx={{width: '300px', mb: 1, mt: 3, backgroundColor: APP_BG_DARK}}
         />
         <CustomButton
           label="No Thanks"
           variant='outlined'
-          sx={{width: '220px'}}
+          sx={{width: '300px', color: APP_BG_DARK}}
         />
         <Box sx={{ flexDirection: 'row', display: "flex", alignContent: 'center', justifyContent: 'center', marginBottom: '20px', paddingTop: '100px' }}>
           <Favorite style={{color: '#ff0000'}}/>

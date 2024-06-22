@@ -17,6 +17,7 @@ const ContactUs = () => {
       <Box sx={{ width: "100%" }}>
         <img src={logo} alt="Toilers" style={{ width: "300px" }} />
         <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
+          <CustomText label="Please Contact Us" variant="h3" isBold={true} />
           <TextInputField
             label="Enter Your Name"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -59,7 +60,7 @@ const ContactUs = () => {
             display: "flex",
             alignContent: "center",
             justifyContent: "center",
-            marginTop: "20px",
+            mt: 2,
           }}
         >
           <Box>

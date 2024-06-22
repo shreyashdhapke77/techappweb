@@ -5,6 +5,7 @@ import { Document, Page, pdfjs } from 'react-pdf'
 import conditions from '../components/assets/conditions.pdf'
 
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
+import { APP_BG_LIGHT } from '../utils/colors';
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
     'pdfjs-dist/build/pdf.worker.min.mjs',
@@ -23,20 +24,20 @@ const TermsCondition = () => {
     }
 
     return (
-        <Box style={{backgroundColor: '#88d8bc'}}>
-            <img src={logo} alt="Toilers" style={{ width: "300px" }} />
-            <CustomText label="Terms and Conditions" variant="h2" isBold={true} />
-            <CustomText label={`Page ${pageNumber} of ${numPages}`}></CustomText>
-            <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
-            {Array.from(new Array(numPages), (el, index) => (
-              <Page
-                key={`page_${index + 1}`}
-                pageNumber={index + 1}
-                width={1500}
-              />
-            ))}
-          </Document>
-        </Box>
+      <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
+        <img src={logo} alt="Toilers" style={{ width: "300px" }} />
+        <CustomText label="Terms and Conditions" variant="h3" isBold={true} />
+        <CustomText label={`Page ${pageNumber} of ${numPages}`}></CustomText>
+        <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
+          {Array.from(new Array(numPages), (el, index) => (
+            <Page
+              key={`page_${index + 1}`}
+              pageNumber={index + 1}
+              width={1500}
+            />
+          ))}
+        </Document>
+      </Box>
     );
 }
 

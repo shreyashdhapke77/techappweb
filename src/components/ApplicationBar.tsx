@@ -24,14 +24,17 @@ import StarBorder from '@mui/icons-material/StarBorder';
 import HelpOutline from '@mui/icons-material/HelpOutline';
 import PermPhoneMsg from '@mui/icons-material/PermPhoneMsg';
 import { useNavigate } from "react-router-dom";
-import logo from '../components/assets/logo-no-background-white.png';
-import { Dashboard, ManageAccounts, AccountCircle, Logout } from "@mui/icons-material";
-import { APP_BG_DARK } from "../utils/colors";
+import logo from '../components/assets/toilers-logos/png/logo-no-background.png';
+import { Dashboard, ManageAccounts, AccountCircle, Logout, ViewList, People  } from "@mui/icons-material";
+import { APP_BG_LIGHT, APP_BG_DARK } from "../utils/colors";
+import CustomText from "../components/common/Text";
 
 const settingsMenu = [
   {label: "Profile", path: "/userProfile", icon: AccountCircle},
   {label: "Account", path: '/userAccount', icon: ManageAccounts}, 
   {label: "Dashboard", path: '/dashboard', icon: Dashboard},
+  {label: "Blog", path: '/blog', icon: ViewList},
+  {label: "Community", path: '/community', icon: People},
   {label: "Logout", path: '/logout', icon: Logout}
 ]
 
@@ -82,15 +85,20 @@ function ApplicationBar() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+      <Box sx={{mt: 2, mb: 2}}>
+          <img src={logo} alt="Toilers" style={{width: '250px', objectFit: 'scale-down'}} />
+      </Box>
+      <Divider />
       <List>
         {[{text: 'Find a worker', icon: Handshake, path: '/findWorker' },
          {text: 'Become a worker', icon: WorkOutline, path: '/becomeWorker'}].map((object, index) => (
           <ListItem key={object.text} disablePadding>
             <ListItemButton onClick={()=>navigate(object.path)}>
               <ListItemIcon>
-              <object.icon></object.icon>
+              {<object.icon sx={{width: '36px', height: '36px', color: APP_BG_DARK}}/>}
               </ListItemIcon>
-              <ListItemText primary={object.text} />
+              <CustomText label={object.text} variant="h7" sx={{color: APP_BG_DARK}}/>
+              {/* <ListItemText primary={object.text} /> */}
             </ListItemButton>
           </ListItem>
         ))}
@@ -103,9 +111,10 @@ function ApplicationBar() {
           <ListItem key={object.text} disablePadding>
             <ListItemButton onClick={()=>navigate(object.path)}>
               <ListItemIcon>
-                {<object.icon />}
+                {<object.icon sx={{width: '36px', height: '36px', color: APP_BG_DARK}}/>}
               </ListItemIcon>
-              <ListItemText primary={object.text} />
+              <CustomText label={object.text} variant="h7" sx={{color: APP_BG_DARK}} />
+              {/* <ListItemText primary={object.text} /> */}
             </ListItemButton>
           </ListItem>
         ))}
@@ -117,11 +126,11 @@ function ApplicationBar() {
         onClick={toggleDrawer(anchor, false)}
         onKeyDown={toggleDrawer(anchor, false)}
       >
+        <Divider />
         <Link
-          sx={{ marginX: '50px', marginBottom: '20px' }}
+          sx={{ marginX: '50px', mt: 2, mb: 2 }}
           underline="hover"
           component="button"
-          variant="body2"
           onClick={() => {
             navigate('/termsCondition')
           }}
@@ -183,10 +192,10 @@ function ApplicationBar() {
           Toilers
         </Typography>
 
-        {/* <Box sx={{ flexGrow: 0 }}>
+        <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar alt="Shreyash Dhapke" src="/static/images/avatar/2.jpg" />
+              <AddReaction sx={{width: '50px', height: '50px', mr: 2, color: APP_BG_LIGHT}}></AddReaction>
             </IconButton>
           </Tooltip>
           <Menu
@@ -212,7 +221,7 @@ function ApplicationBar() {
               </MenuItem>
             ))}
           </Menu>
-        </Box> */}
+        </Box> 
       </Toolbar>
     </AppBar>
   );
