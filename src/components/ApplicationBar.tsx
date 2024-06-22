@@ -2,7 +2,7 @@ import * as React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
 import { AppBar, Menu, Box, Toolbar, IconButton, Avatar, Tooltip, MenuItem, Drawer, Divider, Link, ListItem, List, ListItemIcon, ListItemButton, ListItemText } from '@mui/material/';
 import { useNavigate } from "react-router-dom";
-import logo from '../components/assets/logo-no-background-white.png';
+import logo from '../components/assets/toilers-logos/png/logo-no-background.png';
 import { Dashboard, ManageAccounts, AccountCircle, Logout, ViewList, People, AddReaction, WorkOutline, Handshake, StarBorder, HelpOutline, PermPhoneMsg  } from "@mui/icons-material";
 import { APP_BG_LIGHT, APP_BG_DARK } from "../utils/colors";
 import CustomText from "../components/common/Text";
