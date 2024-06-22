@@ -1,7 +1,7 @@
 import * as React from "react";
 import Rating from "@mui/material/Rating";
 import { Box } from "@mui/material";
-import CustomText from "../components/common/Text"
+import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import { Favorite } from '@mui/icons-material';
@@ -18,19 +18,36 @@ const RateUs = () => {
         <CustomText label="Please Rate Us" variant="h3" isBold={true} />
         <CustomText label="Your opinion matters to us!" variant="h5" sx={{mt: 2}} />
         <CustomText
-          label={"Our Goal is to provide workers that can you help you get your work done."}
-          variant="h5"
-          sx={{my: 2}}
+          label="Welcome to Toilers"
+          variant="h4"
+          isBold={true}
+          sx={{ mt: 2 }}
         />
         <CustomText
-          label={"Our Powerful tool supports the individuals to get the workers as well the workers to get the work."}
+          label="Your opinion matters to us!"
           variant="h5"
-          sx={{mb: 2}}
+          sx={{ mt: 2 }}
         />
         <CustomText
-          label={"Weather you are a beginner or experienced, we're excited to help you and your journey."}
+          label={
+            "Our Goal is to provide workers that can you help you get your work done."
+          }
           variant="h5"
-          sx={{mb: 2}}
+          sx={{ my: 2 }}
+        />
+        <CustomText
+          label={
+            "Our Powerful tool supports the individuals to get the workers as well the workers to get the work."
+          }
+          variant="h5"
+          sx={{ mb: 2 }}
+        />
+        <CustomText
+          label={
+            "Weather you are a beginner or experienced, we're excited to help you and your journey."
+          }
+          variant="h5"
+          sx={{ mb: 2 }}
         />
         <Rating
           size="large"
@@ -39,7 +56,7 @@ const RateUs = () => {
           onChange={(event, newValue) => {
             setValue(newValue);
           }}
-          sx={{my: 2}}
+          sx={{ my: 2 }}
         />
         {value != null && value > 4 ? (
           <CustomText label="Mind Blowing!" variant="h4" isBold={true} />
@@ -68,16 +85,25 @@ const RateUs = () => {
           variant='outlined'
           sx={{width: '300px', color: APP_BG_DARK}}
         />
-        <Box sx={{ flexDirection: 'row', display: "flex", alignContent: 'center', justifyContent: 'center', marginBottom: '20px', paddingTop: '100px' }}>
-          <Favorite style={{color: '#ff0000'}}/>
+        <Box
+          sx={{
+            flexDirection: "row",
+            display: "flex",
+            alignContent: "center",
+            justifyContent: "center",
+            marginBottom: "20px",
+            paddingTop: "50px",
+          }}
+        >
+          <Favorite style={{ color: "#ff0000" }} />
           <CustomText label="Love from Toilers" />
         </Box>
       </Box>
       <CustomText
-          label="Copyright © 2023 - 2024 TermsFeed®. All rights reserved."
-          variant="body1"
-          sx={{ my: 2 }}
-        />
+        label="Copyright © 2023 - 2024 TermsFeed®. All rights reserved."
+        variant="body1"
+        sx={{ my: 2 }}
+      />
     </Box>
   );
 };

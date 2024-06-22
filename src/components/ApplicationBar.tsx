@@ -1,20 +1,19 @@
 import * as React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { AppBar, Menu, Box, Toolbar, IconButton, Avatar, Tooltip, MenuItem, Drawer, Divider, Link, ListItem, List, ListItemIcon, ListItemButton, ListItemText } from '@mui/material/';
+import { Typography, AppBar, Menu, Box, Toolbar, IconButton, Tooltip, MenuItem, Drawer, Divider, Link, ListItem, List, ListItemIcon, ListItemButton } from '@mui/material/';
 import { useNavigate } from "react-router-dom";
 import logo from '../components/assets/toilers-logos/png/logo-no-background.png';
 import { Dashboard, ManageAccounts, AccountCircle, Logout, ViewList, People, SettingsSuggest, HomeRepairService, HandshakeTwoTone, StarPurple500, Feed, PermPhoneMsg  } from "@mui/icons-material";
-import { APP_BG_LIGHT, APP_BG_DARK } from "../utils/colors";
+import { APP_BG_DARK } from "../utils/colors";
 import CustomText from "../components/common/Text";
-import CustomButton from "./common/Button";
 
 const settingsMenu = [
-  {label: "Profile", path: "/userProfile", icon: AccountCircle},
-  {label: "Account", path: '/userAccount', icon: ManageAccounts}, 
-  {label: "Dashboard", path: '/dashboard', icon: Dashboard},
-  {label: "Blog", path: '/blog', icon: ViewList},
-  {label: "Community", path: '/community', icon: People},
-  {label: "Logout", path: '/logout', icon: Logout}
+  {id: 1, label: "Profile", path: "/userProfile", icon: AccountCircle},
+  {id: 2, label: "Account", path: '/userAccount', icon: ManageAccounts}, 
+  {id: 3, label: "Dashboard", path: '/dashboard', icon: Dashboard},
+  {id: 4, label: "Blog", path: '/blog', icon: ViewList},
+  {id: 5, label: "Community", path: '/community', icon: People},
+  {id: 6, label: "Logout", path: '/logout', icon: Logout}
 ]
 
 function ApplicationBar() {
@@ -29,6 +28,7 @@ function ApplicationBar() {
   });
 
   const handleCloseUserMenu = (key: any) => {
+    console.log('Close - ', key)
     setAnchorElUser(null);
   };
   
@@ -36,8 +36,8 @@ function ApplicationBar() {
   //   navigate(path)
   // }
   const handleMenuAction = (event: string) => {
-    console.log('Event', event)
-    // navigate();
+    console.log('handleMenuAction', event)
+    navigate(event);
   };
 
   type Anchor = 'top' | 'left' | 'bottom' | 'right';
@@ -208,12 +208,15 @@ function ApplicationBar() {
             onClose={handleCloseUserMenu}
           >
             {settingsMenu.map((menu) => (
-              <MenuItem sx={{backgroundColor:  menu.label === 'Logout'? '#aaaaaa80' : ''}} key={menu.label} onClick={handleCloseUserMenu}>
-               <menu.icon style={{ marginRight: '10px', color: menu.label === 'Logout'? 'red' : APP_BG_DARK}} onClick={()=>handleMenuAction(menu.path)}/>
-               { menu.label === 'Logout' ? <Divider /> : null }
-               <Divider />
-                <CustomText sx={{color: menu.label === 'Logout'? 'red' : APP_BG_DARK}} isBold={menu.label === 'Logout'} label={menu.label} />
-                {/* <Typography onClick={()=>handleMenuAction(menu.path)}>{menu.label}</Typography> */}
+              <MenuItem sx={{ backgroundColor:  menu.label === 'Logout' ? '#aaaaaa80' : '' }} key={menu.label} onClick={handleCloseUserMenu}>
+               <menu.icon key={menu.id} style={{ marginRight: '10px', color: menu.label === 'Logout' ? 'red' : APP_BG_DARK}} onClick={()=> {
+                console.log('abcd', menu)
+                handleMenuAction(menu.path)
+               }
+              }/>
+               {/* { menu.label === 'Logout' ? <Divider /> : null } */}
+                {/* <CustomText sx={{ color: menu.label === 'Logout' ? 'red' : APP_BG_DARK }} isBold={menu.label === 'Logout'} label={menu.label} /> */}
+                <Typography onClick={()=>handleMenuAction(menu.path)}>{menu.label}</Typography>
               </MenuItem>
             ))}
           </Menu>
