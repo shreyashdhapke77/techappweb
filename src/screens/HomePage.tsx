@@ -11,6 +11,18 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
 import Slide from '@mui/material/Slide';
 import { TransitionProps } from '@mui/material/transitions';
+import { styled } from '@mui/material/styles';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import ButtonBase from '@mui/material/ButtonBase';
+
+import pravin from "../components/assets/pravin.jpeg";
+import shreyash from "../components/assets/shreyash.jpeg";
+import ashish from "../components/assets/ashish.jpeg";
+import yash from "../components/assets/yash.jpeg";
+import nishant from "../components/assets/nishant.jpeg";
+import yogesh from "../components/assets/yogesh.jpg";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -20,6 +32,178 @@ const Transition = React.forwardRef(function Transition(
 ) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
+const teamMemberDetails = [{
+  name: 'Pravin Salame',
+  profession: 'Carpenter',
+  image: pravin,
+  charges: 'Rs 549',
+  contact: '+91 9371643142'
+}, {
+  name: 'Shreyash Dhapke',
+  profession: 'Cleaner',
+  image: shreyash,
+  charges: 'Rs 449',
+  contact: '+91 9876543210'
+}, {
+  name: 'Ashish Kachhawah',
+  profession: 'Plumber',
+  image: ashish,
+  charges: 'Rs 349',
+  contact: '+91 8371673142'
+}, {
+    name: 'Yash Mahajan',
+    profession: 'Kisan',
+    image: yash,
+    charges: 'Rs 349',
+    contact: '+91 5371673241'
+}, {
+  name: 'Mayur Ghatole',
+    profession: 'Mistri',
+    image: ashish,
+    charges: 'Rs 349',
+    contact: '+91 2371633248'
+}, {
+  name: 'Nishant Rangari',
+    profession: 'Thekedar',
+    image: nishant,
+    charges: 'Rs 349',
+    contact: '+91 8371373164'
+}, {
+  name: 'Yogesh Lolusare',
+    profession: 'Cleaner',
+    image: yogesh,
+    charges: 'Rs 349',
+    contact: '+91 2371643143'
+}, {
+  name: 'Pravin Salame',
+  profession: 'Carpenter',
+  image: pravin,
+  charges: 'Rs 549',
+  contact: '+91 9371643142'
+}, {
+  name: 'Shreyash Dhapke',
+  profession: 'Cleaner',
+  image: shreyash,
+  charges: 'Rs 449',
+  contact: '+91 9876543210'
+}, {
+  name: 'Ashish Kachhawah',
+  profession: 'Plumber',
+  image: ashish,
+  charges: 'Rs 349',
+  contact: '+91 8371673142'
+}, {
+    name: 'Yash Mahajan',
+    profession: 'Kisan',
+    image: yash,
+    charges: 'Rs 349',
+    contact: '+91 5371673241'
+}, {
+  name: 'Mayur Ghatole',
+    profession: 'Mistri',
+    image: ashish,
+    charges: 'Rs 349',
+    contact: '+91 2371633248'
+}, {
+  name: 'Nishant Rangari',
+    profession: 'Thekedar',
+    image: nishant,
+    charges: 'Rs 349',
+    contact: '+91 8371373164'
+}, {
+  name: 'Yogesh Lolusare',
+    profession: 'Cleaner',
+    image: yogesh,
+    charges: 'Rs 349',
+    contact: '+91 2371643143'
+},
+{
+  name: 'Pravin Salame',
+  profession: 'Carpenter',
+  image: pravin,
+  charges: 'Rs 549',
+  contact: '+91 9371643142'
+}, {
+  name: 'Shreyash Dhapke',
+  profession: 'Cleaner',
+  image: shreyash,
+  charges: 'Rs 449',
+  contact: '+91 9876543210'
+}, {
+  name: 'Ashish Kachhawah',
+  profession: 'Plumber',
+  image: ashish,
+  charges: 'Rs 349',
+  contact: '+91 8371673142'
+}, {
+    name: 'Yash Mahajan',
+    profession: 'Kisan',
+    image: yash,
+    charges: 'Rs 349',
+    contact: '+91 5371673241'
+}, {
+  name: 'Mayur Ghatole',
+    profession: 'Mistri',
+    image: ashish,
+    charges: 'Rs 349',
+    contact: '+91 2371633248'
+}, {
+  name: 'Nishant Rangari',
+    profession: 'Thekedar',
+    image: nishant,
+    charges: 'Rs 349',
+    contact: '+91 8371373164'
+}, {
+  name: 'Yogesh Lolusare',
+    profession: 'Cleaner',
+    image: yogesh,
+    charges: 'Rs 349',
+    contact: '+91 2371643143'
+},
+{
+  name: 'Pravin Salame',
+  profession: 'Carpenter',
+  image: pravin,
+  charges: 'Rs 549',
+  contact: '+91 9371643142'
+}, {
+  name: 'Shreyash Dhapke',
+  profession: 'Cleaner',
+  image: shreyash,
+  charges: 'Rs 449',
+  contact: '+91 9876543210'
+}, {
+  name: 'Ashish Kachhawah',
+  profession: 'Plumber',
+  image: ashish,
+  charges: 'Rs 349',
+  contact: '+91 8371673142'
+}, {
+    name: 'Yash Mahajan',
+    profession: 'Kisan',
+    image: yash,
+    charges: 'Rs 349',
+    contact: '+91 5371673241'
+}, {
+  name: 'Mayur Ghatole',
+    profession: 'Mistri',
+    image: ashish,
+    charges: 'Rs 349',
+    contact: '+91 2371633248'
+}, {
+  name: 'Nishant Rangari',
+    profession: 'Thekedar',
+    image: nishant,
+    charges: 'Rs 349',
+    contact: '+91 8371373164'
+}, {
+  name: 'Yogesh Lolusare',
+    profession: 'Cleaner',
+    image: yogesh,
+    charges: 'Rs 349',
+    contact: '+91 2371643143'
+},
+]
 
 const HomePage = () => {
   const [open, setOpen] = React.useState(true);
@@ -37,10 +221,67 @@ const HomePage = () => {
       [event.target.name]: event.target.checked,
     });
   };
+
+  const FormRow = ({teamMember}: any) => {
+    return (
+      <Grid style={{ display: 'flex', backgroundColor: '#01010111'}} item xs={44}>
+        <Grid item xs={25} sm container>
+          <Grid item>
+            <ButtonBase sx={{ width: 128, height: 128 }}>
+              <Img alt="complex" src={teamMember.image} />
+            </ButtonBase>
+          </Grid>
+          <Grid item xs container direction="column">
+            <Box style={{margin: '5px',  display: 'flex', flexDirection: "column", alignContent: 'flex-start', alignItems: 'flex-start', justifyContent: 'flex-start'}}>
+              <Typography gutterBottom variant="subtitle1" component="div">
+              {teamMember.name}
+              </Typography>
+              <Typography variant="body2" gutterBottom>
+              {teamMember.profession}
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+              {teamMember.contact}
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid item sx={{margin: '5px', display: 'flex', flexDirection: "column", justifyContent: 'space-between'}}>
+            <Typography variant="subtitle1" component="div">
+               {'Cost: ' + teamMember.charges + '/Hrs'}
+            </Typography>
+            <CustomButton
+              label="Connect"
+              sx={{ backgroundColor: APP_BG_DARK}}
+            />
+          </Grid>
+        </Grid>
+      </Grid>
+    );
+  }
   return (
     <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
       <img src={logo} alt="Toilers" style={{ width: "200px" }} />
       <CustomText label="Join Toilers to change your life" variant="h2" isBold={true} />
+      <Box sx={{ display: 'block', justifyContent: "center", alignContent: "center", alignItems: 'center', mt: 2 }}>
+        {teamMemberDetails.map((teamMember) => {
+          return (
+          <Paper
+            sx={{
+              p: 2,
+              margin: 'auto',
+              maxWidth: 500,
+              float: 'left',
+              flexGrow: 1,
+              backgroundColor: (theme) =>
+                theme.palette.mode === 'dark' ? '#1A2027' : '#1A202711',
+            }}
+          >
+            <Grid container style={{margin: '1px'}} item>
+              <FormRow teamMember={teamMember}/>
+            </Grid>
+          </Paper>
+          )
+        })}
+        </Box>
         <Dialog
           open={open}
           TransitionComponent={Transition}
@@ -69,6 +310,13 @@ const HomePage = () => {
     </Box>
   );
 };
+
+const Img = styled('img')({
+  margin: 'auto',
+  maxWidth: '100%',
+  maxHeight: '100%',
+});
+
 
 const style = {
   top: '10%',
