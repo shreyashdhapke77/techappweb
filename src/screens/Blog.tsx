@@ -21,64 +21,64 @@ function srcset(image: string, width: number, height: number, rows = 1, cols = 1
 const Blog = () => {
   return (
     <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
-            <img src={logo} alt="Toilers" style={{ width: "200px" }} />
-            <CustomText label="Our Blogs" variant="h3" isBold={true} />
-            <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
+      {/* <img src={logo} alt="Toilers" style={{ width: "200px" }} /> */}
+      <CustomText label="Our Blogs" variant="h3" isBold={true} />
 
-        <ImageList
-        sx={{
-            width: '90%',
-            height: 650,
-            // Promote the list into its own layer in Chrome. This costs memory, but helps keeping high FPS.
-            transform: 'translateZ(0)',
-        }}
-        rowHeight={400}
-        gap={1}
-        >
-        {itemData.map((item) => {
-            const cols = item.featured ? 2 : 1;
-            const rows = item.featured ? 2 : 1;
 
-            return (
-            <ImageListItem key={item.img} cols={cols} rows={rows}>
-                <img
-                {...srcset(item.img, 450, 350, rows, cols)}
-                alt={item.title}
-                loading="lazy"
-                />
-                <ImageListItemBar
-                    sx={{
-                        background:
-                        'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-                        'rgba(0,0,0,0.4) 70%, rgba(0,0,0,0) 100%)',
-                    }}
-                    title={item.title}
-                    position='top'
-                    actionIcon={
-                        <IconButton
-                            sx={{ color: 'white', width: '100px', height: '100px' }}
-                            aria-label={`star ${item.title}`}
-                        >
-                        <StarBorderIcon sx={{ color: 'white', width: '50px', height: '50px' }}/>
-                        </IconButton>
-                    }
-                    actionPosition="left"
-                />
-            </ImageListItem>
-            );
-        })}
-        </ImageList>
-        </Box>
+      <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
+          <ImageList
+          sx={{
+              width: '99%',
+              // Promote the list into its own layer in Chrome. This costs memory, but helps keeping high FPS.
+              transform: 'translateZ(0)',
+          }}
+          rowHeight={600}
+          gap={1}
+          >
+          {itemData.map((item) => {
+              const cols = item.featured ? 2 : 1;
+              const rows = item.featured ? 2 : 1;
+
+              return (
+              <ImageListItem key={item.img} cols={cols} rows={rows}>
+                  <img
+                  {...srcset(item.img, 450, 350, rows, cols)}
+                  alt={item.title}
+                  loading="lazy"
+                  />
+                  <ImageListItemBar
+                      sx={{
+                          background:
+                          'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
+                          'rgba(0,0,0,0.4) 70%, rgba(0,0,0,0) 100%)',
+                      }}
+                      title={item.title}
+                      position='top'
+                      actionIcon={
+                          <IconButton
+                              sx={{ color: 'white' }}
+                              aria-label={`star ${item.title}`}
+                          >
+                          <StarBorderIcon sx={{ color: 'white', width: '50px', height: '50px' }}/>
+                          </IconButton>
+                      }
+                      actionPosition="left"
+                  />
+              </ImageListItem>
+              );
+          })}
+          </ImageList>
+      </Box>
     </Box>
   );
 }
+
 
 const itemData = [
   {
     img: 'https://images.unsplash.com/photo-1600880292089-90a7e086ee0c',
     title: 'Worker',
     author: '@bkristastucchio',
-    featured: true,
   },
   {
     img: 'https://images.unsplash.com/photo-1567954970774-58d6aa6c50dc',
@@ -89,6 +89,7 @@ const itemData = [
     img: 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d',
     title: 'Office',
     author: '@helloimnik',
+    featured: true
   },
   {
     img: 'https://plus.unsplash.com/premium_photo-1680787308929-a071c1d33c0b',
@@ -140,6 +141,7 @@ const itemData = [
     img: 'https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8',
     title: 'Wood Work',
     author: '@southside_customs',
+    featured: true
   },
   {
     img: 'https://img.freepik.com/free-photo/dirty-shirt-laundry-service_1098-13262.jpg',
@@ -185,10 +187,16 @@ const itemData = [
     img: 'https://img.freepik.com/free-photo/people-taking-care-office-cleaning_23-2149374451.jpg',
     title: 'Janitor',
     author: '@southside_customs',
+    featured: true
   },
   {
     img: 'https://images.unsplash.com/photo-1623485101793-082c03565fa9',
     title: 'Educational',
+    author: '@southside_customs',
+  },
+  {
+    img: 'https://plus.unsplash.com/premium_photo-1682129168433-1f158473f3d2',
+    title: 'Vehicle Repairing',
     author: '@southside_customs',
   }
   
