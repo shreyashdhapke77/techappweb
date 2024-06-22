@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Box } from '@mui/material';
 import CustomText from '../components/common/Text'
 import { Document, Page, pdfjs } from 'react-pdf'
-import conditions from '../components/assets/conditions.pdf'
 
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import { APP_BG_LIGHT } from '../utils/colors';
@@ -17,7 +16,7 @@ type PDFFile = string | File | null;
 const TermsCondition = () => {
     const [numPages, setNumPages] = useState<number>(12);
     const [pageNumber, setPageNumber] = useState<number>(1);
-    const [file, setFile] = useState<PDFFile>(conditions);
+    const [file, setFile] = useState<PDFFile>(require("../components/assets/conditions.pdf"));
 
     function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
         setNumPages(numPages);
