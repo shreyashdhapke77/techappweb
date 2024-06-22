@@ -18,11 +18,14 @@ import Typography from '@mui/material/Typography';
 import ButtonBase from '@mui/material/ButtonBase';
 
 import pravin from "../components/assets/pravin.jpeg";
-import shreyash from "../components/assets/shreyash.jpeg";
+import shreyash from "../components/assets/shreyash1.jpg";
+import shreyash1 from "../components/assets/shreyash.jpeg";
 import ashish from "../components/assets/ashish.jpeg";
 import yash from "../components/assets/yash.jpeg";
-import nishant from "../components/assets/nishant.jpeg";
+import nilesh from "../components/assets/nilesh.jpg";
+import mayur from "../components/assets/mayur.jpg";
 import yogesh from "../components/assets/yogesh.jpg";
+import swapnil from "../components/assets/swapnil.jpg";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -62,14 +65,14 @@ const teamMemberDetails = [{
 }, {
   name: 'Mayur Ghatole',
     profession: 'Mistri',
-    image: ashish,
+    image: mayur,
     charges: 'Rs 349',
     contact: '+91 2371633248'
 }, {
-  name: 'Nishant Rangari',
-    profession: 'Thekedar',
-    image: nishant,
-    charges: 'Rs 349',
+  name: 'Nilesh Fasate',
+    profession: 'Labour',
+    image: nilesh,
+    charges: 'Rs 899',
     contact: '+91 8371373164'
 }, {
   name: 'Yogesh Lolusare',
@@ -104,56 +107,13 @@ const teamMemberDetails = [{
 }, {
   name: 'Mayur Ghatole',
     profession: 'Mistri',
-    image: ashish,
+    image: mayur,
     charges: 'Rs 349',
     contact: '+91 2371633248'
 }, {
-  name: 'Nishant Rangari',
+  name: 'Swanil Manekar',
     profession: 'Thekedar',
-    image: nishant,
-    charges: 'Rs 349',
-    contact: '+91 8371373164'
-}, {
-  name: 'Yogesh Lolusare',
-    profession: 'Cleaner',
-    image: yogesh,
-    charges: 'Rs 349',
-    contact: '+91 2371643143'
-},
-{
-  name: 'Pravin Salame',
-  profession: 'Carpenter',
-  image: pravin,
-  charges: 'Rs 549',
-  contact: '+91 9371643142'
-}, {
-  name: 'Shreyash Dhapke',
-  profession: 'Cleaner',
-  image: shreyash,
-  charges: 'Rs 449',
-  contact: '+91 9876543210'
-}, {
-  name: 'Ashish Kachhawah',
-  profession: 'Plumber',
-  image: ashish,
-  charges: 'Rs 349',
-  contact: '+91 8371673142'
-}, {
-    name: 'Yash Mahajan',
-    profession: 'Kisan',
-    image: yash,
-    charges: 'Rs 349',
-    contact: '+91 5371673241'
-}, {
-  name: 'Mayur Ghatole',
-    profession: 'Mistri',
-    image: ashish,
-    charges: 'Rs 349',
-    contact: '+91 2371633248'
-}, {
-  name: 'Nishant Rangari',
-    profession: 'Thekedar',
-    image: nishant,
+    image: swapnil,
     charges: 'Rs 349',
     contact: '+91 8371373164'
 }, {
@@ -190,13 +150,56 @@ const teamMemberDetails = [{
 }, {
   name: 'Mayur Ghatole',
     profession: 'Mistri',
-    image: ashish,
+    image: mayur,
     charges: 'Rs 349',
     contact: '+91 2371633248'
 }, {
-  name: 'Nishant Rangari',
+  name: 'Swanil Manekar',
     profession: 'Thekedar',
-    image: nishant,
+    image: swapnil,
+    charges: 'Rs 349',
+    contact: '+91 8371373164'
+}, {
+  name: 'Yogesh Lolusare',
+    profession: 'Cleaner',
+    image: yogesh,
+    charges: 'Rs 349',
+    contact: '+91 2371643143'
+},
+{
+  name: 'Pravin Salame',
+  profession: 'Carpenter',
+  image: pravin,
+  charges: 'Rs 549',
+  contact: '+91 9371643142'
+}, {
+  name: 'Shreyash Dhapke',
+  profession: 'Cleaner',
+  image: shreyash1,
+  charges: 'Rs 449',
+  contact: '+91 9876543210'
+}, {
+  name: 'Ashish Kachhawah',
+  profession: 'Plumber',
+  image: ashish,
+  charges: 'Rs 349',
+  contact: '+91 8371673142'
+}, {
+    name: 'Yash Mahajan',
+    profession: 'Kisan',
+    image: yash,
+    charges: 'Rs 349',
+    contact: '+91 5371673241'
+}, {
+  name: 'Mayur Ghatole',
+    profession: 'Mistri',
+    image: mayur,
+    charges: 'Rs 349',
+    contact: '+91 2371633248'
+}, {
+  name: 'Swanil Manekar',
+    profession: 'Thekedar',
+    image: swapnil,
     charges: 'Rs 349',
     contact: '+91 8371373164'
 }, {
@@ -234,9 +237,7 @@ const HomePage = () => {
     }}>
         <Grid item xs={12} sm container>
           <Grid item>
-            <ButtonBase sx={{ width: 128, height: 128 }}>
-              <Img alt="complex" src={teamMember.image} />
-            </ButtonBase>
+            <Img alt="complex" src={teamMember.image} />
           </Grid>
           <Grid item xs container direction="column">
             <Box style={{margin: '5px', display: 'flex', flexDirection: "column", alignContent: 'flex-start', alignItems: 'flex-start', justifyContent: 'flex-start' }}>
