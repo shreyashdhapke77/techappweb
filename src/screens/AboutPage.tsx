@@ -7,12 +7,12 @@ import yash from "../components/assets/yash.jpeg";
 import nishant from "../components/assets/nishant.jpeg";
 import yogesh from "../components/assets/yogesh.jpg";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
-import { Avatar, Box, Link, ListItemAvatar } from "@mui/material";
+import { Avatar, Box, Link } from "@mui/material";
 import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
 import { APP_BG_LIGHT } from "../utils/colors";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { SocialIcon } from 'react-social-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const teamMemberDetails = [
@@ -52,10 +52,10 @@ const teamMemberDetails = [
 
 const AboutPage = () => {
   return (
-    <Box style={{backgroundColor: APP_BG_LIGHT}}>
+    <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
       <Box>
         <img src={logo} alt="Toilers" style={{ width: "300px" }} />
-        <CustomText label="About Us" variant="h2" isBold={true} />
+        <CustomText label="About Us" variant="h3" isBold={true} />
         <CustomText
         sx={{margin: '25px', marginX: '50px'}}
           label="We are Workers. We provide work and service. We are group of workers.
@@ -121,7 +121,7 @@ const AboutPage = () => {
                 <Box className="card" sx={{ width: '90%', height: '600px' }}>
                   <img
                     src={teamMember.image}
-                    alt="Pravin"
+                    alt={teamMember.name}
                     style={{
                       marginTop: "30px",
                       width: "200px",

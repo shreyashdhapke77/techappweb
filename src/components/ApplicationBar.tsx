@@ -1,37 +1,19 @@
 import * as React from "react";
-import AppBar from "@mui/material/AppBar";
-import Box from "@mui/material/Box";
-import Toolbar from "@mui/material/Toolbar";
-import IconButton from "@mui/material/IconButton";
-import Typography from "@mui/material/Typography";
-import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
-import Avatar from "@mui/material/Avatar";
-import Tooltip from "@mui/material/Tooltip";
-import MenuItem from "@mui/material/MenuItem";
-import Drawer from '@mui/material/Drawer';
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import Link from '@mui/material/Link';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import AddReaction from '@mui/icons-material/AddReaction';
-import WorkOutline from '@mui/icons-material/WorkOutline';
-import Handshake from '@mui/icons-material/Handshake';
-import StarBorder from '@mui/icons-material/StarBorder';
-import HelpOutline from '@mui/icons-material/HelpOutline';
-import PermPhoneMsg from '@mui/icons-material/PermPhoneMsg';
+import { AppBar, Menu, Box, Toolbar, IconButton, Avatar, Tooltip, MenuItem, Drawer, Divider, Link, ListItem, List, ListItemIcon, ListItemButton, ListItemText } from '@mui/material/';
 import { useNavigate } from "react-router-dom";
-import logo from '../components/assets/logo-no-background-white.png';
-import { Dashboard, ManageAccounts, AccountCircle, Logout } from "@mui/icons-material";
-import { APP_BG_DARK } from "../utils/colors";
+import logo from '../components/assets/toilers-logos/png/logo-no-background.png';
+import { Dashboard, ManageAccounts, AccountCircle, Logout, ViewList, People, AddReaction, WorkOutline, Handshake, StarBorder, HelpOutline, PermPhoneMsg  } from "@mui/icons-material";
+import { APP_BG_LIGHT, APP_BG_DARK } from "../utils/colors";
+import CustomText from "../components/common/Text";
+import CustomButton from "./common/Button";
 
 const settingsMenu = [
   {label: "Profile", path: "/userProfile", icon: AccountCircle},
   {label: "Account", path: '/userAccount', icon: ManageAccounts}, 
   {label: "Dashboard", path: '/dashboard', icon: Dashboard},
+  {label: "Blog", path: '/blog', icon: ViewList},
+  {label: "Community", path: '/community', icon: People},
   {label: "Logout", path: '/logout', icon: Logout}
 ]
 
@@ -50,9 +32,13 @@ function ApplicationBar() {
     setAnchorElUser(null);
   };
   
-  const handleMenuAction = (path: string) => {
-    navigate(path)
-  }
+  // const handleMenuAction = (path: string) => {
+  //   navigate(path)
+  // }
+  const handleMenuAction = (event: string) => {
+    console.log('Event', event)
+    // navigate();
+  };
 
   type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
@@ -82,15 +68,20 @@ function ApplicationBar() {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+      <Box sx={{mt: 2, mb: 2}}>
+          <img src={logo} alt="Toilers" style={{width: '250px', objectFit: 'scale-down'}} />
+      </Box>
+      <Divider />
       <List>
         {[{text: 'Find a worker', icon: Handshake, path: '/findWorker' },
          {text: 'Become a worker', icon: WorkOutline, path: '/becomeWorker'}].map((object, index) => (
           <ListItem key={object.text} disablePadding>
             <ListItemButton onClick={()=>navigate(object.path)}>
               <ListItemIcon>
-              <object.icon></object.icon>
+              {<object.icon fontSize="large" sx={{color: APP_BG_DARK}}/>}
               </ListItemIcon>
-              <ListItemText primary={object.text} />
+              <CustomText label={object.text} variant="h7" sx={{color: APP_BG_DARK}}/>
+              {/* <ListItemText primary={object.text} /> */}
             </ListItemButton>
           </ListItem>
         ))}
@@ -103,9 +94,10 @@ function ApplicationBar() {
           <ListItem key={object.text} disablePadding>
             <ListItemButton onClick={()=>navigate(object.path)}>
               <ListItemIcon>
-                {<object.icon />}
+                {<object.icon fontSize="large" sx={{ color: APP_BG_DARK}}/>}
               </ListItemIcon>
-              <ListItemText primary={object.text} />
+              <CustomText label={object.text} variant="h7" sx={{color: APP_BG_DARK}} />
+              {/* <ListItemText primary={object.text} /> */}
             </ListItemButton>
           </ListItem>
         ))}
@@ -117,11 +109,11 @@ function ApplicationBar() {
         onClick={toggleDrawer(anchor, false)}
         onKeyDown={toggleDrawer(anchor, false)}
       >
+        <Divider />
         <Link
-          sx={{ marginX: '50px', marginBottom: '20px' }}
+          sx={{ marginX: '50px', mt: 2, mb: 2 }}
           underline="hover"
           component="button"
-          variant="body2"
           onClick={() => {
             navigate('/termsCondition')
           }}
@@ -164,7 +156,17 @@ function ApplicationBar() {
         </Box>
         {/* <Alert severity="warning">The site is under construction.</Alert> */}
         <img src={logo} alt="Toilers" style={{ width:'50px'}}/>
-        <Typography
+        <CustomText label="Toilers" variant="h5" isBold={true}  sx={{
+            mr: 2,
+            display: { xs: "flex", md: "flex" },
+            flexGrow: 1,
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
+          }}/>
+        {/* <Typography
           variant="h5"
           noWrap
           component="a"
@@ -181,16 +183,16 @@ function ApplicationBar() {
           }}
         >
           Toilers
-        </Typography>
+        </Typography> */}
 
-        {/* <Box sx={{ flexGrow: 0 }}>
+        <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Avatar alt="Shreyash Dhapke" src="/static/images/avatar/2.jpg" />
+              <AddReaction sx={{width: '50px', height: '50px', mr: 2, color: 'white'}}></AddReaction>
             </IconButton>
           </Tooltip>
           <Menu
-            sx={{ mt: "45px" }}
+            sx={{ mt: "65px", backgroundColor: '#00000080' }}
             id="menu-appbar"
             anchorEl={anchorElUser}
             anchorOrigin={{
@@ -206,13 +208,16 @@ function ApplicationBar() {
             onClose={handleCloseUserMenu}
           >
             {settingsMenu.map((menu) => (
-              <MenuItem key={menu.label} onClick={handleCloseUserMenu}>
-               <menu.icon style={{ marginRight: '5px'}}/>
-                <Typography onClick={()=>handleMenuAction(menu.path)}>{menu.label}</Typography>
+              <MenuItem sx={{backgroundColor:  menu.label === 'Logout'? '#aaaaaa80' : ''}} key={menu.label} onClick={handleCloseUserMenu}>
+               <menu.icon style={{ marginRight: '10px', color: menu.label === 'Logout'? 'red' : APP_BG_DARK}} onClick={()=>handleMenuAction(menu.path)}/>
+               { menu.label === 'Logout' ? <Divider /> : null }
+               <Divider />
+                <CustomText sx={{color: menu.label === 'Logout'? 'red' : APP_BG_DARK}} isBold={menu.label === 'Logout'} label={menu.label} />
+                {/* <Typography onClick={()=>handleMenuAction(menu.path)}>{menu.label}</Typography> */}
               </MenuItem>
             ))}
           </Menu>
-        </Box> */}
+        </Box> 
       </Toolbar>
     </AppBar>
   );
