@@ -1,5 +1,4 @@
 import { Box } from "@mui/material"
-import ApplicationBar from "../components/ApplicationBar"
 import { APP_BG_LIGHT } from "../utils/colors"
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import CustomText from "../components/common/Text";
@@ -13,4 +12,4 @@ const Dashboard = () => {
     )
 }
 
-export default Dashboard
+export default Dashboard;

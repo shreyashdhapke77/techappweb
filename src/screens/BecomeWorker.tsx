@@ -18,4 +18,4 @@ const BecomeWorker = () => {
     )
 }
 
-export default BecomeWorker
+export default BecomeWorker;

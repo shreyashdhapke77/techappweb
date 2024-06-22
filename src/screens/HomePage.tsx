@@ -10,15 +10,6 @@ const HomePage = () => {
     <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
       <img src={logo} alt="Toilers" style={{ width: "200px" }} />
       <CustomText label="Join Toilers to change your life" variant="h2" isBold={true} />
-      <TextInputField
-         label="Hello"
-      />
-      <CustomButton
-         label="Submit"
-      />
-      <CustomText
-        label="My Text"
-      />
     </Box>
   );
 };

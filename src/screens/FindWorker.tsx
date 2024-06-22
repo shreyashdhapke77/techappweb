@@ -12,4 +12,4 @@ const FindWorker = () => {
     )
 }
 
-export default FindWorker
+export default FindWorker;

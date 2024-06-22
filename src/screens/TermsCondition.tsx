@@ -18,9 +18,9 @@ const TermsCondition = () => {
     const [pageNumber, setPageNumber] = useState<number>(1);
     const [file, setFile] = useState<PDFFile>(require("../components/assets/conditions.pdf"));
 
-    function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
-        setNumPages(numPages);
-    }
+  function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
+    setNumPages(numPages);
+  }
 
     return (
       <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
@@ -40,5 +40,4 @@ const TermsCondition = () => {
     );
 }
 
-
-export default TermsCondition
+export default TermsCondition;

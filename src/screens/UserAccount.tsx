@@ -12,4 +12,4 @@ const UserAccount = () => {
     )
 }
 
-export default UserAccount
+export default UserAccount;
