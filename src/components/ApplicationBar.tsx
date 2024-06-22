@@ -1,6 +1,6 @@
 import * as React from "react";
 import MenuIcon from "@mui/icons-material/Menu";
-import { AppBar, Menu, Box, Toolbar, IconButton, Tooltip, MenuItem, Drawer, Divider, Link, ListItem, List, ListItemIcon, ListItemButton } from '@mui/material/';
+import { Typography, AppBar, Menu, Box, Toolbar, IconButton, Tooltip, MenuItem, Drawer, Divider, Link, ListItem, List, ListItemIcon, ListItemButton } from '@mui/material/';
 import { useNavigate } from "react-router-dom";
 import logo from '../components/assets/toilers-logos/png/logo-no-background.png';
 import { Dashboard, ManageAccounts, AccountCircle, Logout, ViewList, People, SettingsSuggest, HomeRepairService, HandshakeTwoTone, StarPurple500, Feed, PermPhoneMsg  } from "@mui/icons-material";
@@ -215,8 +215,8 @@ function ApplicationBar() {
                }
               }/>
                {/* { menu.label === 'Logout' ? <Divider /> : null } */}
-                <CustomText sx={{ color: menu.label === 'Logout' ? 'red' : APP_BG_DARK }} isBold={menu.label === 'Logout'} label={menu.label} />
-                {/* <Typography onClick={()=>handleMenuAction(menu.path)}>{menu.label}</Typography> */}
+                {/* <CustomText sx={{ color: menu.label === 'Logout' ? 'red' : APP_BG_DARK }} isBold={menu.label === 'Logout'} label={menu.label} /> */}
+                <Typography onClick={()=>handleMenuAction(menu.path)}>{menu.label}</Typography>
               </MenuItem>
             ))}
           </Menu>
