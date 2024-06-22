@@ -24,7 +24,7 @@ const ContactUs = () => {
         <img src={logo} alt="Toilers" style={{ width: "200px" }} />
         <Slide direction="up" in={true} mountOnEnter unmountOnExit>
           <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
-            <CustomText label="Please Contact Us" variant="h3" isBold={true} />
+            <CustomText label="Please Contact Us" variant="h4" isBold={true} />
             <TextInputField
               label="Enter Your Name"
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -140,11 +140,7 @@ const ContactUs = () => {
         </Box>
         </Slide>
       </Box>
-      <CustomText
-        label="Copyright © 2023 - 2024 TermsFeed®. All rights reserved."
-        variant="body1"
-        sx={{ mt: 2 }}
-      />
+      <CustomText  label="Toilers™ Copyright © 2023 - 2024 TermsFeed®. All rights reserved." variant="body1" sx={{ my: 2 }} />
     </Box>
   );
 };

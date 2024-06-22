@@ -7,13 +7,21 @@ import { Dashboard, ManageAccounts, AccountCircle, Logout, ViewList, People, Set
 import { APP_BG_DARK } from "../utils/colors";
 import CustomText from "../components/common/Text";
 
+const sidePanelMenu = [[  {text: 'Find a worker',   icon: HandshakeTwoTone,  path: '/findWorker' },
+    {text: 'Become a worker', icon: HomeRepairService, path: '/becomeWorker'}
+  ],[ {text: 'About Us',   icon: Feed,          path: '/about'},
+    {text: 'Contact Us', icon:PermPhoneMsg,   path: '/contactUs' },
+    {text: 'Rate Us',    icon: StarPurple500, path: '/rateUs'}
+  ],[ {text: 'Terms & Conditions', icon: Feed,   path: '/termsCondition' }
+  ]
+]
 const settingsMenu = [
-  {id: 1, label: "Profile", path: "/userProfile", icon: AccountCircle},
-  {id: 2, label: "Account", path: '/userAccount', icon: ManageAccounts}, 
-  {id: 3, label: "Dashboard", path: '/dashboard', icon: Dashboard},
-  {id: 4, label: "Blog", path: '/blog', icon: ViewList},
-  {id: 5, label: "Community", path: '/community', icon: People},
-  {id: 6, label: "Logout", path: '/logout', icon: Logout}
+  {id: 1, label: "Profile",   path: "/userProfile", icon: AccountCircle},
+  {id: 2, label: "Account",   path: '/userAccount', icon: ManageAccounts}, 
+  {id: 3, label: "Dashboard", path: '/dashboard',   icon: Dashboard},
+  {id: 4, label: "Blog",      path: '/blog',        icon: ViewList},
+  {id: 5, label: "Community", path: '/community',   icon: People},
+  {id: 6, label: "Logout",    path: '/logout',      icon: Logout}
 ]
 
 function ApplicationBar() {
@@ -73,8 +81,7 @@ function ApplicationBar() {
       </Box>
       <Divider />
       <List>
-        {[{text: 'Find a worker', icon: HandshakeTwoTone, path: '/findWorker' },
-         {text: 'Become a worker', icon: HomeRepairService, path: '/becomeWorker'}].map((object, index) => (
+        {sidePanelMenu[0].map((object, index) => (
           <ListItem key={object.text} disablePadding>
             <ListItemButton onClick={()=>navigate(object.path)}>
               <ListItemIcon>
@@ -88,9 +95,7 @@ function ApplicationBar() {
       </List>
       <Divider />
       <List>
-        {[{text: 'About Us', icon: Feed, path: '/about'},
-        {text: 'Contact Us', icon:PermPhoneMsg, path: '/contactUs' },
-        {text: 'Rate Us', icon: StarPurple500, path: '/rateUs'}].map((object, index) => (
+        {sidePanelMenu[1].map((object, index) => (
           <ListItem key={object.text} disablePadding>
             <ListItemButton onClick={()=>navigate(object.path)}>
               <ListItemIcon>
@@ -103,7 +108,7 @@ function ApplicationBar() {
         ))}
       </List>
       </Box>
-        <Box
+      <Box
         sx={{ alignItems: 'center', alignContent: 'center', justifyContent: 'center' }}
         role="presentation"
         onClick={toggleDrawer(anchor, false)}
@@ -111,14 +116,14 @@ function ApplicationBar() {
       >
         <Divider />
         <Link
-          sx={{ marginX: '50px', mt: 2, mb: 2 }}
+          sx={{ color: APP_BG_DARK, marginX: '50px', mt: 2, mb: 2 }}
           underline="hover"
           component="button"
           onClick={() => {
-            navigate('/termsCondition')
+            navigate(sidePanelMenu[2][0].path)
           }}
         >
-          Terms & Conditions
+          {sidePanelMenu[2][0].text}
         </Link>
       </Box>
     </Box>

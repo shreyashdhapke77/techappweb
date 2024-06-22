@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import CustomText from '../components/common/Text'
 import { Document, Page, pdfjs } from 'react-pdf'
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
-import { APP_BG_LIGHT } from '../utils/colors';
+import { APP_BG_DARK, APP_BG_LIGHT } from '../utils/colors';
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
     'pdfjs-dist/build/pdf.worker.min.mjs',
@@ -24,7 +24,7 @@ const TermsCondition = () => {
     return (
       <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
         <img src={logo} alt="Toilers" style={{ width: "200px" }} />
-        <CustomText label="Terms and Conditions" variant="h3" isBold={true} />
+        <CustomText label="Terms & Conditions" variant="h4" isBold={true} />
         <CustomText label={`Page ${pageNumber} of ${numPages}`}></CustomText>
         <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
           {Array.from(new Array(numPages), (el, index) => (
