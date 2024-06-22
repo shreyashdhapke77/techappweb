@@ -24,7 +24,7 @@ const TermsCondition = () => {
 
     return (
       <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
-        <img src={logo} alt="Toilers" style={{ width: "300px" }} />
+        <img src={logo} alt="Toilers" style={{ width: "200px" }} />
         <CustomText label="Terms and Conditions" variant="h3" isBold={true} />
         <CustomText label={`Page ${pageNumber} of ${numPages}`}></CustomText>
         <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>

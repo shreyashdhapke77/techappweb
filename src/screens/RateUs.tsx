@@ -14,7 +14,7 @@ const RateUs = () => {
   return (
     <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
       <Box>
-        <img src={logo} alt="Toilers" style={{ width: "300px" }} />
+        <img src={logo} alt="Toilers" style={{ width: "200px" }} />
         <CustomText label="Please Rate Us" variant="h3" isBold={true} />
         <CustomText label="Your opinion matters to us!" variant="h5" sx={{mt: 2}} />
         <CustomText

@@ -54,7 +54,7 @@ const AboutPage = () => {
   return (
     <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
       <Box>
-        <img src={logo} alt="Toilers" style={{ width: "300px" }} />
+        <img src={logo} alt="Toilers" style={{ width: "200px" }} />
         <CustomText label="About Us" variant="h3" isBold={true} />
         <CustomText
         sx={{margin: '25px', marginX: '50px'}}

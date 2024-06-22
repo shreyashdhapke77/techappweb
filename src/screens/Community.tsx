@@ -6,7 +6,7 @@ import CustomText from "../components/common/Text";
 const Community = () => {
     return (
         <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
-            <img src={logo} alt="Toilers" style={{ width: "300px" }} />
+            <img src={logo} alt="Toilers" style={{ width: "200px" }} />
             <CustomText label="Join Our Community" variant="h3" isBold={true} />
         </Box>
     )
