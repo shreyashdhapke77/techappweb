@@ -7,13 +7,11 @@ import yash from "../components/assets/yash.jpeg";
 import nishant from "../components/assets/nishant.jpeg";
 import yogesh from "../components/assets/yogesh.jpg";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
-import { Avatar, Box, Link } from "@mui/material";
+import { Avatar, Box, Fade, Link, Slide, Zoom } from "@mui/material";
 import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
 import { APP_BG_LIGHT } from "../utils/colors";
 import { SocialIcon } from 'react-social-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTwitter, faFacebook, faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const teamMemberDetails = [
   {
@@ -54,10 +52,12 @@ const AboutPage = () => {
   return (
     <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
       <Box>
-        <img src={logo} alt="Toilers" style={{ width: "200px" }} />
+        <Zoom in={true} style={{ transitionDelay: true ? '1000ms' : '0ms', transitionDuration: '1000ms' }}>
+          <img src={logo} alt="Toilers" style={{ width: "200px" }} />
+        </Zoom>
         <CustomText label="About Us" variant="h3" isBold={true} />
         <CustomText
-        sx={{margin: '25px', marginX: '50px'}}
+          sx={{margin: '25px', marginX: '50px'}}
           label="We are Workers. We provide work and service. We are group of workers.
             We provide all services related to your indoor outdoor any kind of
             work. We provided best worker based on your location. Toilers is a online platform offering a variety of services at home. 
@@ -82,36 +82,36 @@ const AboutPage = () => {
             variant="h5"
         />
         <Box sx={{mb: 2, display: 'flex', flexDirection: 'row', alignContent: 'space-evenly', justifyContent: 'space-evenly', alignItems: 'space-evenly'}}>
-            <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
-              <CustomText
-                sx={{margin: '25px'}}
-                isBold
-                label="45,000+"
-                  variant="h4"
-              />
-              <CustomText
-                sx={{margin: '25px'}}
-                label="Trained Professionals"
-                  variant="h5"
-              />
-              
-            </Box>
-            <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
+          <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
             <CustomText
-                sx={{margin: '25px'}}
-                isBold
-                label="10 Million+"
-                  variant="h4"
-              />
-              <CustomText
-                sx={{margin: '25px'}}
-                label="Happy Customers"
-                  variant="h5"
-              />
-              
-            </Box>
+              sx={{margin: '25px'}}
+              isBold
+              label="45,000+"
+                variant="h4"
+            />
+            <CustomText
+              sx={{margin: '25px'}}
+              label="Trained Professionals"
+                variant="h5"
+            />
+            
           </Box>
+          <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
+          <CustomText
+              sx={{margin: '25px'}}
+              isBold
+              label="10 Million+"
+                variant="h4"
+            />
+            <CustomText
+              sx={{margin: '25px'}}
+              label="Happy Customers"
+                variant="h5"
+            />
+          </Box>
+        </Box>
       </Box>
+      <Slide direction="up" in={true} mountOnEnter unmountOnExit>
       <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
         <CustomText label="Our Team" variant="h4" isBold={true} />
         <Box sx={{ display: 'flex', justifyContent: "center", alignContent: "center", alignItems: 'center', mt: 2 }}>
@@ -202,6 +202,7 @@ const AboutPage = () => {
         />
         </Box>
       </Box>
+      </Slide>
       <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
         <CustomText
           label="Copyright © 2023 - 2024 TermsFeed®. All rights reserved."

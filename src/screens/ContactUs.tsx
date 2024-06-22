@@ -1,4 +1,4 @@
-import { Box, Link } from "@mui/material";
+import { Box, Link, Slide } from "@mui/material";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import CustomButton from "../components/common/Button";
 import TextInputField from "../components/common/TextInputField";
@@ -22,68 +22,73 @@ const ContactUs = () => {
     >
       <Box sx={{ width: "100%" }}>
         <img src={logo} alt="Toilers" style={{ width: "200px" }} />
-        <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
-          <CustomText label="Please Contact Us" variant="h3" isBold={true} />
-          <TextInputField
-            label="Enter Your Name"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              contactDetails.name = e.target.value
-            }}
-            sx={{ width: { xs: "80%", sm: "70%", lg: "60%", xl: "50%" } }}
-          />
-          <TextInputField
-            label="Enter Your Email"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              contactDetails.email = e.target.value
-            }}
-            sx={{ width: { xs: "80%", sm: "70%", lg: "60%", xl: "50%" } }}
-          />
-          <TextInputField
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-              contactDetails.message = e.target.value
-              console.log('contactDetails - ', contactDetails)
-              console.log('>>> ', contactDetails.name.length === 0, contactDetails.email.length === 0, contactDetails.message.length === 0, ' >>> == >> ', !(contactDetails.name.length === 0 && contactDetails.email.length === 0 && contactDetails.message.length === 0))
-            }}
-            multiline={true}
-            rows={5}
-            label="How can we help you serve better ?"
-            sx={{ width: { xs: "80%", sm: "70%", lg: "60%", xl: "50%" } }}
-          />
-          <CustomButton
-            disabled={!(contactDetails.name.length === 0 && contactDetails.email.length === 0 && contactDetails.message.length === 0)}
-            label="Submit"
-            size="large"
-            sx={{
-              width: { xs: "80%", sm: "70%", lg: "60%", xl: "50%" },
-              my: 2,
-              backgroundColor: APP_BG_DARK,
-            }}
-          />
-        </Box>
-        <Box
-          sx={{
-            flexDirection: "column",
-            display: "flex",
-            alignContent: "center",
-            justifyContent: "center",
-            mt: 2,
-          }}
-        >
-          <Box>
-            <Place style={{ color: "#ff0000" }} />
-            <CustomText isBold={true} label="Address" />
+        <Slide direction="up" in={true} mountOnEnter unmountOnExit>
+          <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
+            <CustomText label="Please Contact Us" variant="h3" isBold={true} />
+            <TextInputField
+              label="Enter Your Name"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                contactDetails.name = e.target.value
+              }}
+              sx={{ width: { xs: "80%", sm: "70%", lg: "60%", xl: "50%" } }}
+            />
+            <TextInputField
+              label="Enter Your Email"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                contactDetails.email = e.target.value
+              }}
+              sx={{ width: { xs: "80%", sm: "70%", lg: "60%", xl: "50%" } }}
+            />
+            <TextInputField
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                contactDetails.message = e.target.value
+                console.log('contactDetails - ', contactDetails)
+                console.log('>>> ', contactDetails.name.length === 0, contactDetails.email.length === 0, contactDetails.message.length === 0, ' >>> == >> ', !(contactDetails.name.length === 0 && contactDetails.email.length === 0 && contactDetails.message.length === 0))
+              }}
+              multiline={true}
+              rows={5}
+              label="How can we help you serve better ?"
+              sx={{ width: { xs: "80%", sm: "70%", lg: "60%", xl: "50%" } }}
+            />
+            <CustomButton
+              disabled={!(contactDetails.name.length === 0 && contactDetails.email.length === 0 && contactDetails.message.length === 0)}
+              label="Submit"
+              size="large"
+              sx={{
+                width: { xs: "80%", sm: "70%", lg: "60%", xl: "50%" },
+                my: 2,
+                backgroundColor: APP_BG_DARK,
+              }}
+            />
           </Box>
-          <Link onClick={() => window.open("https://maps.google.com?q="+21.134167+','+79.075890 )} style={{ marginTop: "5px" }} underline="hover">
-            Akashan Apartment, Busiplex, Above ICICI Bank,
-          </Link>
-          <Link onClick={() => window.open("https://maps.google.com?q="+21.134167+','+79.075890 )} style={{ marginTop: "5px" }} underline="hover">
-            Ramdaspeth, Near Lokmat Square
-          </Link>
-          <Link onClick={() => window.open("https://maps.google.com?q="+21.134167+','+79.075890 )} style={{ marginTop: "5px" }} underline="hover">
-            Nagpur, 440003
-          </Link>
-        </Box>
+        </Slide>
+        <Slide direction="down" in={true} mountOnEnter unmountOnExit>
+          <Box
+            sx={{
+              flexDirection: "column",
+              display: "flex",
+              alignContent: "center",
+              justifyContent: "center",
+              mt: 2,
+            }}
+          >
+            <Box>
+              <Place style={{ color: "#ff0000" }} />
+              <CustomText isBold={true} label="Address" />
+            </Box>
+            <Link onClick={() => window.open("https://maps.google.com?q="+21.134167+','+79.075890 )} style={{ marginTop: "5px" }} underline="hover">
+              Akashan Apartment, Busiplex, Above ICICI Bank,
+            </Link>
+            <Link onClick={() => window.open("https://maps.google.com?q="+21.134167+','+79.075890 )} style={{ marginTop: "5px" }} underline="hover">
+              Ramdaspeth, Near Lokmat Square
+            </Link>
+            <Link onClick={() => window.open("https://maps.google.com?q="+21.134167+','+79.075890 )} style={{ marginTop: "5px" }} underline="hover">
+              Nagpur, 440003
+            </Link>
+          </Box>
+        </Slide>
         {/* window.open("https://maps.google.com?q="+your_lat+","+your_lng ) */}
+        <Slide direction='right' in={true} mountOnEnter unmountOnExit>
         <Box
           sx={{
             flexDirection: "row",
@@ -133,6 +138,7 @@ const ContactUs = () => {
               </Link>
           </Box>
         </Box>
+        </Slide>
       </Box>
       <CustomText
         label="Copyright © 2023 - 2024 TermsFeed®. All rights reserved."
