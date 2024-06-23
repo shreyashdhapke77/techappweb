@@ -3,10 +3,14 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Typography, AppBar, Menu, Box, Toolbar, IconButton, Tooltip, MenuItem, Drawer, Divider, Link, ListItem, List, ListItemIcon, ListItemButton } from '@mui/material/';
 import { useNavigate } from "react-router-dom";
 import logo from '../components/assets/toilers-logos/png/logo-no-background.png';
-import { Dashboard, ManageAccounts, AccountCircle, Logout, ViewList, People, SettingsSuggest, HomeRepairService, HandshakeTwoTone, StarPurple500, Feed, PermPhoneMsg  } from "@mui/icons-material";
+import { Dashboard, ManageAccounts, AccountCircle, LogoDev, Logout, ViewList, People, SettingsSuggest, HomeRepairService, HandshakeTwoTone, StarPurple500, Feed, PermPhoneMsg  } from "@mui/icons-material";
 import { APP_BG_DARK } from "../utils/colors";
 import CustomText from "../components/common/Text";
-
+import { useTheme } from '@mui/material/styles';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { ColorModeContext } from "../App";
+import { Switch } from '@mui/material';
 const sidePanelMenu = [[  {text: 'Find a worker',   icon: HandshakeTwoTone,  path: '/findWorker' },
     {text: 'Become a worker', icon: HomeRepairService, path: '/becomeWorker'}
   ],[ {text: 'About Us',   icon: Feed,          path: '/about'},
@@ -21,10 +25,13 @@ const settingsMenu = [
   {id: 3, label: "Dashboard", path: '/dashboard',   icon: Dashboard},
   {id: 4, label: "Blog",      path: '/blog',        icon: ViewList},
   {id: 5, label: "Community", path: '/community',   icon: People},
-  {id: 6, label: "Logout",    path: '/logout',      icon: Logout}
+  {id: 7, label: "Advertise With Us", path: '/advertise',   icon: LogoDev},
+  {id: 7, label: "Logout",    path: '/logout',      icon: Logout}
 ]
 
 function ApplicationBar() {
+  const theme = useTheme();
+  const colorMode = React.useContext(ColorModeContext);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
   );
@@ -191,13 +198,24 @@ function ApplicationBar() {
         </Typography> */}
 
         <Box sx={{ flexGrow: 0 }}>
+          <IconButton
+            sx={{ ml: 1 }}
+            onClick={colorMode.toggleColorMode}
+            color="inherit"
+          >
+            {theme.palette.mode === 'dark' ? (
+              <Switch />
+            ) : (
+              <Switch />
+            )}
+          </IconButton>
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <SettingsSuggest sx={{width: '50px', height: '50px', mr: 2, color: 'white'}}></SettingsSuggest>
+              <SettingsSuggest sx={{width: '50px', height: '50px', mr: 2,}}></SettingsSuggest>
             </IconButton>
           </Tooltip>
           <Menu
-            sx={{ mt: "65px", backgroundColor: '#00000080' }}
+            sx={{ mt: "64px", backgroundColor: '#00000080' }}
             id="menu-appbar"
             anchorEl={anchorElUser}
             anchorOrigin={{
@@ -215,13 +233,12 @@ function ApplicationBar() {
             {settingsMenu.map((menu) => (
               <MenuItem sx={{ backgroundColor:  menu.label === 'Logout' ? '#aaaaaa80' : '' }} key={menu.label} onClick={handleCloseUserMenu}>
                <menu.icon key={menu.id} style={{ marginRight: '10px', color: menu.label === 'Logout' ? 'red' : APP_BG_DARK}} onClick={()=> {
-                console.log('abcd', menu)
                 handleMenuAction(menu.path)
                }
               }/>
                {/* { menu.label === 'Logout' ? <Divider /> : null } */}
                 {/* <CustomText sx={{ color: menu.label === 'Logout' ? 'red' : APP_BG_DARK }} isBold={menu.label === 'Logout'} label={menu.label} /> */}
-                <Typography onClick={()=>handleMenuAction(menu.path)}>{menu.label}</Typography>
+                <Typography sx={{color: APP_BG_DARK}} onClick={()=>handleMenuAction(menu.path)}>{menu.label}</Typography>
               </MenuItem>
             ))}
           </Menu>

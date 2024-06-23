@@ -58,7 +58,7 @@ const Blog = () => {
                                 sx={{ color: 'white' }}
                                 aria-label={`star ${item.title}`}
                             >
-                            <StarBorderIcon sx={{ color: 'white', width: '50px', height: '50px' }}/>
+                              <StarBorderIcon sx={{ width: '50px', height: '50px' }}/>
                             </IconButton>
                         }
                         actionPosition="left"

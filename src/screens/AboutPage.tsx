@@ -117,13 +117,13 @@ const AboutPage = () => {
                         label={teamMember.name}
                         variant="h5"
                         isBold={true}
-                        sx={{ my: 1, color: 'white' }}
+                        sx={{ my: 1, }}
                       />
                       <CustomText
                         isBold
                         label={teamMember.position}
                         variant="body1"
-                        sx={{ my: 1, color: 'white' }}
+                        sx={{ my: 1, }}
                       />
                       <Box sx={{ my: 1}}>
                         <SocialIcon style={{ marginRight: '5px'}} url="https://x.com/toilersapp" />
@@ -136,9 +136,9 @@ const AboutPage = () => {
                         label={teamMember.designation}
                         align="left"
                         variant="body1"
-                        sx={{ my: 1, color: 'white', height: '180px'}}
+                        sx={{ my: 1, height: '180px'}}
                       />
-                      <Link style={{ color: 'white', marginBottom: '25px'}} onClick={() => window.open(`mailto:${teamMember.email}?subject=Subject&body=Body%20goes%20here`)}>{teamMember.email}</Link>
+                      <Link style={{  marginBottom: '25px'}} onClick={() => window.open(`mailto:${teamMember.email}?subject=Subject&body=Body%20goes%20here`)}>{teamMember.email}</Link>
                     </Box>
                       <CustomButton
                         label="Contact"
@@ -177,8 +177,14 @@ const AboutPage = () => {
               <CustomText sx={{mt: 2}} variant="h7" label="Green Farms"/>
             </Box>
           </Box>
+          
         <CustomText
-          label={'For media queries, contact: press@toilers.com'}
+          label={'Reach Out'}
+          variant="h5"
+          sx={{ mt: 2 }}
+        />
+        <CustomText
+          label={'For media queries, please get in touch with us on email at media@toilers.comm'}
           variant="body1"
           sx={{ my: 2 }}
         />
@@ -186,7 +192,7 @@ const AboutPage = () => {
       </Box>
       </Slide>
       <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
-        <CustomText  label="Toilers™ Copyright © 2023 - 2024 TermsFeed®. All rights reserved." variant="body1" sx={{ my: 2 }} />
+        <CustomText  label=" Toilers™. Copyright © 2023 - 2024 Toilers™. All rights reserved." variant="body1" sx={{ my: 2 }} />
       </Box>
     </Box>
   );
