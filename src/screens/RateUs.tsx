@@ -70,7 +70,7 @@ const RateUs = () => {
           <CustomText label="Love from Toilers" />
         </Box>
       </Box>
-      <CustomText label="Toilers™ Copyright © 2023 - 2024 TermsFeed®. All rights reserved." variant="body1" sx={{ my: 2 }}/>
+      <CustomText label="Copyright © 2023 - 2024 Toilers™. All rights reserved." variant="body1" sx={{ my: 2 }}/>
     </Box>
   );
 };

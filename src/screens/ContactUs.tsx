@@ -22,9 +22,13 @@ const ContactUs = () => {
     >
       <Box sx={{ width: "100%" }}>
         <img src={logo} alt="Toilers" style={{ width: "200px" }} />
-        <Slide direction="up" in={true} mountOnEnter unmountOnExit>
+        <Slide direction="up" in mountOnEnter unmountOnExit>
           <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
-            <CustomText label="Please Contact Us" variant="h4" isBold={true} />
+            <CustomText label="Please Contact Us" variant="h4" isBold />
+            <CustomText label="For any feedback, suggestion or advertising queries mail us on" variant="h5" sx={{mt: 2, mb: 2}}/>
+            <Link variant="h5" href="#" style={{ marginTop: '5px', marginBottom: '5px', fontSize: '55' }} underline="hover">
+              hello@toilers.com
+            </Link>
             <TextInputField
               label="Enter Your Name"
               onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
@@ -140,7 +144,7 @@ const ContactUs = () => {
         </Box>
         </Slide>
       </Box>
-      <CustomText  label="Toilers™ Copyright © 2023 - 2024 TermsFeed®. All rights reserved." variant="body1" sx={{ my: 2 }} />
+      <CustomText  label=" Toilers™. Copyright © 2023 - 2024 Toilers™. All rights reserved." variant="body1" sx={{ my: 2 }} />
     </Box>
   );
 };
