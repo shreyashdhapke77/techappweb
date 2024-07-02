@@ -1,13 +1,11 @@
 import "../about.css";
-import React from 'react';
 import pravin from "../components/assets/pravin.jpeg";
 import shreyash from "../components/assets/shreyash.jpeg";
-import ashish from "../components/assets/ashish.jpeg";
 import yash from "../components/assets/yash.jpeg";
 import nishant from "../components/assets/nishant.jpeg";
 import yogesh from "../components/assets/yogesh.jpg";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
-import { Avatar, Box, Fade, Link, Slide, Zoom } from "@mui/material";
+import { Avatar, Box, Link, Slide, Zoom } from "@mui/material";
 import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
 import { APP_BG_LIGHT } from "../utils/colors";
@@ -30,22 +28,6 @@ const teamMemberDetails = [
     contactNumber:'+91 9371643142',
     image: shreyash,
   },
-  // {
-  //   name: "Ashishsingh Kachhawah",
-  //   position: "CTO & Co-Founder",
-  //   designation: "Ashish is responsible for operations and service provider on-boarding at Toilers. When not building Toilers, Ashish likes to check out new coffee shops in Urban Theka, explore Bhandara with his Splendor and go for a run at Kasturchand Park Gardens - his favourite spot in the city.",
-  //   email: "askachhawah23@gmail.com",
-  //   contactNumber:'+91 9371643142',
-  //   image: ashish,
-  // },
-  // {
-  //   name: "Yash Mahajan",
-  //   position: "Director",
-  //   designation: "Yash is responsible for Quality at Toilers. When not building Toilers, Yash likes to check out his farm and play cricket with his friends together. He has won International cup of gully cricket thrice.",
-  //   email: "yash.mahajan@gmail.com",
-  //   contactNumber:'+91 9371643142',
-  //   image: yash,
-  // }
 ];
 
 const AboutPage = () => {
