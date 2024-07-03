@@ -12,7 +12,6 @@ import {
   DialogTitle,
   DialogContentText,
   Grid,
-  Paper,
   Fade,
 } from "@mui/material";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";

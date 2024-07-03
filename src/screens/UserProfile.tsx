@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Box, FormControl, InputLabel, MenuItem, Select, SelectChangeEvent } from "@mui/material"
+import { Box, MenuItem, Select, SelectChangeEvent } from "@mui/material"
 import { APP_BG_LIGHT } from "../utils/colors"
 import CustomText from "../components/common/Text";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
