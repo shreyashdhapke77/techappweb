@@ -18,7 +18,7 @@ import Blog from './screens/Blog';
 import Advertise from './screens/Advertise';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { amber, teal, deepOrange, grey, cyan } from '@mui/material/colors';
+import { teal, cyan } from '@mui/material/colors';
 import { APP_BG_DARK, APP_BG_LIGHT } from './utils/colors';
 
 export const ColorModeContext = React.createContext({

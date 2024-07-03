@@ -11,6 +11,7 @@ import TextInputField from "../components/common/TextInputField";
 const RateUs = () => {
   const [value, setValue] = React.useState<number | null>(2);
   const [message, setMessage] = React.useState<string| null>();
+  console.log('Typed Message ===> ', message)
   return (
     <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
       <Box>
