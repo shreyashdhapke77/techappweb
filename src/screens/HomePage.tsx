@@ -17,14 +17,9 @@ import {
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import * as React from "react";
 import { TransitionProps } from "@mui/material/transitions";
-import { styled } from "@mui/material/styles";
 import pravin from "../components/assets/pravin.jpeg";
 import shreyash from "../components/assets/shreyash1.jpg";
 import ashish from "../components/assets/ashish.jpeg";
-import yash from "../components/assets/yash.jpeg";
-import nilesh from "../components/assets/nilesh.jpg";
-import mayur from "../components/assets/mayur.jpg";
-import yogesh from "../components/assets/yogesh.jpg";
 import WorkerCard from "../components/common/WorkerCard";
 
 const Transition = React.forwardRef(function Transition(
@@ -167,24 +162,6 @@ const HomePage = () => {
       </Dialog>
     </Box>
   );
-};
-
-const Img = styled("img")({
-  margin: "auto",
-  maxWidth: "100%",
-  maxHeight: "100%",
-});
-
-const style = {
-  top: "10%",
-  height: "80%",
-  left: "10%",
-  width: "80%",
-  backgroundColor: "red",
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
 };
 
 export default HomePage;
