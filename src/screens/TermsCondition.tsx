@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import CustomText from '../components/common/Text'
 import { Document, Page, pdfjs } from 'react-pdf'
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
-import { APP_BG_DARK, APP_BG_LIGHT } from '../utils/colors';
+import { APP_BG_LIGHT } from '../utils/colors';
 
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
     'pdfjs-dist/build/pdf.worker.min.mjs',

@@ -7,8 +7,6 @@ import { Dashboard, ManageAccounts, AccountCircle, LogoDev, Logout, ViewList, Pe
 import { APP_BG_DARK } from "../utils/colors";
 import CustomText from "../components/common/Text";
 import { useTheme } from '@mui/material/styles';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { ColorModeContext } from "../App";
 import { Switch } from '@mui/material';
 const sidePanelMenu = [[  {text: 'Find a worker',   icon: HandshakeTwoTone,  path: '/findWorker' },
