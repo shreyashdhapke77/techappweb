@@ -10,12 +10,9 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
     import.meta.url,
   ).toString();
 
-type PDFFile = string | File | null;
-
 const TermsCondition = () => {
   const [numPages, setNumPages] = useState<number>(12);
-  const [pageNumber, setPageNumber] = useState<number>(1);
-  const [file, setFile] = useState<PDFFile>(require("../components/assets/conditions.pdf"));
+  const file = (require("../components/assets/conditions.pdf"));
 
   function onDocumentLoadSuccess({ numPages }: { numPages: number }): void {
     setNumPages(numPages);
@@ -25,7 +22,7 @@ const TermsCondition = () => {
       <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
         <img src={logo} alt="Toilers" style={{ width: "200px" }} />
         <CustomText label="Terms & Conditions" variant="h4" isBold={true} />
-        <CustomText label={`Page ${pageNumber} of ${numPages}`}></CustomText>
+        <CustomText label={`Page 1 of ${numPages}`}></CustomText>
         <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>
           {Array.from(new Array(numPages), (el, index) => (
             <Page
