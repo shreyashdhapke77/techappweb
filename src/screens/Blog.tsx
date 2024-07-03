@@ -1,8 +1,6 @@
 import { Box, Grow } from "@mui/material"
 import { APP_BG_LIGHT } from "../utils/colors";
-import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import CustomText from "../components/common/Text";
-import * as React from 'react';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
