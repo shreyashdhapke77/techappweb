@@ -53,10 +53,10 @@ const getDesignTokens = (mode: PaletteMode) => ({
           default: APP_BG_DARK,
           paper: teal[50],
         },
-        text: {
-          primary: '#fff',
+        // text: {
+          // primary: '#fff',
           // secondary: grey[500],
-        },
+        // },
       }
       : {
         // palette values for light mode
@@ -64,12 +64,12 @@ const getDesignTokens = (mode: PaletteMode) => ({
         divider: cyan[200],
         background: {
           default: APP_BG_LIGHT,
-          paper: '#fff',
+          paper: teal[50],
         },
-        text: {
-          primary: '#fff',
+        // text: {
+          // primary: '#fff',
           // secondary: cyan[200],
-        },
+        // },
       }
       ),
       },
@@ -94,9 +94,9 @@ function App() {
   const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
 
   return (
-    <ColorModeContext.Provider value={colorMode}>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+    // <ColorModeContext.Provider value={colorMode}>
+    // <ThemeProvider theme={theme}>
+      // <CssBaseline />
       <BrowserRouter>
         <ApplicationBar />
         <Box sx={{mt: 4, textAlign: 'center'}}>
@@ -117,8 +117,8 @@ function App() {
           </Routes>
         </Box>
       </BrowserRouter>
-    </ThemeProvider>
-    </ColorModeContext.Provider>
+    // </ThemeProvider>
+    // </ColorModeContext.Provider>
   );
 }
 

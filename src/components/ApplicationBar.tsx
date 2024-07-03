@@ -198,7 +198,7 @@ function ApplicationBar() {
         </Typography> */}
 
         <Box sx={{ flexGrow: 0 }}>
-          <IconButton
+          {/* <IconButton
             sx={{ ml: 1 }}
             onClick={colorMode.toggleColorMode}
             color="inherit"
@@ -208,7 +208,7 @@ function ApplicationBar() {
             ) : (
               <Switch />
             )}
-          </IconButton>
+          </IconButton> */}
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
               <SettingsSuggest sx={{width: '50px', height: '50px', mr: 2,}}></SettingsSuggest>
