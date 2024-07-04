@@ -19,7 +19,6 @@ import Advertise from './screens/Advertise';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { teal, cyan } from '@mui/material/colors';
-import { APP_BG_DARK, APP_BG_LIGHT } from './utils/colors';
 
 export const ColorModeContext = React.createContext({
   toggleColorMode: () => {
@@ -27,48 +26,34 @@ export const ColorModeContext = React.createContext({
   },
 });
 
-
-// const darkTheme = createTheme({
-//   palette: {
-//     mode: 'dark',
-//   },
-// });
-// background: {
-//   default: APP_BG_LIGHT,
-//   paper: deepOrange[900],
-// },
-// text: {
-//   primary: APP_BG_LIGHT,
-//   secondary: teal[800],
-// },
 const getDesignTokens = (mode: PaletteMode) => ({
   palette: {
     mode,
     ...(mode === 'light'
       ? {
+        // palette values for light mode
+        primary: cyan,
+        divider: cyan[500],
+        background: {
+          default: '#fff',
+          paper: cyan[50],
+        },
+        text: {
+          primary: '#000000',
+          // secondary: cyan[200],
+        },
+      }
+      : {
         // palette values for dark mode
         primary: teal,
-        divider: teal[200],
+        divider: teal[500],
         background: {
-          default: APP_BG_DARK,
+          default: '#000000',
           paper: teal[50],
         },
         text: {
           primary: '#fff',
           // secondary: grey[500],
-        },
-      }
-      : {
-        // palette values for light mode
-        primary: cyan,
-        divider: cyan[200],
-        background: {
-          default: APP_BG_LIGHT,
-          paper: '#fff',
-        },
-        text: {
-          primary: '#fff',
-          // secondary: cyan[200],
         },
       }
       ),

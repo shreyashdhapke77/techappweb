@@ -5,7 +5,6 @@ import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import { Favorite } from '@mui/icons-material';
-import { APP_BG_DARK, APP_BG_LIGHT } from "../utils/colors";
 import TextInputField from "../components/common/TextInputField";
 
 const RateUs = () => {
@@ -13,7 +12,7 @@ const RateUs = () => {
   const [message, setMessage] = React.useState<string| null>();
   console.log('Typed Message ===> ', message)
   return (
-    <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
+    <Box sx={{ paddingTop: '50px' }}>
       <Box>
         <img src={logo} alt="Toilers" style={{ width: "200px" }} />
         <CustomText label="Please Rate Us" variant="h4" isBold={true} />
@@ -55,8 +54,8 @@ const RateUs = () => {
             label="Please leave a feedback?"
             sx={{ width: { xs: "80%", sm: "70%", lg: "50%", xl: "40%", backgroundColor: 'white' } }}
           />
-        <CustomButton label="Submit" sx={{width: '300px', mb: 1, mt: 3, backgroundColor: APP_BG_DARK}}/>
-        <CustomButton label="No Thanks" variant='outlined' sx={{width: '300px', color: APP_BG_DARK}}/>
+        <CustomButton label="Submit" sx={{width: '300px', mb: 1, mt: 3}}/>
+        <CustomButton label="No Thanks" variant='outlined' sx={{width: '300px'}}/>
         <Box
           sx={{
             flexDirection: "row",

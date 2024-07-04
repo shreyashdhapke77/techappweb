@@ -8,7 +8,6 @@ import logo from "../components/assets/toilers-logos/png/logo-no-background-blac
 import { Avatar, Box, Link, Slide, Zoom } from "@mui/material";
 import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
-import { APP_BG_LIGHT } from "../utils/colors";
 import { SocialIcon } from 'react-social-icons'
 
 const teamMemberDetails = [
@@ -32,7 +31,7 @@ const teamMemberDetails = [
 
 const AboutPage = () => {
   return (
-    <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
+    <Box sx={{ paddingTop: '50px' }}>
       <Box>
         <Zoom in={true} style={{ transitionDelay: true ? '1000ms' : '0ms', transitionDuration: '1000ms' }}>
           <img src={logo} alt="Toilers" style={{ width: "200px" }} />

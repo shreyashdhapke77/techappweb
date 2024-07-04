@@ -1,6 +1,5 @@
 import CustomButton from "../components/common/Button";
 import CustomText from "../components/common/Text";
-import { APP_BG_DARK, APP_BG_LIGHT } from "../utils/colors";
 import {
   Box,
   Checkbox,
@@ -77,7 +76,7 @@ const HomePage = () => {
   };
 
   return (
-    <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: "50px" }}>
+    <Box sx={{ paddingTop: "50px" }}>
       <img src={logo} alt="Toilers" style={{ width: "200px" }} />
       <CustomText
         label="Join Toilers to change your life"
@@ -146,13 +145,13 @@ const HomePage = () => {
         </DialogContent>
         <DialogActions>
           <CustomButton
-            sx={{ width: "200px", mb: 1, mt: 3, backgroundColor: APP_BG_DARK }}
+            sx={{ width: "200px", mb: 1, mt: 3 }}
             disabled={!accepted}
             label={"I Agree"}
             onClick={handleClose}
           />
           <CustomButton
-            sx={{ width: "200px", mb: 1, mt: 3, color: APP_BG_DARK }}
+            sx={{ width: "200px", mb: 1, mt: 3 }}
             variant="outlined"
             disabled={!accepted}
             label={"Disagree"}

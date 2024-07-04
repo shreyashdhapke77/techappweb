@@ -1,5 +1,4 @@
 import { Box, Grow } from "@mui/material"
-import { APP_BG_LIGHT } from "../utils/colors";
 import CustomText from "../components/common/Text";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
@@ -18,7 +17,7 @@ function srcset(image: string, width: number, height: number, rows = 1, cols = 1
 
 const Blog = () => {
   return (
-    <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
+    <Box sx={{ paddingTop: '50px' }}>
       {/* <img src={logo} alt="Toilers" style={{ width: "200px" }} /> */}
       <CustomText label="Our Blogs" variant="h4" isBold={true} />
       <Grow in={true} style={{ transitionDelay: true ? '500ms' : '0ms', transitionDuration: '1000ms' }}>

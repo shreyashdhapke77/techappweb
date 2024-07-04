@@ -1,5 +1,4 @@
 import { Box, Link } from "@mui/material";
-import { APP_BG_LIGHT } from "../utils/colors";
 import CustomText from "../components/common/Text";
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
@@ -9,7 +8,6 @@ const Advertise = () => {
   return (
     <Box
       sx={{
-        backgroundColor: APP_BG_LIGHT,
         paddingTop: "50px",
         paddingBottom: "20px",
       }}
