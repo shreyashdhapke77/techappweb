@@ -8,7 +8,6 @@ import CustomText from "../components/common/Text";
 import { useTheme } from '@mui/material/styles';
 import { ColorModeContext } from "../App";
 import { Switch } from '@mui/material';
-import { APP_BG_DARK, APP_BG_LIGHT } from "../utils/colors";
 const sidePanelMenu = [[  {text: 'Find a worker',   icon: HandshakeTwoTone,  path: '/findWorker' },
     {text: 'Become a worker', icon: HomeRepairService, path: '/becomeWorker'}
   ],[ {text: 'About Us',   icon: Feed,          path: '/about'},
