@@ -96,22 +96,22 @@ const AboutPage = () => {
       <Slide direction="up" in={true} mountOnEnter unmountOnExit>
       <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
         <CustomText label="Our Team" variant="h4" isBold={true} />
-        <Box sx={{ display: 'flex', justifyContent: "center", alignContent: "center", alignItems: 'center', mt: 2 }}>
+        <Box className="hover-zoom" sx={{ display: 'flex', justifyContent: "center", alignContent: "center", alignItems: 'center', mt: 2 , paddingTop: '120px'}}>
           {teamMemberDetails.map((teamMember) => {
             return (
               <Box className="column" sx={{display: 'flex', justifyContent: 'center'}}>
-                <Box className="card" sx={{ width: '90%', height: '600px' }}>
+                <Box className="card" sx={{ width: '90%', height: '500px' }}>
                   <img
                     src={teamMember.image}
                     alt={teamMember.name}
                     style={{
-                      marginTop: "10px",
+                      marginTop: "-90px",
                       width: "200px",
                       height: "200px",
                       borderRadius: "100px",
                     }}
                   />
-                  <Box style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignContent: 'space-between'}}>
+                  <Box style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignContent: 'space-between'}} sx={{mt: 2}}>
                     <Box sx={{mx: 2}}>
                       <CustomText
                         label={teamMember.name}
@@ -163,17 +163,18 @@ const AboutPage = () => {
           <Box sx={{mb: 2, display: 'flex', flexDirection: 'row', alignContent: 'space-evenly', justifyContent: 'space-evenly', alignItems: 'space-evenly'}}>
             <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
               <CustomText sx={{mb: 2}}  variant="h6" label="Nishant Rangari"/>
-              <Avatar alt="Nishant Rangari" sx={{ width: 100, height: 100 }} src={nishant}/>
+              <Avatar className="hover-zoom" alt="Nishant Rangari" sx={{ width: 100, height: 100 }} src={nishant}/>
               <CustomText sx={{mt: 2}} variant="h7" label="Urban Theka"/>
             </Box>
             <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
               <CustomText sx={{mb: 2}}  variant="h6" label="Yogesh Lolusare"/>
-              <Avatar alt="Yogesh Lolusare" sx={{ width: 100, height: 100 }} src={yogesh} />
+              <Avatar className="hover-zoom" alt="Yogesh Lolusare" sx={{ width: 100, height: 100 }} src={yogesh} />
               <CustomText sx={{mt: 2}} variant="h7" label="Enjoy Programming"/>
             </Box>
             <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
               <CustomText sx={{mb: 2}}  variant="h6" label="Yash Mahajan"/>
-              <Avatar alt="Yash Mahajan" sx={{ width: 100, height: 100 }} src={yash} />
+              
+              <Avatar className="hover-zoom" alt="Yash Mahajan" sx={{ width: 100, height: 100 }} src={yash} />
               <CustomText sx={{mt: 2}} variant="h7" label="Green Farms"/>
             </Box>
           </Box>

@@ -54,7 +54,7 @@ const RateUs = () => {
             label="Please leave a feedback?"
             sx={{ width: { xs: "80%", sm: "70%", lg: "50%", xl: "40%", backgroundColor: 'white' } }}
           />
-        <CustomButton label="Submit" sx={{width: '300px', mb: 1, mt: 3, backgroundColor: APP_BG_DARK}}/>
+        <CustomButton label="Submit" sx={{width: '300px', mb: 1, mt: 3, backgroundColor: APP_BG_DARK}} />
         <CustomButton label="No Thanks" variant='outlined' sx={{width: '300px', color: APP_BG_DARK}}/>
         <Box
           sx={{
