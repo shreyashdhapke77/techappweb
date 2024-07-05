@@ -31,6 +31,13 @@ html {
   border-radius: 20px;
 }
 
+.card-light {
+  box-shadow: 0 4px 8px 0 #c4cee8;
+  background-color: #b1e1e7;
+  margin: 8px;
+  border-radius: 20px;
+}
+
 
 
 .container {
