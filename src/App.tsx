@@ -102,7 +102,7 @@ function App() {
           </Routes>
         </Box>
       </BrowserRouter>
-    </ThemeProvider>
+     </ThemeProvider>
     </ColorModeContext.Provider>
   );
 }

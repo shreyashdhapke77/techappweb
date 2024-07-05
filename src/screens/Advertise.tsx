@@ -12,9 +12,11 @@ const Advertise = () => {
         paddingBottom: "20px",
       }}
     >
-      <CustomText label="Advertise With Us" variant="h5" isBold />
-      <CustomText label="Toilers is the most reliable source for the free SEO, digital marketing, image and other utility tools on the internet. Thousands of users browse our website monthly to use tools online and get their task done faster. Thus, we can connect you with your targeted audience with our custom advertising solutions." variant="body1" />
-      <CustomText label="Explore below to know about ads position & price list." variant="body2" />
+      <CustomText sx={{mt: 2, mb: 2}} label="Advertise With Us" variant="h5" isBold />
+      <CustomText label="Toilers is the most reliable source for the free SEO, digital marketing, image and other utility tools on the internet." variant="body1" />
+      <CustomText label="Thousands of users browse our website monthly to use tools online and get their task done faster." variant="body1" />
+      <CustomText label="Thus, we can connect you with your targeted audience with our custom advertising solutions." variant="body1" />
+      <CustomText label="Explore below to know about ads position & price list." variant="body1" />
       <CustomText sx={{mt: 2}} label="Website Stats (FY 2021-22)" variant="h5" isBold />
       <Timeline>
         <TimelineItem>
