@@ -136,7 +136,7 @@ function ApplicationBar() {
   );
   return (
     <AppBar position="fixed">
-      <Toolbar disableGutters style={{backgroundColor: theme.palette.mode === 'dark' ? APP_BG_DARK : APP_BG_LIGHT}}>
+      <Toolbar disableGutters style={{backgroundColor: theme.palette.mode === 'dark' ? '#222' : '#eee'}}>
         <Box
           sx={{
             flexGrow: 1,

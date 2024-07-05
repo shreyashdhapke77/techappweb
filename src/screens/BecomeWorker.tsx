@@ -4,6 +4,7 @@ import logo from "../components/assets/toilers-logos/png/logo-no-background-blac
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import MdPhone from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
+import { useTheme } from '@mui/material/styles'
 
 const teamMemberDetails = [
   {
@@ -29,6 +30,7 @@ const teamMemberDetails = [
 ];
 
 const BecomeWorker = () => {
+  const theme = useTheme();
   return (
     <Box sx={{ paddingTop: "50px" }}>
       <img src={logo} alt="Toilers" style={{ width: "200px" }} />
@@ -65,7 +67,7 @@ const BecomeWorker = () => {
                 className="column"
                 sx={{ display: "flex", justifyContent: "center" }}
               >
-                <Box className="card" sx={{width: '100%'}}>
+                <Box className= {theme.palette.mode ? "card" : "card-light"} sx={{width: '100%'}}>
                     <SupportAgentIcon sx={{ fontSize: 100 }}/>
                     <CustomText label={`Hi I am ${teamMember.name}`} variant="h6" isBold={true} />
                     <CustomText label="How can I help you ?" variant="body2" />

@@ -35,8 +35,8 @@ const getDesignTokens = (mode: PaletteMode) => ({
         primary: cyan,
         divider: cyan[500],
         background: {
-          default: '#fff',
-          paper: cyan[50],
+          default: '#efefef',
+          paper: '#fff',
         },
         text: {
           primary: '#000000',
@@ -48,8 +48,8 @@ const getDesignTokens = (mode: PaletteMode) => ({
         primary: teal,
         divider: teal[500],
         background: {
-          default: '#000000',
-          paper: teal[50],
+          default: '#222',
+          paper: '#111',
         },
         text: {
           primary: '#fff',

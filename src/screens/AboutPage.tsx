@@ -81,7 +81,7 @@ const AboutPage = () => {
           {teamMemberDetails.map((teamMember) => {
             return (
               <Box className="column" sx={{display: 'flex', justifyContent: 'center'}}>
-                <Box className="card" sx={{ width: '90%', height: '500px' }}>
+                <Box className="card" sx={{ width: '90%', height: '525px' }}>
                   <img
                     src={teamMember.image}
                     alt={teamMember.name}
