@@ -4,13 +4,11 @@ import { Typography, AppBar, Menu, Box, Toolbar, IconButton, Tooltip, MenuItem, 
 import { useNavigate } from "react-router-dom";
 import logo from '../components/assets/toilers-logos/png/logo-no-background.png';
 import { Dashboard, ManageAccounts, AccountCircle, LogoDev, Logout, ViewList, People, SettingsSuggest, HomeRepairService, HandshakeTwoTone, StarPurple500, Feed, PermPhoneMsg  } from "@mui/icons-material";
-import { APP_BG_DARK } from "../utils/colors";
 import CustomText from "../components/common/Text";
 import { useTheme } from '@mui/material/styles';
-import Brightness4Icon from '@mui/icons-material/Brightness4';
-import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { ColorModeContext } from "../App";
 import { Switch } from '@mui/material';
+import { APP_BG_DARK, APP_BG_LIGHT } from "../utils/colors";
 const sidePanelMenu = [[  {text: 'Find a worker',   icon: HandshakeTwoTone,  path: '/findWorker' },
     {text: 'Become a worker', icon: HomeRepairService, path: '/becomeWorker'}
   ],[ {text: 'About Us',   icon: Feed,          path: '/about'},
@@ -31,6 +29,7 @@ const settingsMenu = [
 
 function ApplicationBar() {
   const theme = useTheme();
+  console.log('theme ===> ', theme)
   const colorMode = React.useContext(ColorModeContext);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
@@ -92,9 +91,9 @@ function ApplicationBar() {
           <ListItem key={object.text} disablePadding>
             <ListItemButton onClick={()=>navigate(object.path)}>
               <ListItemIcon>
-              {<object.icon fontSize="large" sx={{color: APP_BG_DARK}}/>}
+              {<object.icon fontSize="large" />}
               </ListItemIcon>
-              <CustomText label={object.text} variant="h7" sx={{color: APP_BG_DARK}}/>
+              <CustomText label={object.text} variant="h7" />
               {/* <ListItemText primary={object.text} /> */}
             </ListItemButton>
           </ListItem>
@@ -106,9 +105,9 @@ function ApplicationBar() {
           <ListItem key={object.text} disablePadding>
             <ListItemButton onClick={()=>navigate(object.path)}>
               <ListItemIcon>
-                {<object.icon fontSize="large" sx={{ color: APP_BG_DARK}}/>}
+                {<object.icon fontSize="large" />}
               </ListItemIcon>
-              <CustomText label={object.text} variant="h7" sx={{color: APP_BG_DARK}} />
+              <CustomText label={object.text} variant="h7" />
               {/* <ListItemText primary={object.text} /> */}
             </ListItemButton>
           </ListItem>
@@ -123,7 +122,7 @@ function ApplicationBar() {
       >
         <Divider />
         <Link
-          sx={{ color: APP_BG_DARK, marginX: '50px', mt: 2, mb: 2 }}
+          sx={{ marginX: '50px', mt: 2, mb: 2 }}
           underline="hover"
           component="button"
           onClick={() => {
@@ -137,7 +136,7 @@ function ApplicationBar() {
   );
   return (
     <AppBar position="fixed">
-      <Toolbar disableGutters style={{backgroundColor: APP_BG_DARK}}>
+      <Toolbar disableGutters style={{backgroundColor: theme.palette.mode === 'dark' ? APP_BG_DARK : APP_BG_LIGHT}}>
         <Box
           sx={{
             flexGrow: 1,
@@ -198,7 +197,7 @@ function ApplicationBar() {
         </Typography> */}
 
         <Box sx={{ flexGrow: 0 }}>
-          {/* <IconButton
+          <IconButton
             sx={{ ml: 1 }}
             onClick={colorMode.toggleColorMode}
             color="inherit"
@@ -208,7 +207,7 @@ function ApplicationBar() {
             ) : (
               <Switch />
             )}
-          </IconButton> */}
+          </IconButton>
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
               <SettingsSuggest sx={{width: '50px', height: '50px', mr: 2,}}></SettingsSuggest>
@@ -232,13 +231,11 @@ function ApplicationBar() {
           >
             {settingsMenu.map((menu) => (
               <MenuItem sx={{ backgroundColor:  menu.label === 'Logout' ? '#aaaaaa80' : '' }} key={menu.label} onClick={handleCloseUserMenu}>
-               <menu.icon key={menu.id} style={{ marginRight: '10px', color: menu.label === 'Logout' ? 'red' : APP_BG_DARK}} onClick={()=> {
+               <menu.icon key={menu.id} style={{ marginRight: '10px', color: menu.label === 'Logout' ? 'red' : 'white'}} onClick={()=> {
                 handleMenuAction(menu.path)
                }
               }/>
-               {/* { menu.label === 'Logout' ? <Divider /> : null } */}
-                {/* <CustomText sx={{ color: menu.label === 'Logout' ? 'red' : APP_BG_DARK }} isBold={menu.label === 'Logout'} label={menu.label} /> */}
-                <Typography sx={{color: APP_BG_DARK}} onClick={()=>handleMenuAction(menu.path)}>{menu.label}</Typography>
+                <Typography onClick={()=>handleMenuAction(menu.path)}>{menu.label}</Typography>
               </MenuItem>
             ))}
           </Menu>

@@ -18,8 +18,7 @@ import Blog from './screens/Blog';
 import Advertise from './screens/Advertise';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-import { amber, teal, deepOrange, grey, cyan } from '@mui/material/colors';
-import { APP_BG_DARK, APP_BG_LIGHT } from './utils/colors';
+import { teal, cyan } from '@mui/material/colors';
 
 export const ColorModeContext = React.createContext({
   toggleColorMode: () => {
@@ -27,49 +26,35 @@ export const ColorModeContext = React.createContext({
   },
 });
 
-
-// const darkTheme = createTheme({
-//   palette: {
-//     mode: 'dark',
-//   },
-// });
-// background: {
-//   default: APP_BG_LIGHT,
-//   paper: deepOrange[900],
-// },
-// text: {
-//   primary: APP_BG_LIGHT,
-//   secondary: teal[800],
-// },
 const getDesignTokens = (mode: PaletteMode) => ({
   palette: {
     mode,
     ...(mode === 'light'
       ? {
-        // palette values for dark mode
-        primary: teal,
-        divider: teal[200],
-        background: {
-          default: APP_BG_DARK,
-          paper: teal[50],
-        },
-        // text: {
-          // primary: '#fff',
-          // secondary: grey[500],
-        // },
-      }
-      : {
         // palette values for light mode
         primary: cyan,
-        divider: cyan[200],
+        divider: cyan[500],
         background: {
-          default: APP_BG_LIGHT,
+          default: '#fff',
+          paper: cyan[50],
+        },
+        text: {
+          primary: '#000000',
+          // secondary: cyan[200],
+        },
+      }
+      : {
+        // palette values for dark mode
+        primary: teal,
+        divider: teal[500],
+        background: {
+          default: '#000000',
           paper: teal[50],
         },
-        // text: {
-          // primary: '#fff',
-          // secondary: cyan[200],
-        // },
+        text: {
+          primary: '#fff',
+          // secondary: grey[500],
+        },
       }
       ),
       },
@@ -94,9 +79,9 @@ function App() {
   const theme = React.useMemo(() => createTheme(getDesignTokens(mode)), [mode]);
 
   return (
-    // <ColorModeContext.Provider value={colorMode}>
-    // <ThemeProvider theme={theme}>
-      // <CssBaseline />
+    <ColorModeContext.Provider value={colorMode}>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
       <BrowserRouter>
         <ApplicationBar />
         <Box sx={{mt: 4, textAlign: 'center'}}>
@@ -117,8 +102,8 @@ function App() {
           </Routes>
         </Box>
       </BrowserRouter>
-    // </ThemeProvider>
-    // </ColorModeContext.Provider>
+     </ThemeProvider>
+    </ColorModeContext.Provider>
   );
 }
 

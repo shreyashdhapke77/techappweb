@@ -4,7 +4,6 @@ import CustomButton from "../components/common/Button";
 import TextInputField from "../components/common/TextInputField";
 import CustomText from "../components/common/Text";
 import { Call, Place, MailOutline } from "@mui/icons-material";
-import { APP_BG_DARK, APP_BG_LIGHT } from "../utils/colors";
 
 const ContactUs = () => {
   const contactDetails = {
@@ -15,7 +14,6 @@ const ContactUs = () => {
   return (
     <Box
       sx={{
-        backgroundColor: APP_BG_LIGHT,
         paddingTop: "50px",
         paddingBottom: "20px",
       }}
@@ -61,7 +59,6 @@ const ContactUs = () => {
               sx={{
                 width: { xs: "80%", sm: "70%", lg: "60%", xl: "50%" },
                 my: 2,
-                backgroundColor: APP_BG_DARK,
               }}
             />
           </Box>

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Box } from "@mui/material"
-import { APP_BG_LIGHT } from "../utils/colors"
 import CustomText from "../components/common/Text";
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 
@@ -19,26 +18,11 @@ const style = {
 };
 
 const UserAccount = () => {
-  const [open, setOpen] = React.useState(true);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
-
-  return (
-    <Box sx={{ backgroundColor: APP_BG_LIGHT, paddingTop: '50px' }}>
-    <img src={logo} alt="Toilers" style={{ width: "200px" }} />
-    <CustomText label="Join Toilers to change your life" variant="h4" isBold={true} />
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <CustomText variant="h6" label='Text in a modal'/>
-          <CustomText sx={{ mt: 2 }} label=' Duis mollis, est non commodo luctus, nisi erat porttitor ligula.'/>
+    return (
+        <Box sx={{ paddingTop: '50px' }}>
+            <img src={logo} alt="Toilers" style={{ width: "200px" }} />
+            <CustomText label="Join Toilers to change your life" variant="h4" isBold={true} />
         </Box>
-      </Modal>
-    </Box>
   );
 }
 
