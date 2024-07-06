@@ -177,7 +177,7 @@ const AboutPage = () => {
       </Box>
       </Slide>
       <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
-        <CustomText  label=" Toilers™. Copyright © 2023 - 2024 Toilers™. All rights reserved." variant="body1" sx={{ my: 2 }} />
+        <CustomText label=" Toilers™. Copyright © 2023 - 2024 Toilers™. All rights reserved." variant="body1" sx={{ my: 2 }} />
       </Box>
     </Box>
   );
