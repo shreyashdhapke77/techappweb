@@ -10,37 +10,12 @@ import { ColorModeContext } from "../App";
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { drawerMenu } from "../constants/drawer-menu";
-import { makeStyles } from "@mui/styles";
 import { APP_BG_GREY } from "../utils/colors";
 import { settingsMenu } from "../constants/settings-menu";
-
-const UseStyles = makeStyles(() => ({
-  drawerList: {
-    display: "flex",
-    flexDirection: 'column',
-    alignContent: 'space-between',
-    justifyContent: 'space-between',
-    height: '100%'
-  },
-  drawerListThree: {
-    alignItems: 'center',
-    alignContent: 'center',
-    justifyContent: 'center'
-  },
-  toilersLabel: {
-    flexGrow: 1,
-    fontFamily: "monospace",
-    fontWeight: 700,
-    letterSpacing: ".3rem",
-    color: "inherit",
-    textDecoration: "none",
-  }
-}));
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
 function ApplicationBar() {
-  const { drawerList, drawerListThree, toilersLabel } = UseStyles();
   const theme = useTheme();
   const navigate = useNavigate()
 
@@ -71,7 +46,13 @@ function ApplicationBar() {
 
   const list = (anchor: Anchor) => (
     <Box
-      className={drawerList}
+      sx={{
+        display: "flex",
+        flexDirection: 'column',
+        alignContent: 'space-between',
+        justifyContent: 'space-between',
+        height: '100%'
+      }}
     >
       <Box
         sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
@@ -133,7 +114,11 @@ function ApplicationBar() {
         </List>
       </Box>
       <Box
-      className={drawerListThree}
+        sx={{
+          alignItems: 'center',
+          alignContent: 'center',
+          justifyContent: 'center'
+        }}
         role="presentation"
         onClick={toggleDrawer(anchor, false)}
         onKeyDown={toggleDrawer(anchor, false)}
@@ -190,8 +175,13 @@ function ApplicationBar() {
           sx={{
             mr: 2,
             display: { xs: "flex", md: "flex" },
+            flexGrow: 1,
+            fontFamily: "monospace",
+            fontWeight: 700,
+            letterSpacing: ".3rem",
+            color: "inherit",
+            textDecoration: "none",
           }}
-          className={toilersLabel}
         />
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Open settings">
