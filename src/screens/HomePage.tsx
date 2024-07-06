@@ -24,7 +24,6 @@ import kitchen from "../components/assets/home-slider/kitchen.jpg";
 import glasscleaner from "../components/assets/home-slider/glasscleaner.jpg";
 import WorkerCard from "../components/common/WorkerCard";
 import worker17 from "../components/assets/Worker/worker17.png";          
-import Footer from "./Footer";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
