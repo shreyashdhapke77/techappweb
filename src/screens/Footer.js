@@ -10,7 +10,8 @@ import {
 } from "./FooterStyle";
 import tools2 from "../components/assets/toilers-logos/tools2.png";
 // import circleTool from "../components/assets/toilers-logos/circle-tools.png";
- 
+import { SocialIcon } from 'react-social-icons'
+
 const Footer = () => {
     return (
         <Box>
@@ -29,15 +30,30 @@ const Footer = () => {
             <FooterContainer>
                 <Row>
                     <Column>
-                        <Heading>About Us</Heading>
+                        <Heading>About Toilers</Heading>
                         <FooterLink href="#">
-                            Aim
+                        Who we are
                         </FooterLink>
                         <FooterLink href="#">
-                            Vision
+                        Help & Support
                         </FooterLink>
                         <FooterLink href="#">
-                            Testimonials
+                        Partner with us
+                        </FooterLink>
+                        <FooterLink href="#">
+                        Legal
+                        </FooterLink>
+                        <FooterLink href="#">
+                        Terms & Conditions
+                        </FooterLink>
+                        <FooterLink href="#">
+                        Cookie Policy
+                        </FooterLink>
+                        <FooterLink href="#">
+                        Privacy Policy
+                        </FooterLink>
+                        <FooterLink href="#">
+                        Investor Relations
                         </FooterLink>
                     </Column>
                     <Column>
@@ -50,6 +66,15 @@ const Footer = () => {
                         </FooterLink>
                         <FooterLink href="#">
                             Rate Us
+                        </FooterLink>
+                        <FooterLink href="#">
+                            Blog
+                        </FooterLink>
+                        <FooterLink href="#">
+                            Community
+                        </FooterLink>
+                        <FooterLink href="#">
+                            Advertise with Us
                         </FooterLink>
                         <FooterLink href="#">
                             Join Us
@@ -73,18 +98,22 @@ const Footer = () => {
                     <Column>
                         <Heading>Social Media</Heading>
                         <FooterLink href="#">
-                            <i className="fab fa-facebook-f">
-                                <span
-                                    style={{
-                                        marginLeft: "10px",
-                                    }}
-                                >
-                                    Facebook
-                                </span>
-                            </i>
+                        {/* 
+                        
+                        <SocialIcon className='zoom-icon' style={{ marginRight: '8px'}} url="https://share.com/toilers" title='Sign In With instagram' type='instagram'/>
+                        <SocialIcon className='zoom-icon' url="https://www.linkedin.com/in/toilers-app-331551315/" title='linkedIn' type='linkedin' /> */}
+                        <SocialIcon className='zoom-icon' style={{ marginRight: '8px'}} url="https://www.facebook.com/people/Toilers-App/pfbid0uCTtCqSFBHtAqyRjeCPvrGKknR2WVYR45EoixRTwRo3n6vDQJEsVUMu44c3tcW7pl/" title='facebook' type='facebook'/>
+                        <span
+                            style={{
+                                marginLeft: "10px",
+                            }}
+                        >
+                            Facebook
+                        </span>
                         </FooterLink>
                         <FooterLink href="#">
-                            <i className="fab fa-instagram">
+                        <SocialIcon className='zoom-icon' style={{ marginRight: '8px'}} url="https://instagram.com/toilers" title='instagram' type='facebook'/>
+
                                 <span
                                     style={{
                                         marginLeft: "10px",
@@ -92,10 +121,9 @@ const Footer = () => {
                                 >
                                     Instagram
                                 </span>
-                            </i>
                         </FooterLink>
                         <FooterLink href="#">
-                            <i className="fab fa-twitter">
+                        <SocialIcon className='zoom-icon' style={{ marginRight: '8px'}} url="https://x.com/toilersapp" />
                                 <span
                                     style={{
                                         marginLeft: "10px",
@@ -103,10 +131,9 @@ const Footer = () => {
                                 >
                                     Twitter
                                 </span>
-                            </i>
                         </FooterLink>
                         <FooterLink href="#">
-                            <i className="fab fa-youtube">
+                        <SocialIcon className='zoom-icon' style={{ marginRight: '8px'}} url="https://youtube.com/toilersapp" />
                                 <span
                                     style={{
                                         marginLeft: "10px",
@@ -114,7 +141,6 @@ const Footer = () => {
                                 >
                                     Youtube
                                 </span>
-                            </i>
                         </FooterLink>
                     </Column>
                 </Row>
