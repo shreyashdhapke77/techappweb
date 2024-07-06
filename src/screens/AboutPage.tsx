@@ -95,23 +95,25 @@ const AboutPage = () => {
                   <Box style={{display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignContent: 'space-between'}} sx={{mt: 2}}>
                     <Box sx={{mx: 2}}>
                       <CustomText
+                        className="hover-zoom"
                         label={teamMember.name}
                         variant="h5"
                         isBold={true}
                         sx={{ my: 1, }}
                       />
                       <CustomText
+                        className="hover-zoom"
                         isBold
                         label={teamMember.position}
                         variant="body1"
                         sx={{ my: 1, }}
                       />
                       <Box sx={{ my: 1}}>
-                        <SocialIcon style={{ marginRight: '5px'}} url="https://x.com/toilersapp" />
-                        <SocialIcon style={{ marginRight: '5px'}} url="https://www.facebook.com/people/Toilers-App/pfbid0uCTtCqSFBHtAqyRjeCPvrGKknR2WVYR45EoixRTwRo3n6vDQJEsVUMu44c3tcW7pl/" title='facebook' type='facebook'/>
-                        <SocialIcon style={{ marginRight: '5px'}} url="https://share.com/toilers" title='Sign In With instagram' type='instagram'/>
-                        <SocialIcon style={{ marginRight: '5px'}} url="https://instagram.com/toilers" title='instagram' type='facebook'/>
-                        <SocialIcon url="https://www.linkedin.com/in/toilers-app-331551315/" title='linkedIn' type='linkedin' />
+                        <SocialIcon className='zoom-icon' style={{ marginRight: '8px'}} url="https://x.com/toilersapp" />
+                        <SocialIcon className='zoom-icon' style={{ marginRight: '8px'}} url="https://www.facebook.com/people/Toilers-App/pfbid0uCTtCqSFBHtAqyRjeCPvrGKknR2WVYR45EoixRTwRo3n6vDQJEsVUMu44c3tcW7pl/" title='facebook' type='facebook'/>
+                        <SocialIcon className='zoom-icon' style={{ marginRight: '8px'}} url="https://share.com/toilers" title='Sign In With instagram' type='instagram'/>
+                        <SocialIcon className='zoom-icon' style={{ marginRight: '8px'}} url="https://instagram.com/toilers" title='instagram' type='facebook'/>
+                        <SocialIcon className='zoom-icon' url="https://www.linkedin.com/in/toilers-app-331551315/" title='linkedIn' type='linkedin' />
                       </Box>
                       <CustomText
                         label={teamMember.designation}

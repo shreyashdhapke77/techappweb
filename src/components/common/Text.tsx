@@ -9,6 +9,7 @@ interface Props {
     paragraph?: boolean
     isBold?: boolean
     onClick?: () => {}
+    className?: string
 }
 
 const customText = (props: Props) => {
@@ -16,6 +17,7 @@ const customText = (props: Props) => {
     <Typography
         variant={props.variant}
         align={props.align}
+        className={props.className}
         noWrap={props.noWrap}
         sx={{...props.sx}}
         paragraph={props.paragraph}
