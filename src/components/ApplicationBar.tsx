@@ -229,7 +229,7 @@ function ApplicationBar() {
           >
             {settingsMenu.map((menu) => (
               <MenuItem sx={{ backgroundColor:  menu.label === 'Logout' ? '#aaaaaa80' : '' }} key={menu.label} onClick={handleCloseUserMenu}>
-               <menu.icon key={menu.id} style={{ marginRight: '10px', color: menu.label === 'Logout' ? 'red' : 'white'}} onClick={()=> {
+               <menu.icon key={menu.id} sx={{ fontSize: 25 }} style={{ marginRight: '10px', color: menu.label === 'Logout' ? 'red' : theme.palette.mode === 'dark' ? '#eee' : '#222' }} onClick={()=> {
                 handleMenuAction(menu.path)
                }
               }/>
