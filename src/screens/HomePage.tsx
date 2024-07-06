@@ -135,8 +135,8 @@ const HomePage = () => {
 
   return (
     <Box sx={{ paddingTop: "50px" }}>
-      <Box sx={{display: 'flex', justifyContent: 'flex-start', flexDirection: 'row'}}>
-        <img id="float" src={worker17} alt="Toilers" style={{ width: "300px" }} />
+      <Box sx={{display: 'flex', justifyContent: 'flex-start', flexDirection: 'row', height: '320px'}}>
+        <img id="float" src={worker17} alt="Toilers" style={{ width: "300px", height: '300px' }} />
       </Box>
       <CustomText
         label="Join Toilers to change your life"
