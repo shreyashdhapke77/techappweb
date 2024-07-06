@@ -28,7 +28,6 @@ const settingsMenu = [
 
 function ApplicationBar() {
   const theme = useTheme();
-  console.log('theme ===> ', theme)
   const colorMode = React.useContext(ColorModeContext);
   const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
     null
