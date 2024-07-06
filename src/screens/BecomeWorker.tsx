@@ -1,11 +1,10 @@
 import CustomText from "../components/common/Text";
 import { Box, Chip } from "@mui/material";
-import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import MdPhone from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import { useTheme } from '@mui/material/styles'
-
+import worker3 from "../components/assets/Worker/worker3.png";
 const teamMemberDetails = [
   {
     name: "Pravin",
@@ -33,7 +32,7 @@ const BecomeWorker = () => {
   const theme = useTheme();
   return (
     <Box sx={{ paddingTop: "50px" }}>
-      <img src={logo} alt="Toilers" style={{ width: "200px" }} />
+      <img src={worker3} alt="Toilers" style={{ width: "200px" }} />
       <CustomText
         label="Join Toilers to change your life"
         variant="h5"

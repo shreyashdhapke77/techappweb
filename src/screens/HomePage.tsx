@@ -13,7 +13,7 @@ import {
   Grid,
   Fade,
 } from "@mui/material";
-import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
+import worker9 from "../components/assets/Worker/worker9.png";
 import * as React from "react";
 import { TransitionProps } from "@mui/material/transitions";
 import pravin from "../components/assets/pravin.jpeg";
@@ -77,7 +77,7 @@ const HomePage = () => {
 
   return (
     <Box sx={{ paddingTop: "50px" }}>
-      <img src={logo} alt="Toilers" style={{ width: "200px" }} />
+      <img src={worker9} alt="Toilers" style={{ width: "200px" }} />
       <CustomText
         label="Join Toilers to change your life"
         variant="h2"

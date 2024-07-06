@@ -1,9 +1,9 @@
 import { Box, Link, Slide } from "@mui/material";
-import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import CustomButton from "../components/common/Button";
 import TextInputField from "../components/common/TextInputField";
 import CustomText from "../components/common/Text";
 import { Call, Place, MailOutline } from "@mui/icons-material";
+import worker6 from "../components/assets/Worker/worker6.png";
 
 const ContactUs = () => {
   const contactDetails = {
@@ -19,7 +19,7 @@ const ContactUs = () => {
       }}
     >
       <Box sx={{ width: "100%" }}>
-        <img src={logo} alt="Toilers" style={{ width: "200px" }} />
+        <img src={worker6} alt="Toilers" style={{ width: "200px" }} />
         <Slide direction="up" in mountOnEnter unmountOnExit>
           <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
             <CustomText label="Please Contact Us" variant="h4" isBold />

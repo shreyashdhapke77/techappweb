@@ -5,6 +5,7 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import IconButton from '@mui/material/IconButton';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
+import worker4 from "../components/assets/Worker/worker4.png";
 
 function srcset(image: string, width: number, height: number, rows = 1, cols = 1) {
   return {
@@ -18,7 +19,7 @@ function srcset(image: string, width: number, height: number, rows = 1, cols = 1
 const Blog = () => {
   return (
     <Box sx={{ paddingTop: '50px' }}>
-      {/* <img src={logo} alt="Toilers" style={{ width: "200px" }} /> */}
+      <img src={worker4} alt="Toilers" style={{ width: "200px" }} />
       <CustomText label="Our Blogs" variant="h4" isBold={true} />
       <Grow in={true} style={{ transitionDelay: true ? '500ms' : '0ms', transitionDuration: '1000ms' }}>
         <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>

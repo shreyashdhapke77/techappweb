@@ -1,11 +1,10 @@
 import { Box } from "@mui/material"
-import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import CustomText from "../components/common/Text";
-
+import worker5 from "../components/assets/Worker/worker5.png";
 const Community = () => {
     return (
         <Box sx={{ paddingTop: '50px' }}>
-            <img src={logo} alt="Toilers" style={{ width: "200px" }} />
+            <img src={worker5} alt="Toilers" style={{ width: "200px" }} />
             <CustomText label="Join Our Community" variant="h4" isBold={true} />
             <CustomText label="Joining the Toilers as a Community member is a great introduction to the quickly evolving and specialized field of your work." variant="body1" />
             <CustomText label="Membership is free and gives you the opportunity to expand your professional development by networking with seekers worldwide." variant="body1" />
