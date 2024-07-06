@@ -4,6 +4,8 @@ import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
+import worker18 from "../components/assets/Worker/worker18.png";
+
 const Advertise = () => {
   return (
     <Box
@@ -12,6 +14,8 @@ const Advertise = () => {
         paddingBottom: "20px",
       }}
     >
+      <img src={worker18} alt="Toilers" style={{width: '250px', objectFit: 'scale-down'}} />
+
       <CustomText sx={{mt: 2, mb: 2}} label="Advertise With Us" variant="h5" isBold />
       <CustomText label="Toilers is the most reliable source for the free SEO, digital marketing, image and other utility tools on the internet." variant="body1" />
       <CustomText label="Thousands of users browse our website monthly to use tools online and get their task done faster." variant="body1" />

@@ -47,7 +47,7 @@ export default function WorkerCard(props: Props) {
           </Avatar>
         }
         action={
-          <IconButton aria-label="settings">
+          <IconButton className='hover-zoom' aria-label="settings">
             <MoreVertIcon />
           </IconButton>
         }
@@ -67,10 +67,10 @@ export default function WorkerCard(props: Props) {
         <Chip icon={<EmailIcon />} label={props.email} />
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton className='zoom-icon' aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
+        <IconButton className='zoom-icon' aria-label="share">
           <ShareIcon />
         </IconButton>
       </CardActions>

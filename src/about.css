@@ -71,9 +71,9 @@ html {
 }
 .zoom-icon:hover {
   transition: all 0.3s ease 0s;
-  padding-bottom: 22px;
+  color: rgb(226, 75, 33);
   transform: scale(1.25);
-  box-shadow: 0 4px 8px 0 #233565;
+  box-shadow: 0 4px 2px 0 #233565;
   border-radius: 50%;
 }
 
@@ -84,7 +84,8 @@ html {
   }
 }
 
-.hover-zoom {
+.hover-zoom:hover {
   transition: all 0.3s ease 0s;
+  transform: scale(1.25);
   width: 100%;
 }

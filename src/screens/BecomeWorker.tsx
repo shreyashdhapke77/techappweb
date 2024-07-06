@@ -66,7 +66,7 @@ const BecomeWorker = () => {
                 className="column"
                 sx={{ display: "flex", justifyContent: "center" }}
               >
-                <Box className= {theme.palette.mode ? "card" : "card-light"} sx={{width: '100%'}}>
+                <Box className= {theme.palette.mode === 'dark' ? "card" : "card-light"} sx={{width: '100%'}}>
                     <SupportAgentIcon sx={{ fontSize: 100 }}/>
                     <CustomText label={`Hi I am ${teamMember.name}`} variant="h6" isBold={true} />
                     <CustomText label="How can I help you ?" variant="body2" />

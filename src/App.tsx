@@ -61,7 +61,6 @@ const getDesignTokens = (mode: PaletteMode) => ({
         icon: {
           default: 'blue'
         }
-
       }
       ),
       },
@@ -69,7 +68,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
 
 function App() {
 
-  const [mode, setMode] = React.useState<PaletteMode>('dark');
+  const [mode, setMode] = React.useState<PaletteMode>('light');
   const colorMode = React.useMemo(
     () => ({
       // The dark mode switch would invoke this method
