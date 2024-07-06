@@ -221,7 +221,7 @@ function ApplicationBar() {
                   key={menu.id}
                   style={{
                     marginRight: '10px',
-                    color: menu.label === 'Logout' ? 'red' : 'white'
+                    color: menu.label === 'Logout' ? 'red' : theme.palette.mode === 'dark' ? '#eee' : '#222'
                   }}
                   onClick={()=> handleMenuAction(menu.path)}
                 />
