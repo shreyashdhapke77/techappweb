@@ -3,6 +3,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Typography, AppBar, Menu, Box, Toolbar, IconButton, Tooltip, MenuItem, Drawer, Divider, Link, ListItem, List, ListItemIcon, ListItemButton } from '@mui/material/';
 import { useNavigate } from "react-router-dom";
 import logo from '../components/assets/toilers-logos/png/logo-no-background.png';
+import worker17 from "../components/assets/Worker/worker17.png";
 import { Dashboard, ManageAccounts, AccountCircle, LogoDev, Logout, ViewList, People, SettingsSuggest, HomeRepairService, HandshakeTwoTone, StarPurple500, Feed, PermPhoneMsg  } from "@mui/icons-material";
 import CustomText from "../components/common/Text";
 import { useTheme } from '@mui/material/styles';
@@ -81,7 +82,7 @@ function ApplicationBar() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <Box sx={{mt: 2, mb: 2}}>
-          <img src={logo} alt="Toilers" style={{width: '250px', objectFit: 'scale-down'}} />
+          <img src={worker17} alt="Toilers" style={{width: '250px', objectFit: 'scale-down'}} />
       </Box>
       <Divider />
       <List>

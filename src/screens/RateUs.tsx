@@ -3,10 +3,11 @@ import Rating from "@mui/material/Rating";
 import { Box } from "@mui/material";
 import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
-import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
+// import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import { Favorite } from '@mui/icons-material';
 import TextInputField from "../components/common/TextInputField";
 import { APP_BG_DARK } from "../utils/colors";
+import worker10 from "../components/assets/Worker/worker10.png";
 
 const RateUs = () => {
   const [value, setValue] = React.useState<number | null>(2);
@@ -15,7 +16,7 @@ const RateUs = () => {
   return (
     <Box sx={{ paddingTop: '50px' }}>
       <Box>
-        <img src={logo} alt="Toilers" style={{ width: "200px" }} />
+        <img src={worker10} alt="Toilers" style={{ width: "200px" }} />
         <CustomText label="Please Rate Us" variant="h4" isBold={true} />
         {/* <CustomText
           label="Welcome to Toilers"

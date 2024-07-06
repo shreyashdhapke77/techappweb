@@ -4,7 +4,7 @@ import shreyash from "../components/assets/shreyash.jpeg";
 import yash from "../components/assets/yash.jpeg";
 import nishant from "../components/assets/nishant.jpeg";
 import yogesh from "../components/assets/yogesh.jpg";
-import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
+import worker2 from "../components/assets/Worker/worker2.png";
 import { Avatar, Box, Link, Slide, Zoom } from "@mui/material";
 import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
@@ -34,7 +34,7 @@ const AboutPage = () => {
     <Box sx={{ paddingTop: '50px' }}>
       <Box>
         <Zoom in={true} style={{ transitionDelay: true ? '1000ms' : '0ms', transitionDuration: '1000ms' }}>
-          <img src={logo} alt="Toilers" style={{ width: "200px" }} />
+          <img src={worker2} alt="Toilers" style={{ width: "200px" }} />
         </Zoom>
         <CustomText label="About Us" variant="h4" isBold={true} />
         <CustomText

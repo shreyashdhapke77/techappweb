@@ -3,7 +3,7 @@ import { Box } from '@mui/material';
 import CustomText from '../components/common/Text'
 import { Document, Page, pdfjs } from 'react-pdf'
 import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
-
+import worker11 from "../components/assets/Worker/worker11.png";
 pdfjs.GlobalWorkerOptions.workerSrc = new URL(
     'pdfjs-dist/build/pdf.worker.min.mjs',
     import.meta.url,
@@ -19,7 +19,7 @@ const TermsCondition = () => {
 
     return (
       <Box sx={{ paddingTop: '50px' }}>
-        <img src={logo} alt="Toilers" style={{ width: "200px" }} />
+        <img src={worker11} alt="Toilers" style={{ width: "200px" }} />
         <CustomText label="Terms & Conditions" variant="h4" isBold={true} />
         <CustomText label={`Page 1 of ${numPages}`}></CustomText>
         <Document file={file} onLoadSuccess={onDocumentLoadSuccess}>

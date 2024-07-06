@@ -42,6 +42,9 @@ const getDesignTokens = (mode: PaletteMode) => ({
           primary: '#000000',
           // secondary: cyan[200],
         },
+        icon: {
+          default: 'blue'
+        }
       }
       : {
         // palette values for dark mode
@@ -55,6 +58,10 @@ const getDesignTokens = (mode: PaletteMode) => ({
           primary: '#fff',
           // secondary: grey[500],
         },
+        icon: {
+          default: 'blue'
+        }
+
       }
       ),
       },
