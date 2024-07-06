@@ -10,29 +10,32 @@ import { red } from "@mui/material/colors";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import { APP_BG_DARK } from "../../utils/colors";
+import { APP_BG_DARK, APP_LIGHT_BLUE } from "../../utils/colors";
 import farms from "../assets/home-slider/farms.jpg";
 import { Chip } from "@mui/material";
 import MdPhone from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
+import { useTheme } from '@mui/material/styles'
 
 interface Props {
   name: string;
   category: string;
   description: string;
   workImages: any;
+  rate:string;
   profileImage?: string;
   mobileNumber: string;
   email?: string;
 }
 
 export default function WorkerCard(props: Props) {
+  const theme = useTheme();
   return (
     <Card
       sx={{
         width: "50%",
         maxWidth: 350,
-        backgroundColor: APP_BG_DARK,
+        backgroundColor: theme.palette.mode === 'light' ? APP_LIGHT_BLUE : APP_BG_DARK,
         mx: 3,
         my: 3,
       }}
@@ -54,8 +57,11 @@ export default function WorkerCard(props: Props) {
         title={props.name}
         subheader={props.category}
       />
-      <CardMedia component="img" height="194" image={farms} alt="Paella dish" />
-      <CardContent sx={{ height: "100px" }}>
+      <CardMedia component="img" height="194" image={props.workImages ? props.workImages : farms} alt="Paella dish" />
+      <CardContent sx={{ height: "110px" }}>
+      <Typography variant="body2" color="text.secondary">
+          <strong>Rs. </strong>{props.rate}
+        </Typography>
         <Typography variant="body2" color="text.secondary">
           {props.description}
         </Typography>

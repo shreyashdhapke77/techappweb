@@ -4,7 +4,7 @@ import shreyash from "../components/assets/shreyash.jpeg";
 import yash from "../components/assets/yash.jpeg";
 import nishant from "../components/assets/nishant.jpeg";
 import yogesh from "../components/assets/yogesh.jpg";
-import worker2 from "../components/assets/Worker/worker2.png";
+import worker21 from "../components/assets/Worker/worker21.png";
 import { Avatar, Box, Link, Slide, Zoom } from "@mui/material";
 import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
@@ -33,8 +33,8 @@ const AboutPage = () => {
   return (
     <Box sx={{ paddingTop: '50px' }}>
       <Box>
-        <Zoom in={true} style={{ transitionDelay: true ? '1000ms' : '0ms', transitionDuration: '1000ms' }}>
-          <img src={worker2} alt="Toilers" style={{ width: "200px" }} />
+        <Zoom in={true} style={{ transitionDelay: true ? '100ms' : '0ms', transitionDuration: '500ms' }}>
+          <img src={worker21} alt="Toilers" style={{ width: "300px" }} />
         </Zoom>
         <CustomText label="About Us" variant="h4" isBold={true} />
         <CustomText
@@ -77,12 +77,13 @@ const AboutPage = () => {
       <Slide direction="up" in={true} mountOnEnter unmountOnExit>
       <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
         <CustomText label="Our Team" variant="h4" isBold={true} />
-        <Box className="hover-zoom" sx={{ display: 'flex', justifyContent: "center", alignContent: "center", alignItems: 'center', mt: 2 , paddingTop: '120px'}}>
+        <Box sx={{ display: 'flex', justifyContent: "center", alignContent: "center", alignItems: 'center', mt: 2 , paddingTop: '120px'}}>
           {teamMemberDetails.map((teamMember) => {
             return (
               <Box className="column" sx={{display: 'flex', justifyContent: 'center'}}>
                 <Box className="card" sx={{ width: '90%', height: '525px' }}>
                   <img
+                    className="hover-zoom"
                     src={teamMember.image}
                     alt={teamMember.name}
                     style={{
@@ -151,13 +152,13 @@ const AboutPage = () => {
             </Box>
             <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
               <CustomText sx={{mb: 2}}  variant="h6" label="Yogesh Lolusare"/>
-              <Avatar className="hover-zoom" alt="Yogesh Lolusare" sx={{ width: 100, height: 100 }} src={yogesh} />
+              <Avatar className="zoom-icon" alt="Yogesh Lolusare" sx={{ width: 100, height: 100 }} src={yogesh} />
               <CustomText sx={{mt: 2}} variant="h7" label="Enjoy Programming"/>
             </Box>
             <Box sx={{display: 'flex', flexDirection: 'column', alignContent: 'center', justifyContent: 'center', alignItems: 'center'}}>
               <CustomText sx={{mb: 2}}  variant="h6" label="Yash Mahajan"/>
               
-              <Avatar className="hover-zoom" alt="Yash Mahajan" sx={{ width: 100, height: 100 }} src={yash} />
+              <Avatar className="zoom-icon" alt="Yash Mahajan" sx={{ width: 100, height: 100 }} src={yash} />
               <CustomText sx={{mt: 2}} variant="h7" label="Green Farms"/>
             </Box>
           </Box>
