@@ -6,28 +6,26 @@ import {
     Column,
     FooterLink,
     Heading,
+    FullRow,
 } from "./FooterStyle";
+import tools2 from "../components/assets/toilers-logos/tools2.png";
+// import circleTool from "../components/assets/toilers-logos/circle-tools.png";
  
 const Footer = () => {
     return (
-        <Box
-        sx={{
-          display: "flex",
-          flexDirection: 'column',
-          alignContent: 'space-between',
-          justifyContent: 'space-between',
-          height: '100%'
-        }}
-      >
+        <Box>
+            <FullRow>
             <h1
-                style={{
-                    color: "white",
-                    textAlign: "center",
-                    marginTop: "10px",
-                }}
-            >
-                Join Toilers to change your life!
-            </h1>
+                    style={{
+                        color: "white",
+                        textAlign: "center",
+                        marginTop: "10px",
+                    }}
+                >
+                    Join Toilers to change your life!
+                </h1>
+                <img style={{ width: "150px", height: '150px', marginRLeft:2 }} className="FR" alt='tools' src={tools2} />
+                </FullRow>
             <FooterContainer>
                 <Row>
                     <Column>
