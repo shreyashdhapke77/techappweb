@@ -7,20 +7,37 @@ import {
     FooterLink,
     Heading,
     FullRow,
+    BottomText,
+    FullColumn,
 } from "./FooterStyle";
 import tools2 from "../components/assets/toilers-logos/tools2.png";
-// import circleTool from "../components/assets/toilers-logos/circle-tools.png";
+import mobileApp from "../components/assets/toilers-logos/mobileApp.png";
 import { SocialIcon } from 'react-social-icons'
+import { Divider } from "@mui/material";
 
 const Footer = () => {
     return (
+        <>
+            <FullColumn style={{
+                        color: "Black",
+                        padding: '25px',
+                        background: 'white',
+                        textAlign: "center",
+                        justifyContent: 'center',
+                        marginTop: "10px",
+                    }}>
+                <h1
+                >
+                    For better experience,download the Toilers app now
+                </h1>
+                <img src={mobileApp}/>
+            </FullColumn>
         <Box>
             <FullRow>
             <h1
                     style={{
                         color: "white",
                         textAlign: "center",
-                        marginTop: "10px",
                     }}
                 >
                     Join Toilers to change your life!
@@ -142,19 +159,28 @@ const Footer = () => {
                                     Youtube
                                 </span>
                         </FooterLink>
+                        <FooterLink href="#">
+                        <SocialIcon className='zoom-icon' url="https://www.linkedin.com/in/toilers-app-331551315/" title='linkedIn' type='linkedin' />
+                            <span
+                                    style={{
+                                        marginLeft: "10px",
+                                    }}
+                                >
+                                    Linked In
+                                </span>
+                        </FooterLink>
                     </Column>
                 </Row>
             </FooterContainer>
-            <h4
-                style={{
-                    color: "white",
-                    textAlign: "center",
-                    marginTop: "100px",
-                }}
-            >
-                Toilers™. Copyright © 2023 - 2024 Toilers™. All rights reserved.
-            </h4>
+            <Divider/>
+            <BottomText>
+                By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 
+                </BottomText>
+            <BottomText>
+                Toilers™. Copyright © 2023 - 2024. All rights reserved.
+            </BottomText>
         </Box>
+        </>
     );
 };
 export default Footer;

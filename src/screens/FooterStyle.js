@@ -2,7 +2,7 @@
 import styled from "styled-components";
  
 export const Box = styled.div`
-    padding: 5% 2.5%;
+    padding: 2.5% 5%;
     background: #102020;
     // position: absolute;
     bottom: 0;
@@ -51,6 +51,13 @@ export const FullRow = styled.div`
     text-align: left;
     margin-left: 0px;
 `;
+
+export const FullColumn = styled.div`
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    margin-left: 0px;
+`;
  
 export const FooterLink = styled.a`
     color: #fff;
@@ -69,4 +76,10 @@ export const Heading = styled.p`
     color: #fff;
     margin-bottom: 40px;
     font-weight: bold;
+`;
+
+export const BottomText = styled.p`
+    font-size: 14px;
+    color: #fff;
+    margin-bottom: 0px;
 `;
