@@ -75,7 +75,7 @@ const ContactUs = () => {
           >
             <Box>
               <Place style={{ color: "#ff0000" }} />
-              <CustomText isBold={true} label="Address" />
+              <CustomText variant="h6" isBold={true} label="Address" />
             </Box>
             <Link onClick={() => window.open("https://maps.google.com?q="+21.134167+','+79.075890 )} style={{ marginTop: "5px" }} underline="hover">
               Akashan Apartment, Busiplex, Above ICICI Bank,
@@ -109,7 +109,7 @@ const ContactUs = () => {
           >
             <Box>
               <MailOutline style={{ color: "#1111ff" }} />
-              <CustomText isBold={true} label="Mail Us" />
+              <CustomText variant="h6" isBold={true} label="Mail Us" />
             </Box>
             <Link style={{ marginTop: "5px" }} underline="hover">
               info@toilers.com
@@ -128,8 +128,8 @@ const ContactUs = () => {
             }}
           >
             <Box>
-              <Call style={{ color: "#00A36C" }} />
-              <CustomText isBold={true} label="Telephone" />
+              <Call sx={{ fontSize: 'large', color: "#00A36C" }} />
+              <CustomText variant="h6" isBold={true} label="Telephone" />
             </Box>
               <Link style={{ marginTop: "5px" }} underline="hover">
                 (+91) 78879 07023

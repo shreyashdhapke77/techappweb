@@ -19,6 +19,7 @@ import Advertise from './screens/Advertise';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { teal, cyan } from '@mui/material/colors';
+import Footer from './screens/Footer';
 
 export const ColorModeContext = React.createContext({
   toggleColorMode: () => {
@@ -107,6 +108,7 @@ function App() {
             <Route index={true} path={'advertise'} element={<Advertise />}></Route>
           </Routes>
         </Box>
+        <Footer />
       </BrowserRouter>
      </ThemeProvider>
     </ColorModeContext.Provider>
