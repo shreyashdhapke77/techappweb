@@ -112,29 +112,30 @@ html {
 
 #float {
   position: relative;
-  -webkit-animation: floatBubble 8s infinite  normal ease-out;
-  animation: floatBubble 8s infinite  normal ease-out;
+  -webkit-animation: floatBubble 8s  normal ease-out;
+  animation: floatBubble 8s  normal ease-out;
+  /* infinite */
 }
 @-webkit-keyframes floatBubble {
   0% {
-      left:1200px;
+      left: 1800px;
       width: 100px;
       height: 100px;
   }
   100% {
-      left: -200px;
+      left: 0px;
       width: 300px;
       height: 300px;
   }
 }
 @keyframes floatBubble {
   0% {
-      Left:1200px;
+      Left:1800px;
       width: 100px;
       height: 100px;
   }
   100% {
-      left: -200px;
+      left: 0px;
       width: 300px;
       height: 300px;
   }
