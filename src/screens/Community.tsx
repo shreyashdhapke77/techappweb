@@ -1,5 +1,4 @@
 import { Box } from "@mui/material"
-import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import CustomText from "../components/common/Text";
 import worker5 from "../components/assets/Worker/worker5.png";
 const Community = () => {

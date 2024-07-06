@@ -1,5 +1,4 @@
 import { Box, Link, Slide } from "@mui/material";
-import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import CustomButton from "../components/common/Button";
 import TextInputField from "../components/common/TextInputField";
 import CustomText from "../components/common/Text";

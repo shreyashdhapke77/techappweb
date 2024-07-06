@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Box } from "@mui/material"
 import CustomText from "../components/common/Text";
-import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import worker12 from "../components/assets/Worker/worker12.png";
 const UserAccount = () => {
     return (

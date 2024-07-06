@@ -4,7 +4,6 @@ import { Typography, AppBar, Menu, Box, Toolbar, IconButton, Tooltip, MenuItem, 
 import { useNavigate } from "react-router-dom";
 import logo from '../components/assets/toilers-logos/png/logo-no-background.png';
 import { SettingsSuggest } from "@mui/icons-material";
-import worker17 from "../components/assets/Worker/worker17.png";
 import CustomText from "../components/common/Text";
 import { useTheme } from '@mui/material/styles';
 import { ColorModeContext } from "../App";
