@@ -4,6 +4,7 @@ import { Typography, AppBar, Menu, Box, Toolbar, IconButton, Tooltip, MenuItem, 
 import { useNavigate } from "react-router-dom";
 import logo from '../components/assets/toilers-logos/png/logo-no-background.png';
 import { SettingsSuggest } from "@mui/icons-material";
+import worker17 from "../components/assets/Worker/worker17.png";
 import CustomText from "../components/common/Text";
 import { useTheme } from '@mui/material/styles';
 import { ColorModeContext } from "../App";
@@ -61,7 +62,7 @@ function ApplicationBar() {
         onKeyDown={toggleDrawer(anchor, false)}
       >
         <Box sx={{mt: 2, mb: 2}}>
-          <img src={logo} alt="Toilers" style={{width: '250px', objectFit: 'scale-down'}} />
+          <img src={worker17} alt="Toilers" style={{width: '250px', objectFit: 'scale-down'}} />
         </Box>
 
         <Divider />
