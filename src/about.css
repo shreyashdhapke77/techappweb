@@ -89,3 +89,53 @@ html {
   transform: scale(1.25);
   width: 100%;
 }
+
+@keyframes FRA{
+  0%{
+      transform: rotateZ(360deg);
+  }
+}
+
+.FR{
+  left: 18%;
+  top: 20%;
+  animation: FRA forwards 5s infinite;
+  animation-timing-function: linear;
+}
+
+.images {
+  height: 15em;
+  margin: 0 auto;
+  overflow: hidden;
+  width: 20em;
+}
+
+#float {
+  position: relative;
+  -webkit-animation: floatBubble 8s infinite  normal ease-out;
+  animation: floatBubble 8s infinite  normal ease-out;
+}
+@-webkit-keyframes floatBubble {
+  0% {
+      left:1200px;
+      width: 100px;
+      height: 100px;
+  }
+  100% {
+      left: -200px;
+      width: 300px;
+      height: 300px;
+  }
+}
+@keyframes floatBubble {
+  0% {
+      Left:1200px;
+      width: 100px;
+      height: 100px;
+  }
+  100% {
+      left: -200px;
+      width: 300px;
+      height: 300px;
+  }
+}

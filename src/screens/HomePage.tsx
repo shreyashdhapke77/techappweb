@@ -13,13 +13,17 @@ import {
   Grid,
   Fade,
 } from "@mui/material";
-import worker9 from "../components/assets/Worker/worker9.png";
 import * as React from "react";
 import { TransitionProps } from "@mui/material/transitions";
 import pravin from "../components/assets/pravin.jpeg";
+import yogesh from "../components/assets/yogesh.jpg";
 import shreyash from "../components/assets/shreyash1.jpg";
 import ashish from "../components/assets/ashish.jpeg";
+import carpenter from "../components/assets/home-slider/carpenter.jpg";
+import kitchen from "../components/assets/home-slider/kitchen.jpg";
+import glasscleaner from "../components/assets/home-slider/glasscleaner.jpg";
 import WorkerCard from "../components/common/WorkerCard";
+import worker17 from "../components/assets/Worker/worker17.png";          
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -34,28 +38,82 @@ const teamMemberDetails = [
     name: "Pravin Salame",
     category: "Carpenter",
     profileImage: pravin,
-    rate: "Rs 549",
+    rate: "549",
     workImages: "",
     mobileNumber: "+91 9371643142",
     email: "pravin.salame@gmail.com",
+    description: 'A useful, plain-language Worker that explains the tasks, duties, function and responsibilities of a position'
   },
   {
     name: "Shreyash Dhapke",
     category: "Chef",
     profileImage: shreyash,
-    rate: "Rs 549",
-    workImages: "",
+    rate: "549",
+    workImages: glasscleaner,
     mobileNumber: "+91 7887907023",
     email: "shreyashdhapke7777@gmail.com",
+    description: 'I am passionate about my work and it helps me bring my best to the role. In my previous job, my passion motivated me daily to learn new skills and help the company grow.'
+
   },
   {
     name: "Ashish Kachhawah",
     category: "Plumber",
     profileImage: ashish,
-    rate: "Rs 349",
-    workImages: "",
+    rate: "349",
+    workImages: carpenter,
     mobileNumber: "+91 8371673142",
     email: "ashish.kachawah@gmail.com",
+    description: 'I am a driven individual who focuses on results and works well under pressure. I have helped my team shorten our production time by two weeks.'
+  },
+  {
+    name: "Yash Mahajan",
+    category: "Carpenter",
+    profileImage: ashish,
+    rate: "149",
+    workImages: kitchen,
+    mobileNumber: "+91 8371673142",
+    email: "yash.mahajan@gmail.com",
+    description: "I am a people's person. I enjoy working with teams and meeting new people as it inspires me to work on new ideas and collaborative methods."
+  },
+  {
+    name: "Rahul Banginwar",
+    category: "Doctor",
+    profileImage: ashish,
+    rate: "349",
+    workImages: glasscleaner,
+    mobileNumber: "+91 8371673142",
+    email: "ashish.kachawah@gmail.com",
+    description: "I am a perfectionist who pays attention to every detail. I ensure everything is in place for a project to be successful."
+  },
+  {
+    name: "Yogesh Lolusare",
+    category: "Painter",
+    profileImage: yogesh,
+    rate: "312",
+    workImages: kitchen,
+    mobileNumber: "+91 8371673142",
+    email: "yogesh.lolusare@gmail.com",
+    description: "I am a creative person. I do not limit my thoughts and explore different ways of solving problems through creative thinking."
+  },
+  {
+    name: "Nishant Patel",
+    category: "Driver",
+    profileImage: ashish,
+    rate: "1349",
+    workImages: glasscleaner,
+    mobileNumber: "+91 8371673142",
+    email: "nishant.patel@gmail.com",
+    description: "I would describe myself as a creative, initiative, go-getter and someone who faces challenges head-on to ensure the company is ahead of its competition."
+  },
+  {
+    name: "Amitabh Patel",
+    category: "Cleaner",
+    profileImage: ashish,
+    rate: "49",
+    workImages: carpenter,
+    mobileNumber: "+91 8371673142",
+    email: "amitabh.patel@gmail.com",
+    description: "I would describe myself as driven, competitive and organised, the person who takes ownership of the situation and is adaptable to changes."
   },
 ];
 
@@ -77,7 +135,9 @@ const HomePage = () => {
 
   return (
     <Box sx={{ paddingTop: "50px" }}>
-      <img src={worker9} alt="Toilers" style={{ width: "200px" }} />
+      <Box sx={{display: 'flex', justifyContent: 'flex-start', flexDirection: 'row'}}>
+        <img id="float" src={worker17} alt="Toilers" style={{ width: "300px" }} />
+      </Box>
       <CustomText
         label="Join Toilers to change your life"
         variant="h2"
@@ -110,8 +170,9 @@ const HomePage = () => {
                 <WorkerCard
                   name={teamMember.name}
                   category={teamMember.category}
-                  description="Hello this is test description"
+                  description={teamMember.description}
                   workImages={teamMember.workImages}
+                  rate={teamMember.rate}
                   mobileNumber={teamMember.mobileNumber}
                   email={teamMember.email}
                 />
