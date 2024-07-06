@@ -1,6 +1,5 @@
 import CustomText from "../components/common/Text";
 import { Box, Chip } from "@mui/material";
-import logo from "../components/assets/toilers-logos/png/logo-no-background-black.png";
 import SupportAgentIcon from '@mui/icons-material/SupportAgent';
 import MdPhone from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
