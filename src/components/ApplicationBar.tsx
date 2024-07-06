@@ -13,7 +13,7 @@ import LightModeIcon from '@mui/icons-material/LightMode';
 import { drawerMenu } from "../constants/drawer-menu";
 import { APP_BG_DARK, APP_BG_GREY, APP_LIGHT_BLUE } from "../utils/colors";
 import { settingsMenu } from "../constants/settings-menu";
-// import tools from "../components/assets/toilers-logos/tools2.png";
+
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
 function ApplicationBar() {
@@ -187,9 +187,7 @@ function ApplicationBar() {
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Settings className="FR"  sx={{color: APP_BG_DARK, width: '50px', height: '50px', mr: 2,}} />
-              {/* <img style={{ width: "50px", height: '50px', marginRight:2 }} className="FR" alt='tools' src={tools}/> */}
-
+              <Settings className="FR" sx={{color: APP_BG_DARK, width: '50px', height: '50px', mr: 2,}} />
             </IconButton>
           </Tooltip>
           <Menu

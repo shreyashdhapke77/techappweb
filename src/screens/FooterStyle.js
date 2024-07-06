@@ -6,7 +6,7 @@ export const Box = styled.div`
     background: #135D66;
     // position: absolute;
     bottom: 0;
-    width: 95%;
+    width: 100%;
  
     @media (max-width: 1000px) {
         // padding: 70px 30px;
@@ -43,6 +43,13 @@ export const Row = styled.div`
             minmax(200px, 1fr)
         );
     }
+`;
+
+export const FullRow = styled.div`
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: 0px;
 `;
  
 export const FooterLink = styled.a`
