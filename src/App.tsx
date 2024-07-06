@@ -61,7 +61,6 @@ const getDesignTokens = (mode: PaletteMode) => ({
         icon: {
           default: 'blue'
         }
-
       }
       ),
       },
