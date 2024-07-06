@@ -3,118 +3,123 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { Typography, AppBar, Menu, Box, Toolbar, IconButton, Tooltip, MenuItem, Drawer, Divider, Link, ListItem, List, ListItemIcon, ListItemButton } from '@mui/material/';
 import { useNavigate } from "react-router-dom";
 import logo from '../components/assets/toilers-logos/png/logo-no-background.png';
+import { SettingsSuggest } from "@mui/icons-material";
 import worker17 from "../components/assets/Worker/worker17.png";
-import { Dashboard, ManageAccounts, AccountCircle, LogoDev, Logout, ViewList, People, SettingsSuggest, HomeRepairService, HandshakeTwoTone, StarPurple500, Feed, PermPhoneMsg  } from "@mui/icons-material";
 import CustomText from "../components/common/Text";
 import { useTheme } from '@mui/material/styles';
 import { ColorModeContext } from "../App";
-import { Switch } from '@mui/material';
-const sidePanelMenu = [[  {text: 'Find a worker',   icon: HandshakeTwoTone,  path: '/findWorker' },
-    {text: 'Become a worker', icon: HomeRepairService, path: '/becomeWorker'}
-  ],[ {text: 'About Us',   icon: Feed,          path: '/about'},
-    {text: 'Contact Us', icon:PermPhoneMsg,   path: '/contactUs' },
-    {text: 'Rate Us',    icon: StarPurple500, path: '/rateUs'}
-  ],[ {text: 'Terms & Conditions', icon: Feed,   path: '/termsCondition' }
-  ]
-]
-const settingsMenu = [
-  {id: 1, label: "Profile",   path: "/userProfile", icon: AccountCircle},
-  {id: 2, label: "Account",   path: '/userAccount', icon: ManageAccounts}, 
-  {id: 3, label: "Dashboard", path: '/dashboard',   icon: Dashboard},
-  {id: 4, label: "Blog",      path: '/blog',        icon: ViewList},
-  {id: 5, label: "Community", path: '/community',   icon: People},
-  {id: 7, label: "Advertise With Us", path: '/advertise',   icon: LogoDev},
-  {id: 7, label: "Logout",    path: '/logout',      icon: Logout}
-]
+import DarkModeIcon from '@mui/icons-material/DarkMode';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import { drawerMenu } from "../constants/drawer-menu";
+import { APP_BG_GREY } from "../utils/colors";
+import { settingsMenu } from "../constants/settings-menu";
+
+type Anchor = 'top' | 'left' | 'bottom' | 'right';
 
 function ApplicationBar() {
   const theme = useTheme();
+  const navigate = useNavigate()
+
   const colorMode = React.useContext(ColorModeContext);
-  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(
-    null
-  );
+  const [anchorElUser, setAnchorElUser] = React.useState<null | HTMLElement>(null);
+  const [state, setState] = React.useState({left: false});
+
   const handleOpenUserMenu = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorElUser(event.currentTarget);
   };
-  const [state, setState] = React.useState({
-    left: false,
-  });
 
-  const handleCloseUserMenu = (key: any) => {
-    console.log('Close - ', key)
+  const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
   
-  // const handleMenuAction = (path: string) => {
-  //   navigate(path)
-  // }
   const handleMenuAction = (event: string) => {
-    console.log('handleMenuAction', event)
     navigate(event);
   };
 
-  type Anchor = 'top' | 'left' | 'bottom' | 'right';
+  const toggleDrawer = (anchor: Anchor, open: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
+    if (
+      event.type === 'keydown' &&
+      ((event as React.KeyboardEvent).key === 'Tab' ||
+        (event as React.KeyboardEvent).key === 'Shift')
+    ) { return }
+    setState({ ...state, [anchor]: open });
+  };
 
-  const toggleDrawer =
-    (anchor: Anchor, open: boolean) =>
-    (event: React.KeyboardEvent | React.MouseEvent) => {
-      if (
-        event.type === 'keydown' &&
-        ((event as React.KeyboardEvent).key === 'Tab' ||
-          (event as React.KeyboardEvent).key === 'Shift')
-      ) {
-        return;
-      }
-
-      setState({ ...state, [anchor]: open });
-    };
-
-  const navigate = useNavigate()
   const list = (anchor: Anchor) => (
-    // Somewhere in your code, e.g. inside a handler:
     <Box
-      sx={{ flexDirection: 'column', display: "flex", alignContent: 'space-between', justifyContent: 'space-between', height: '100%' }}
-  >
-    <Box
-      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
-      role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+      sx={{
+        display: "flex",
+        flexDirection: 'column',
+        alignContent: 'space-between',
+        justifyContent: 'space-between',
+        height: '100%'
+      }}
     >
-      <Box sx={{mt: 2, mb: 2}}>
-          <img src={worker17} alt="Toilers" style={{width: '250px', objectFit: 'scale-down'}} />
-      </Box>
-      <Divider />
-      <List>
-        {sidePanelMenu[0].map((object, index) => (
-          <ListItem key={object.text} disablePadding>
-            <ListItemButton onClick={()=>navigate(object.path)}>
-              <ListItemIcon>
-              {<object.icon fontSize="large" />}
-              </ListItemIcon>
-              <CustomText label={object.text} variant="h7" />
-              {/* <ListItemText primary={object.text} /> */}
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {sidePanelMenu[1].map((object, index) => (
-          <ListItem key={object.text} disablePadding>
-            <ListItemButton onClick={()=>navigate(object.path)}>
-              <ListItemIcon>
+      <Box
+        sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+        role="presentation"
+        onClick={toggleDrawer(anchor, false)}
+        onKeyDown={toggleDrawer(anchor, false)}
+      >
+        <Box sx={{mt: 2, mb: 2}}>
+          <img src={logo} alt="Toilers" style={{width: '250px', objectFit: 'scale-down'}} />
+        </Box>
+
+        <Divider />
+
+        {/* Drawer menu One which includes Find a worker and become a worker */}
+        <List>
+          {drawerMenu.menuOne.map((object, index) => (
+            <ListItem key={object.text} disablePadding>
+              <ListItemButton onClick={()=>navigate(object.path)}>
+                <ListItemIcon>
                 {<object.icon fontSize="large" />}
-              </ListItemIcon>
-              <CustomText label={object.text} variant="h7" />
-              {/* <ListItemText primary={object.text} /> */}
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
+                </ListItemIcon>
+                <CustomText label={object.text} variant="h7" />
+              </ListItemButton>
+            </ListItem>
+          ))}
+        </List>
+
+        <Divider />
+
+        {/* Drawer Menu Two: Includes About Us contacts rates */}
+        <List>
+          {drawerMenu.menuTwo.map((object, index) => (
+            <ListItem key={object.text} disablePadding>
+              <ListItemButton onClick={()=>navigate(object.path)}>
+                <ListItemIcon>
+                  {<object.icon fontSize="large" />}
+                </ListItemIcon>
+                <CustomText label={object.text} variant="h7" />
+              </ListItemButton>
+            </ListItem>
+          ))}
+          <Divider />
+
+          {/* Theme Switch Control */}
+            <ListItem key={'theme'} disablePadding>
+              <ListItemButton onClick={colorMode.toggleColorMode}>
+                <ListItemIcon>
+                  {theme.palette.mode === 'light'
+                    ? <DarkModeIcon fontSize="large" />
+                    : <LightModeIcon fontSize="large" />
+                  }
+                </ListItemIcon>
+                <CustomText
+                  label={theme.palette.mode === 'light' ? 'Switch to dark mode' : 'Switch to light mode'}
+                  variant="h7"
+                />
+              </ListItemButton>
+            </ListItem>
+        </List>
       </Box>
       <Box
-        sx={{ alignItems: 'center', alignContent: 'center', justifyContent: 'center' }}
+        sx={{
+          alignItems: 'center',
+          alignContent: 'center',
+          justifyContent: 'center'
+        }}
         role="presentation"
         onClick={toggleDrawer(anchor, false)}
         onKeyDown={toggleDrawer(anchor, false)}
@@ -125,10 +130,10 @@ function ApplicationBar() {
           underline="hover"
           component="button"
           onClick={() => {
-            navigate(sidePanelMenu[2][0].path)
+            navigate(drawerMenu.menuThree[0].path)
           }}
         >
-          {sidePanelMenu[2][0].text}
+          {drawerMenu.menuThree[0].text}
         </Link>
       </Box>
     </Box>
@@ -164,23 +169,10 @@ function ApplicationBar() {
             </React.Fragment>
           ))}
         </Box>
-        {/* <Alert severity="warning">The site is under construction.</Alert> */}
         <img src={logo} alt="Toilers" style={{ width:'50px'}}/>
-        <CustomText label="Toilers" variant="h5" isBold={true}  sx={{
-            mr: 2,
-            display: { xs: "flex", md: "flex" },
-            flexGrow: 1,
-            fontFamily: "monospace",
-            fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "inherit",
-            textDecoration: "none",
-          }}/>
-        {/* <Typography
-          variant="h5"
-          noWrap
-          component="a"
-          href="#app-bar-with-responsive-menu"
+        <CustomText
+          label="Toilers" variant="h5"
+          isBold={true}
           sx={{
             mr: 2,
             display: { xs: "flex", md: "flex" },
@@ -191,25 +183,11 @@ function ApplicationBar() {
             color: "inherit",
             textDecoration: "none",
           }}
-        >
-          Toilers
-        </Typography> */}
-
+        />
         <Box sx={{ flexGrow: 0 }}>
-          <IconButton
-            sx={{ ml: 1 }}
-            onClick={colorMode.toggleColorMode}
-            color="inherit"
-          >
-            {theme.palette.mode === 'dark' ? (
-              <Switch />
-            ) : (
-              <Switch />
-            )}
-          </IconButton>
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <SettingsSuggest sx={{width: '50px', height: '50px', mr: 2,}}></SettingsSuggest>
+              <SettingsSuggest sx={{width: '50px', height: '50px', mr: 2,}} />
             </IconButton>
           </Tooltip>
           <Menu
@@ -228,13 +206,19 @@ function ApplicationBar() {
             open={Boolean(anchorElUser)}
             onClose={handleCloseUserMenu}
           >
-            {settingsMenu.map((menu) => (
-              <MenuItem sx={{ backgroundColor:  menu.label === 'Logout' ? '#aaaaaa80' : '' }} key={menu.label} onClick={handleCloseUserMenu}>
-               <menu.icon key={menu.id} sx={{ fontSize: 25 }} style={{ marginRight: '10px', color: menu.label === 'Logout' ? 'red' : theme.palette.mode === 'dark' ? '#eee' : '#222' }} onClick={()=> {
-                handleMenuAction(menu.path)
-               }
-              }/>
-                <Typography onClick={()=>handleMenuAction(menu.path)}>{menu.label}</Typography>
+            {settingsMenu.data.map((menu) => (
+              <MenuItem sx={{ backgroundColor:  menu.label === 'Logout' ? APP_BG_GREY : '' }} key={menu.label} onClick={handleCloseUserMenu}>
+                <menu.icon
+                  key={menu.id}
+                  style={{
+                    marginRight: '10px',
+                    color: menu.label === 'Logout' ? 'red' : theme.palette.mode === 'dark' ? '#eee' : '#222'
+                  }}
+                  onClick={()=> handleMenuAction(menu.path)}
+                />
+                <Typography onClick={()=>handleMenuAction(menu.path)}>
+                  {menu.label}
+                </Typography>
               </MenuItem>
             ))}
           </Menu>
