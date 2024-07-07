@@ -87,13 +87,7 @@ const Footer = () => {
                   title="facebook"
                   type="facebook"
                 />
-                <span
-                  style={{
-                    marginLeft: "10px",
-                  }}
-                >
-                  Facebook
-                </span>
+                <span>Facebook</span>
               </FooterLink>
               <FooterLink href="#">
                 <SocialIcon
@@ -103,14 +97,7 @@ const Footer = () => {
                   title="instagram"
                   type="facebook"
                 />
-
-                <span
-                  style={{
-                    marginLeft: "10px",
-                  }}
-                >
-                  Instagram
-                </span>
+                <span>Instagram</span>
               </FooterLink>
               <FooterLink href="#">
                 <SocialIcon
@@ -118,13 +105,7 @@ const Footer = () => {
                   style={{ marginRight: "8px" }}
                   url="https://x.com/toilersapp"
                 />
-                <span
-                  style={{
-                    marginLeft: "10px",
-                  }}
-                >
-                  Twitter
-                </span>
+                <span>Twitter</span>
               </FooterLink>
               <FooterLink href="#">
                 <SocialIcon
@@ -132,29 +113,27 @@ const Footer = () => {
                   style={{ marginRight: "8px" }}
                   url="https://youtube.com/toilersapp"
                 />
-                <span
-                  style={{
-                    marginLeft: "10px",
-                  }}
-                >
-                  Youtube
-                </span>
+                <span>Youtube</span>
               </FooterLink>
               <FooterLink href="#">
                 <SocialIcon
                   className="zoom-icon"
+                  style={{ marginRight: '8px'}} 
                   url="https://www.linkedin.com/in/toilers-app-331551315/"
                   title="linkedIn"
                   type="linkedin"
                 />
-                <span
-                  style={{
-                    marginLeft: "10px",
-                  }}
-                >
-                  Linked In
-                </span>
+                <span>Linked In</span>
               </FooterLink>
+              <FooterLink href="#">
+                <SocialIcon 
+                className='zoom-icon'
+                style={{ marginRight: '8px'}} 
+                url="https://in.pinterest.com/toilers"
+                title='Pinterest'
+                type='pinterest' />
+                  <span>Pinterest</span>
+                </FooterLink>
             </Column>
           </Row>
         </FooterContainer>

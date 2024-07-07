@@ -332,7 +332,7 @@ const AboutPage = () => {
                   label="Nishant Rangari"
                 />
                 <Avatar
-                  className="hover-zoom"
+                  className="zoom-icon"
                   alt="Nishant Rangari"
                   sx={{ width: 100, height: 100 }}
                   src={nishant}

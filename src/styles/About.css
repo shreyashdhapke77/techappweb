@@ -84,12 +84,6 @@ body {
     }
   }
   
-  .hover-zoom:hover {
-    transition: all 0.3s ease 0s;
-    transform: scale(1.25);
-    width: 100%;
-  }
-  
   @keyframes FRA{
     0%{
         transform: rotateZ(360deg);
