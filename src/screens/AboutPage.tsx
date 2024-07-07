@@ -1,4 +1,4 @@
-import "../about.css";
+import "../styles/About.css";
 import pravin from "../components/assets/pravin.jpeg";
 import shreyash from "../components/assets/shreyash.jpeg";
 import yash from "../components/assets/yash.jpeg";
