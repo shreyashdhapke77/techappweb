@@ -12,7 +12,7 @@ import ShareIcon from "@mui/icons-material/Share";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { APP_BG_DARK, APP_LIGHT_BLUE } from "../../utils/colors";
 import farms from "../assets/home-slider/farms.jpg";
-import { Chip } from "@mui/material";
+import { Chip, Divider } from "@mui/material";
 import MdPhone from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import { useTheme } from '@mui/material/styles'
@@ -72,6 +72,7 @@ export default function WorkerCard(props: Props) {
         <Chip icon={<MdPhone />} label={props.mobileNumber} sx={{ mb: 1 }} />
         <Chip icon={<EmailIcon />} label={props.email} />
       </CardContent>
+      <Divider />
       <CardActions disableSpacing>
         <IconButton className='zoom-icon' aria-label="add to favorites">
           <FavoriteIcon />

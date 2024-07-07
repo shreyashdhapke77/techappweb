@@ -5,10 +5,11 @@ import yash from "../components/assets/yash.jpeg";
 import nishant from "../components/assets/nishant.jpeg";
 import yogesh from "../components/assets/yogesh.jpg";
 import worker21 from "../components/assets/Worker/worker21.png";
-import { Avatar, Box, Link, Slide, Zoom } from "@mui/material";
+import { Avatar, Box, Divider, Link, Slide, Zoom } from "@mui/material";
 import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
 import { SocialIcon } from 'react-social-icons'
+import { getRandomColor } from "../utils/colors";
 
 const teamMemberDetails = [
   {
@@ -36,7 +37,7 @@ const AboutPage = () => {
         <Zoom in={true} style={{ transitionDelay: true ? '100ms' : '0ms', transitionDuration: '500ms' }}>
           <img src={worker21} alt="Toilers" style={{ width: "300px" }} />
         </Zoom>
-        <CustomText label="About Us" variant="h4" isBold={true} />
+        <CustomText className="THREE_D_TEXT" label="About Us" variant="h4" isBold={true} />
         <CustomText
           sx={{margin: '25px', marginX: '50px', my: 2}}
           label="We are Workers. We provide work and service. We are group of workers.
@@ -50,7 +51,7 @@ const AboutPage = () => {
             Our Vision: Empower millions of professionals worldwide to deliver services at home like never experienced before"
             variant="h6"
         />
-        <CustomText sx={{margin: '25px'}} isBold label="How We help you" variant="h4" />
+        <CustomText className="THREE_D_TEXT" sx={{margin: '25px'}} isBold label="How We help you" variant="h4" />
         <CustomText sx={{margin: '25px', marginX: '50px'}} label="Toilers provides a platform that allows skilled and experienced professionals to connect with users looking for specific services.
           Once on the platform, our match-making algorithm identifies professionals who are closest to the users’ requirements and available at the requested time and date." variant="h6"
         />
@@ -76,7 +77,7 @@ const AboutPage = () => {
       </Box>
       <Slide direction="up" in={true} mountOnEnter unmountOnExit>
       <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
-        <CustomText label="Our Team" variant="h4" isBold={true} />
+        <CustomText className="THREE_D_TEXT" label="Our Team" variant="h4" isBold={true} />
         <Box sx={{ display: 'flex', justifyContent: "center", alignContent: "center", alignItems: 'center', mt: 2 , paddingTop: '120px'}}>
           {teamMemberDetails.map((teamMember) => {
             return (
@@ -109,6 +110,7 @@ const AboutPage = () => {
                         variant="body1"
                         sx={{ my: 1, }}
                       />
+                      <Divider sx={{my: 1}}/>
                       <Box sx={{ my: 1}}>
                         <SocialIcon className='zoom-icon' style={{ marginRight: '8px'}} url="https://x.com/toilersapp" />
                         <SocialIcon className='zoom-icon' style={{ marginRight: '8px'}} url="https://www.facebook.com/people/Toilers-App/pfbid0uCTtCqSFBHtAqyRjeCPvrGKknR2WVYR45EoixRTwRo3n6vDQJEsVUMu44c3tcW7pl/" title='facebook' type='facebook'/>
@@ -122,7 +124,7 @@ const AboutPage = () => {
                         variant="body1"
                         sx={{ my: 1, height: '180px'}}
                       />
-                      <Link style={{  marginBottom: '25px'}} onClick={() => window.open(`mailto:${teamMember.email}?subject=Subject&body=Body%20goes%20here`)}>{teamMember.email}</Link>
+                      <Link style={{ color: "white", marginBottom: '25px'}} onClick={() => window.open(`mailto:${teamMember.email}?subject=Subject&body=Body%20goes%20here`)}>{teamMember.email}</Link>
                     </Box>
                       <CustomButton
                         label="Contact"
@@ -137,6 +139,7 @@ const AboutPage = () => {
         </Box>
         <Box sx={{mb: 2, display: 'flex', flexDirection: 'column'}}>
           <CustomText
+          className="THREE_D_TEXT"
             sx={{margin: '25px'}}
             isBold
             label="Our Investors"
@@ -164,8 +167,9 @@ const AboutPage = () => {
           </Box>
           
         <CustomText
+          className="THREE_D_TEXT"
           label={'Reach Out'}
-          variant="h5"
+          variant="h4"
           sx={{ mt: 2 }}
         />
         <CustomText

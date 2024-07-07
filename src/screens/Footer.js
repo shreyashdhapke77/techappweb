@@ -42,7 +42,7 @@ const Footer = () => {
                 >
                     Join Toilers to change your life!
                 </h1>
-                <img style={{ width: "150px", height: '150px', marginRLeft:2 }} className="FR" alt='tools' src={tools2} />
+                <img style={{ width: "150px", height: '150px', marginRLeft:2 }} className="MOVEMENT" alt='tools' src={tools2} />
                 </FullRow>
             <FooterContainer>
                 <Row>

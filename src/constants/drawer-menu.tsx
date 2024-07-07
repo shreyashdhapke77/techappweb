@@ -1,4 +1,4 @@
-import { Feed, HandshakeTwoTone, HomeRepairService, PermPhoneMsg, StarPurple500 } from "@mui/icons-material";
+import { Feed, HandshakeTwoTone, HomeRepairService, PermPhoneMsg, StarPurple500, Notifications, Bookmarks, QuestionAnswer } from "@mui/icons-material";
 
 export const drawerMenu = {
   menuOne: [
@@ -28,12 +28,22 @@ export const drawerMenu = {
       text: 'Rate Us',
       icon: StarPurple500,
       path: '/rateUs'
+    },
+    {
+      text: 'Notifications',
+      icon: Notifications,
+      path: '/notifications'
+    },
+    {
+      text: 'Bookmarks',
+      icon: Bookmarks,
+      path: '/bookmarks'
     }
   ],
   menuThree: [
     {
       text: 'Terms & Conditions',
-      icon: Feed,
+      icon: QuestionAnswer,
       path: '/termsCondition'
     }
   ]
