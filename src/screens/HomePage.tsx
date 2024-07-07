@@ -23,7 +23,7 @@ import carpenter from "../components/assets/home-slider/carpenter.jpg";
 import kitchen from "../components/assets/home-slider/kitchen.jpg";
 import glasscleaner from "../components/assets/home-slider/glasscleaner.jpg";
 import WorkerCard from "../components/common/WorkerCard";
-import worker17 from "../components/assets/Worker/worker17.png";          
+import worker17 from "../components/assets/Worker/worker17.png";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -42,7 +42,8 @@ const teamMemberDetails = [
     workImages: "",
     mobileNumber: "+91 9371643142",
     email: "pravin.salame@gmail.com",
-    description: 'A useful, plain-language Worker that explains the tasks, duties, function and responsibilities of a position'
+    description:
+      "A useful, plain-language Worker that explains the tasks, duties, function and responsibilities of a position",
   },
   {
     name: "Shreyash Dhapke",
@@ -52,8 +53,8 @@ const teamMemberDetails = [
     workImages: glasscleaner,
     mobileNumber: "+91 7887907023",
     email: "shreyashdhapke7777@gmail.com",
-    description: 'I am passionate about my work and it helps me bring my best to the role. In my previous job, my passion motivated me daily to learn new skills and help the company grow.'
-
+    description:
+      "I am passionate about my work and it helps me bring my best to the role. In my previous job, my passion motivated me daily to learn new skills and help the company grow.",
   },
   {
     name: "Ashish Kachhawah",
@@ -63,7 +64,8 @@ const teamMemberDetails = [
     workImages: carpenter,
     mobileNumber: "+91 8371673142",
     email: "ashish.kachawah@gmail.com",
-    description: 'I am a driven individual who focuses on results and works well under pressure. I have helped my team shorten our production time by two weeks.'
+    description:
+      "I am a driven individual who focuses on results and works well under pressure. I have helped my team shorten our production time by two weeks.",
   },
   {
     name: "Yash Mahajan",
@@ -73,7 +75,8 @@ const teamMemberDetails = [
     workImages: kitchen,
     mobileNumber: "+91 8371673142",
     email: "yash.mahajan@gmail.com",
-    description: "I am a people's person. I enjoy working with teams and meeting new people as it inspires me to work on new ideas and collaborative methods."
+    description:
+      "I am a people's person. I enjoy working with teams and meeting new people as it inspires me to work on new ideas and collaborative methods.",
   },
   {
     name: "Rahul Banginwar",
@@ -83,7 +86,8 @@ const teamMemberDetails = [
     workImages: glasscleaner,
     mobileNumber: "+91 8371673142",
     email: "ashish.kachawah@gmail.com",
-    description: "I am a perfectionist who pays attention to every detail. I ensure everything is in place for a project to be successful."
+    description:
+      "I am a perfectionist who pays attention to every detail. I ensure everything is in place for a project to be successful.",
   },
   {
     name: "Yogesh Lolusare",
@@ -93,7 +97,8 @@ const teamMemberDetails = [
     workImages: kitchen,
     mobileNumber: "+91 8371673142",
     email: "yogesh.lolusare@gmail.com",
-    description: "I am a creative person. I do not limit my thoughts and explore different ways of solving problems through creative thinking."
+    description:
+      "I am a creative person. I do not limit my thoughts and explore different ways of solving problems through creative thinking.",
   },
   {
     name: "Nishant Patel",
@@ -103,7 +108,8 @@ const teamMemberDetails = [
     workImages: glasscleaner,
     mobileNumber: "+91 8371673142",
     email: "nishant.patel@gmail.com",
-    description: "I would describe myself as a creative, initiative, go-getter and someone who faces challenges head-on to ensure the company is ahead of its competition."
+    description:
+      "I would describe myself as a creative, initiative, go-getter and someone who faces challenges head-on to ensure the company is ahead of its competition.",
   },
   {
     name: "Amitabh Patel",
@@ -113,7 +119,8 @@ const teamMemberDetails = [
     workImages: carpenter,
     mobileNumber: "+91 8371673142",
     email: "amitabh.patel@gmail.com",
-    description: "I would describe myself as driven, competitive and organised, the person who takes ownership of the situation and is adaptable to changes."
+    description:
+      "I would describe myself as driven, competitive and organised, the person who takes ownership of the situation and is adaptable to changes.",
   },
 ];
 
@@ -135,8 +142,20 @@ const HomePage = () => {
 
   return (
     <Box sx={{ paddingTop: "50px" }}>
-      <Box sx={{display: 'flex', justifyContent: 'flex-start', flexDirection: 'row', height: '320px'}}>
-        <img id="float" src={worker17} alt="Toilers" style={{ width: "300px", height: '300px' }} />
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "flex-start",
+          flexDirection: "row",
+          height: "320px",
+        }}
+      >
+        <img
+          id="float"
+          src={worker17}
+          alt="Toilers"
+          style={{ width: "300px", height: "300px" }}
+        />
       </Box>
       <CustomText
         label="Join Toilers to change your life"
