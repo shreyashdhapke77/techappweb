@@ -19,21 +19,21 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ## App Structure
 
-Follow the app structure to maintain consistency
+1. Use the build in common component for
+    -> Input Field
+    -> Text
+    -> Button
+
+2. Avoid adding style in html element, add all style in css file of same component
+
+
 
 ## TO DOs
-1. Need to implement Select component - To Do
-2. Need to implement Check box component - To Do
-3. Need to implement Switch component
-4. Need to implement Snackbar component - To Do
-5. Need to implement Drawer component - To Do
-6. Need to implement Menu component
-7. Need to implement Date Picker component
-8. Need to implement Time Picker component
-9. Need to implement chip component
-10. Need to implement ratings component - To Do
-11. Need to implement Radio Group component
-12. Need to implement icon component - To Do
+1. Found that the code is written thrice if the same details want to be shown
+    -> Lets create the array of object and store information in that
+    -> And Lets loop the stored data to show same information
+
+2. Move all the style in css file of same component and avoid adding style in the html element
 
 <!-- Slogan -->
 ## Home services at your doorstep
