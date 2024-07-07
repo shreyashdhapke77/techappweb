@@ -15,11 +15,11 @@ import { Box, PaletteMode } from '@mui/material';
 import ApplicationBar from './components/ApplicationBar';
 import Community from './screens/Community';
 import Blog from './screens/Blog';
-import Advertise from './screens/Advertise';
+import Advertise from './components/Advertise';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import { teal, cyan } from '@mui/material/colors';
-import Footer from './screens/Footer';
+import Footer from './components/Footer';
 
 export const ColorModeContext = React.createContext({
   toggleColorMode: () => {

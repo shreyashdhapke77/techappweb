@@ -1,5 +1,5 @@
 import { Box, Link } from "@mui/material";
-import CustomText from "../components/common/Text";
+import CustomText from "./common/Text";
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineContent from '@mui/lab/TimelineContent';
@@ -24,43 +24,22 @@ const Advertise = () => {
       <CustomText sx={{mt: 2}} label="Website Stats (FY 2021-22)" variant="h5" isBold />
       <Timeline>
         <TimelineItem>
-            <TimelineDot color="warning"/> 
-            {/* //'inherit' | 'grey' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning',/ */}
-            {/* <CustomText label="Sessions:" variant="h6" isBold /> */}
+          <TimelineDot color="warning"/>
           <TimelineContent> Sessions: 2 M+ (20 Lakhs+)</TimelineContent>
         </TimelineItem>
         <TimelineItem>
         <TimelineDot color="info"/> 
-            {/* <CustomText label="Users:" variant="h6" isBold /> */}
           <TimelineContent> Users: 1.4 M+ (14 Lakhs+)</TimelineContent>
         </TimelineItem>
         <TimelineItem>
-          {/* <TimelineSeparator> */}
-            <TimelineDot  color="success"/>
-            {/* <TimelineConnector /> */}
-            {/* <CustomText label="Page Views:" variant="h6" isBold /> */}
+          <TimelineDot  color="success"/>
           <TimelineContent> Page Views: 5 M+ (50 Lakhs+)</TimelineContent>
         </TimelineItem>
       </Timeline>
-
-{/* 
-As Seen On
-
-Search Engine Journal
-Neil Patel
-Backlinko
-Ads Pricelist
-Impressions	Cost
-10,000	$15
-20,000	$25
-50,000	$60
-100,000	$100
-Ads Placements */}
-
-        <CustomText label="Contact us on" variant="h5" sx={{mt: 2, mb: 2}}/>
-        <Link variant="h5" href="#" style={{ marginTop: '5px', marginBottom: '5px', fontSize: '55' }} underline="hover">
-          hello@toilers.com
-        </Link>
+      <CustomText label="Contact us on" variant="h5" sx={{mt: 2, mb: 2}}/>
+      <Link variant="h5" href="#" style={{ marginTop: '5px', marginBottom: '5px', fontSize: '55' }} underline="hover">
+        hello@toilers.com
+      </Link>
     </Box>
   );
 };
