@@ -8,7 +8,7 @@ import worker21 from "../components/assets/Worker/worker21.png";
 import { Avatar, Box, Link, Slide, Zoom } from "@mui/material";
 import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
-import { SocialIcon } from "react-social-icons";
+import { SocialIcon } from 'react-social-icons'
 
 const teamMemberDetails = [
   {
@@ -44,7 +44,7 @@ const AboutPage = () => {
         >
           <img src={worker21} alt="Toilers" style={{ width: "300px" }} />
         </Zoom>
-        <CustomText label="About Us" variant="h4" isBold={true} />
+        <CustomText className="THREE_D_TEXT" label="About Us" variant="h4" isBold={true} />
         <CustomText
           sx={{ margin: "25px", marginX: "50px", my: 2 }}
           label="We are Workers. We provide work and service. We are group of workers.
@@ -59,6 +59,7 @@ const AboutPage = () => {
           variant="h6"
         />
         <CustomText
+          className="THREE_D_TEXT"
           sx={{ margin: "25px" }}
           isBold
           label="How We help you"
@@ -126,7 +127,7 @@ const AboutPage = () => {
       </Box>
       <Slide direction="up" in={true} mountOnEnter unmountOnExit>
         <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
-          <CustomText label="Our Team" variant="h4" isBold={true} />
+          <CustomText className="THREE_D_TEXT" label="Our Team" variant="h4" isBold={true} />
           <Box
             sx={{
               display: "flex",
@@ -220,7 +221,7 @@ const AboutPage = () => {
                           sx={{ my: 1, height: "180px" }}
                         />
                         <Link
-                          style={{ marginBottom: "25px" }}
+                          style={{color: 'white', marginBottom: "25px" }}
                           onClick={() =>
                             window.open(
                               `mailto:${teamMember.email}?subject=Subject&body=Body%20goes%20here`
@@ -250,6 +251,7 @@ const AboutPage = () => {
           </Box>
           <Box sx={{ mb: 2, display: "flex", flexDirection: "column" }}>
             <CustomText
+              className="THREE_D_TEXT"
               sx={{ margin: "25px" }}
               isBold
               label="Our Investors"
@@ -336,7 +338,7 @@ const AboutPage = () => {
               </Box>
             </Box>
 
-            <CustomText label={"Reach Out"} variant="h5" sx={{ mt: 2 }} />
+            <CustomText className="THREE_D_TEXT" label="Reach Out" variant="h5" sx={{ mt: 2 }} />
             <CustomText
               label={
                 "For media queries, please get in touch with us on email at media@toilers.comm"
@@ -347,13 +349,6 @@ const AboutPage = () => {
           </Box>
         </Box>
       </Slide>
-      <Box sx={{ justifyContent: "center", alignContent: "center", mt: 2 }}>
-        <CustomText
-          label=" Toilers™. Copyright © 2023 - 2024 Toilers™. All rights reserved."
-          variant="body1"
-          sx={{ my: 2 }}
-        />
-      </Box>
     </Box>
   );
 };

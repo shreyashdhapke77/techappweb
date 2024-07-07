@@ -28,12 +28,7 @@ import { ColorModeContext } from "../App";
 import DarkModeIcon from "@mui/icons-material/DarkMode";
 import LightModeIcon from "@mui/icons-material/LightMode";
 import { drawerMenu } from "../constants/drawer-menu";
-import {
-  APP_BG_DARK,
-  APP_BG_GREY,
-  APP_LIGHT_BLUE,
-  APP_BG_BLACK,
-} from "../utils/colors";
+import { APP_BG_DARK, APP_LIGHT_BLUE, APP_BG_BLACK, getRandomColor } from "../utils/colors";
 import { settingsMenu } from "../constants/settings-menu";
 
 type Anchor = "top" | "left" | "bottom" | "right";
@@ -76,7 +71,7 @@ function ApplicationBar() {
   const list = (anchor: Anchor) => (
     <Box className="list">
       <Box
-        sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+        sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 300 }}
         role="presentation"
         onClick={toggleDrawer(anchor, false)}
         onKeyDown={toggleDrawer(anchor, false)}
@@ -241,15 +236,7 @@ function ApplicationBar() {
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-              <Settings
-                className="FR"
-                sx={{
-                  color: APP_BG_DARK,
-                  width: "50px",
-                  height: "50px",
-                  mr: 2,
-                }}
-              />
+              <Settings className="MOVEMENT" sx={{color: APP_BG_DARK, width: '50px', height: '50px', mr: 2,}} />
             </IconButton>
           </Tooltip>
           <Menu
@@ -270,8 +257,9 @@ function ApplicationBar() {
           >
             {settingsMenu.data.map((menu) => (
               <MenuItem
-                sx={{
-                  backgroundColor: menu.label === "Logout" ? APP_BG_GREY : "",
+                sx={{ 
+                  backgroundColor:  menu.label === 'Logout' ? APP_LIGHT_BLUE : '',
+                  ...({ padding: 1 }) 
                 }}
                 key={menu.label}
                 onClick={handleCloseUserMenu}
@@ -280,18 +268,14 @@ function ApplicationBar() {
                   key={menu.id}
                   style={{
                     marginRight: "10px",
-                    color:
-                      menu.label === "Logout"
-                        ? "red"
-                        : theme.palette.mode === "dark"
-                        ? APP_LIGHT_BLUE
-                        : APP_BG_DARK,
+                    color: menu.label === 'Logout' ? 'red' : getRandomColor()
                   }}
                   onClick={() => handleMenuAction(menu.path)}
                 />
                 <Typography onClick={() => handleMenuAction(menu.path)}>
                   {menu.label}
                 </Typography>
+                <Divider />
               </MenuItem>
             ))}
           </Menu>

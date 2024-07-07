@@ -4,6 +4,9 @@ import {
   HomeRepairService,
   PermPhoneMsg,
   StarPurple500,
+  Notifications,
+  Bookmarks,
+  QuestionAnswer
 } from "@mui/icons-material";
 
 export const drawerMenu = {
@@ -33,14 +36,24 @@ export const drawerMenu = {
     {
       text: "Rate Us",
       icon: StarPurple500,
-      path: "/rateUs",
+      path: '/rateUs'
     },
+    {
+      text: 'Notifications',
+      icon: Notifications,
+      path: '/notifications'
+    },
+    {
+      text: 'Bookmarks',
+      icon: Bookmarks,
+      path: '/bookmarks'
+    }
   ],
   menuThree: [
     {
-      text: "Terms & Conditions",
-      icon: Feed,
-      path: "/termsCondition",
-    },
-  ],
-};
+      text: 'Terms & Conditions',
+      icon: QuestionAnswer,
+      path: '/termsCondition'
+    }
+  ]
+}
