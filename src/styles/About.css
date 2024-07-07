@@ -1,0 +1,168 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  .about-section {
+    padding: 30px;
+    text-align: center;
+    background-color: #88d8bc; /* #24bd92; */
+    color: white;
+  }
+   
+  .column {
+    float: left;
+    width: 25%;
+    margin-bottom: 16px;
+    padding: 0 8px;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 #233565;
+    background-color: #135D66;
+    margin: 8px;
+    border-radius: 20px;
+  }
+  
+  .card-light {
+    box-shadow: 0 4px 8px 0 #c4cee8;
+    background-color: #b1e1e7;
+    margin: 8px;
+    border-radius: 20px;
+  }
+  
+  
+  
+  .container {
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: #ffffff;
+  }
+  
+  .button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #233565;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .button:hover {
+    background-color: #233565;
+  }
+  .zoom-icon:hover {
+    transition: all 0.3s ease 0s;
+    color: rgb(226, 75, 33);
+    transform: scale(1.25);
+    box-shadow: 0 4px 2px 0 #233565;
+    border-radius: 50%;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  .hover-zoom:hover {
+    transition: all 0.3s ease 0s;
+    transform: scale(1.25);
+    width: 100%;
+  }
+  
+  @keyframes FRA{
+    0%{
+        transform: rotateZ(360deg);
+    }
+  }
+  
+  .MOVEMENT {
+    left: 18%;
+    top: 20%;
+    animation: FRA forwards 5s infinite;
+    animation-timing-function: linear;
+  }
+  
+  .images {
+    height: 15em;
+    margin: 0 auto;
+    overflow: hidden;
+    width: 20em;
+  }
+  
+  #float {
+    position: relative;
+    -webkit-animation: floatBubble 8s  normal ease-out;
+    animation: floatBubble 8s  normal ease-out;
+    /* infinite */
+  }
+  @-webkit-keyframes floatBubble {
+    0% {
+        left: 1800px;
+        width: 100px;
+        height: 100px;
+    }
+    100% {
+        left: 0px;
+        width: 300px;
+        height: 300px;
+    }
+  }
+  @keyframes floatBubble {
+    0% {
+        Left:1800px;
+        width: 100px;
+        height: 100px;
+    }
+    100% {
+        left: 0px;
+        width: 300px;
+        height: 300px;
+    }
+  }
+
+  .THREE_D_TEXT {
+    /* position: relative;
+    top: 50%; 
+    right: 50%; */
+    /* transform: translate(50%,-50%); */
+    text-transform: uppercase;
+    font-family: verdana;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #919191,
+        1px 2px 1px #919191,
+        1px 3px 1px #919191,
+        1px 4px 1px #919191,
+        1px 5px 1px #919191,
+        1px 6px 1px #919191,
+        1px 7px 1px #919191,
+        1px 8px 1px #919191,
+        1px 9px 1px #919191,
+        1px 10px 1px #919191,
+    1px 12px 6px rgba(16,16,16,0.4),
+    1px 15px 10px rgba(16,16,16,0.2),
+    1px 20px 35px rgba(16,16,16,0.2),
+    1px 25px 60px rgba(16,16,16,0.4);
+  }

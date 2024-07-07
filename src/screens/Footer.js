@@ -1,4 +1,3 @@
-
 import {
     Box,
     FooterContainer,
@@ -14,6 +13,7 @@ import tools2 from "../components/assets/toilers-logos/tools2.png";
 import mobileApp from "../components/assets/toilers-logos/mobileApp.png";
 import { SocialIcon } from 'react-social-icons'
 import { Divider } from "@mui/material";
+import "../styles/About.css";
 
 const Footer = () => {
     return (
@@ -42,7 +42,7 @@ const Footer = () => {
                 >
                     Join Toilers to change your life!
                 </h1>
-                <img style={{ width: "150px", height: '150px', marginRLeft:2 }} className="MOVEMENT" alt='tools' src={tools2} />
+                <img className="MOVEMENT" style={{ width: "150px", height: '150px', marginRLeft:2 }} alt='tools' src={tools2} />
                 </FullRow>
             <FooterContainer>
                 <Row>

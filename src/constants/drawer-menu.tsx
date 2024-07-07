@@ -1,31 +1,40 @@
-import { Feed, HandshakeTwoTone, HomeRepairService, PermPhoneMsg, StarPurple500, Notifications, Bookmarks, QuestionAnswer } from "@mui/icons-material";
+import {
+  Feed,
+  HandshakeTwoTone,
+  HomeRepairService,
+  PermPhoneMsg,
+  StarPurple500,
+  Notifications,
+  Bookmarks,
+  QuestionAnswer
+} from "@mui/icons-material";
 
 export const drawerMenu = {
   menuOne: [
     {
-      text: 'Find a worker',
+      text: "Find a worker",
       icon: HandshakeTwoTone,
-      path: '/findWorker'
+      path: "/findWorker",
     },
     {
-      text: 'Become a worker',
+      text: "Become a worker",
       icon: HomeRepairService,
-      path: '/becomeWorker'
-    }
+      path: "/becomeWorker",
+    },
   ],
   menuTwo: [
     {
-      text: 'About Us',
+      text: "About Us",
       icon: Feed,
-      path: '/about'
+      path: "/about",
     },
     {
-      text: 'Contact Us',
+      text: "Contact Us",
       icon: PermPhoneMsg,
-      path: '/contactUs'
+      path: "/contactUs",
     },
     {
-      text: 'Rate Us',
+      text: "Rate Us",
       icon: StarPurple500,
       path: '/rateUs'
     },
