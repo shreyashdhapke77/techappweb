@@ -1,4 +1,5 @@
 import "../styles/About.css";
+import "../decorativeText.scss";
 import pravin from "../components/assets/pravin.jpeg";
 import shreyash from "../components/assets/shreyash.jpeg";
 import yash from "../components/assets/yash.jpeg";
@@ -9,6 +10,7 @@ import { Avatar, Box, Link, Slide, Zoom } from "@mui/material";
 import CustomText from "../components/common/Text";
 import CustomButton from "../components/common/Button";
 import { SocialIcon } from 'react-social-icons'
+import { getRandomColor } from "../utils/colors";
 
 const teamMemberDetails = [
   {
@@ -71,6 +73,52 @@ const AboutPage = () => {
           Once on the platform, our match-making algorithm identifies professionals who are closest to the users’ requirements and available at the requested time and date."
           variant="h6"
         />
+        <ul style={{marginLeft: '-200px'}} className="Words">
+          <li className="Words-line">
+            <span style={{color: getRandomColor()}} className="paragraph">&nbsp;</span>
+            <span style={{color: getRandomColor()}} className="paragraph">Toilers</span>
+          </li>
+          <li className="Words-line">
+            <span style={{color: getRandomColor()}} className="paragraph">Carpenter</span>
+            <span style={{color: getRandomColor()}} className="paragraph">Plumber</span>
+          </li>
+          <li className="Words-line">
+            <span style={{color: getRandomColor()}} className="paragraph">Driver</span>
+            <span style={{color: getRandomColor()}} className="paragraph">Painter</span>
+          </li>
+          <li className="Words-line">
+            <span style={{color: getRandomColor()}} className="paragraph">Fire Worker</span>
+            <span style={{color: getRandomColor()}} className="paragraph">Mechanic</span>
+          </li>
+          <li className="Words-line">
+            <span style={{color: getRandomColor()}} className="paragraph">Labour</span>
+            <span style={{color: getRandomColor()}} className="paragraph">Cleaner</span>
+          </li>
+          <li className="Words-line">
+          <span style={{color: getRandomColor()}} className="paragraph">Photographer</span>
+            <span style={{color: getRandomColor()}} className="paragraph">Detective&nbsp;</span>
+          </li>
+          <li className="Words-line">
+            <span style={{color: getRandomColor()}} className="paragraph">Barber</span>
+            <span style={{color: getRandomColor()}} className="paragraph">Lawyer</span>
+          </li>
+          <li className="Words-line">
+            <span style={{color: getRandomColor()}} className="paragraph">Electrician</span>
+            <span style={{color: getRandomColor()}} className="paragraph">Milkman&nbsp;</span>
+          </li>
+          <li className="Words-line">
+            <span style={{color: getRandomColor()}} className="paragraph">Baker</span>
+            <span style={{color: getRandomColor()}} className="paragraph">Writer</span>
+          </li>
+          <li className="Words-line">
+            <span style={{color: getRandomColor()}} className="paragraph">Engineer</span>
+            <span style={{color: getRandomColor()}} className="paragraph">Security Guard</span>
+          </li>
+          <li className="Words-line">
+          <span style={{color: getRandomColor()}} className="paragraph">Potter</span>
+          <span style={{color: getRandomColor()}} className="paragraph">Cobler</span>
+          </li>
+          </ul>
         <Box
           sx={{
             mb: 2,
