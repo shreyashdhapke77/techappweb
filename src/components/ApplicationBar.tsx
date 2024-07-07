@@ -1,4 +1,5 @@
 import * as React from "react";
+import "../styles/ApplicationBar.css"
 import MenuIcon from "@mui/icons-material/Menu";
 import { Typography, AppBar, Menu, Box, Toolbar, IconButton, Tooltip, MenuItem, Drawer, Divider, Link, ListItem, List, ListItemIcon, ListItemButton } from '@mui/material/';
 import { useNavigate } from "react-router-dom";
@@ -11,7 +12,7 @@ import { ColorModeContext } from "../App";
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { drawerMenu } from "../constants/drawer-menu";
-import { APP_BG_DARK, APP_BG_GREY, APP_LIGHT_BLUE } from "../utils/colors";
+import { APP_BG_DARK, APP_BG_GREY, APP_LIGHT_BLUE, APP_BG_BLACK } from "../utils/colors";
 import { settingsMenu } from "../constants/settings-menu";
 
 type Anchor = 'top' | 'left' | 'bottom' | 'right';
@@ -46,15 +47,7 @@ function ApplicationBar() {
   };
 
   const list = (anchor: Anchor) => (
-    <Box
-      sx={{
-        display: "flex",
-        flexDirection: 'column',
-        alignContent: 'space-between',
-        justifyContent: 'space-between',
-        height: '100%'
-      }}
-    >
+    <Box className="list" >
       <Box
         sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
         role="presentation"
@@ -95,6 +88,7 @@ function ApplicationBar() {
               </ListItemButton>
             </ListItem>
           ))}
+
           <Divider />
 
           {/* Theme Switch Control */}
@@ -115,11 +109,7 @@ function ApplicationBar() {
         </List>
       </Box>
       <Box
-        sx={{
-          alignItems: 'center',
-          alignContent: 'center',
-          justifyContent: 'center'
-        }}
+        className="drawer-third-view"
         role="presentation"
         onClick={toggleDrawer(anchor, false)}
         onKeyDown={toggleDrawer(anchor, false)}
@@ -176,13 +166,8 @@ function ApplicationBar() {
           sx={{
             mr: 2,
             display: { xs: "flex", md: "flex" },
-            flexGrow: 1,
-            fontFamily: "monospace",
-            fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "inherit",
-            textDecoration: "none",
           }}
+          className="toilers-label"
         />
         <Box sx={{ flexGrow: 0 }}>
           <Tooltip title="Open settings">
@@ -191,7 +176,7 @@ function ApplicationBar() {
             </IconButton>
           </Tooltip>
           <Menu
-            sx={{ mt: "64px", backgroundColor: '#00000080' }}
+            sx={{ mt: "64px", backgroundColor: APP_BG_BLACK }}
             id="menu-appbar"
             anchorEl={anchorElUser}
             anchorOrigin={{

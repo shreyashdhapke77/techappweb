@@ -1,0 +1,47 @@
+.main {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+.body {
+    justify-content: center;
+    align-content: center;
+}
+
+.link {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 55;
+}
+
+.address {
+    flex-direction: column;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.address-margin {
+    margin-top: 5px;
+}
+
+.email-phone-body {
+    flex-direction: row;
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-evenly;
+}
+
+.email-view {
+    flex-direction: column;
+    display: flex;
+    align-content: flex-start;
+    justify-content: center;
+}
+
+.mobile-view {
+    flex-direction: column;
+    display: flex;
+    align-content: flex-start;
+    justify-content: center;
+}
