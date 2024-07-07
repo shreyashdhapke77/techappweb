@@ -115,10 +115,10 @@ const AboutPage = () => {
             <span style={{color: getRandomColor()}} className="paragraph">Security Guard</span>
           </li>
           <li className="Words-line">
-          <span style={{color: getRandomColor()}} className="paragraph">Potter</span>
-          <span style={{color: getRandomColor()}} className="paragraph">Cobler</span>
+            <span style={{color: getRandomColor()}} className="paragraph">Potter</span>
+            <span style={{color: getRandomColor()}} className="paragraph">Cobler</span>
           </li>
-          </ul>
+        </ul>
         <Box
           sx={{
             mb: 2,
