@@ -11,7 +11,7 @@ import RateUs from './screens/RateUs';
 import UserProfile from './screens/UserProfile';
 import UserAccount from './screens/UserAccount';
 import Dashboard from './screens/Dashboard';
-import { Box, PaletteMode, Snackbar } from '@mui/material';
+import { Box, PaletteMode } from '@mui/material';
 import ApplicationBar from './components/ApplicationBar';
 import Community from './screens/Community';
 import Blog from './screens/Blog';

@@ -30,7 +30,7 @@ const Footer = () => {
                 >
                     For better experience,download the Toilers app now
                 </h1>
-                <img src={mobileApp}/>
+                <img src={mobileApp} alt="mobile"/>
             </FullColumn>
         <Box>
             <FullRow>
