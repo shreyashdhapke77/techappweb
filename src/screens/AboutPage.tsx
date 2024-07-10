@@ -2,9 +2,9 @@ import "../styles/About.css";
 import "../decorativeText.scss";
 import pravin from "../components/assets/pravin.jpeg";
 import shreyash from "../components/assets/shreyash.jpeg";
-import yash from "../components/assets/yash.jpeg";
-import nishant from "../components/assets/nishant.jpeg";
-import yogesh from "../components/assets/yogesh.jpg";
+import nishant from "../components/assets/Worker/worker1.png";
+import yogesh from "../components/assets/Worker/worker2.png";
+import yash from "../components/assets/Worker/worker3.png";
 import worker21 from "../components/assets/Worker/worker21.png";
 import { Avatar, Box, Link, Slide, Zoom } from "@mui/material";
 import CustomText from "../components/common/Text";
@@ -329,11 +329,11 @@ const AboutPage = () => {
                 <CustomText
                   sx={{ mb: 2 }}
                   variant="h6"
-                  label="Nishant Rangari"
+                  label="Nishant Tiwari"
                 />
                 <Avatar
                   className="zoom-icon"
-                  alt="Nishant Rangari"
+                  alt="Nishant Tiwari"
                   sx={{ width: 100, height: 100 }}
                   src={nishant}
                 />
@@ -351,11 +351,11 @@ const AboutPage = () => {
                 <CustomText
                   sx={{ mb: 2 }}
                   variant="h6"
-                  label="Yogesh Lolusare"
+                  label="Yogesh Panpaliya"
                 />
                 <Avatar
                   className="zoom-icon"
-                  alt="Yogesh Lolusare"
+                  alt="Yogesh Panpaliya"
                   sx={{ width: 100, height: 100 }}
                   src={yogesh}
                 />

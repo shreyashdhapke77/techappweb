@@ -18,13 +18,13 @@ const teamMemberDetails = [
     contactNumber: "+91 7887907023",
   },
   {
-    name: "Ashishsingh",
-    email: "askachhawah23@gmail.com",
+    name: "Ashish Patel",
+    email: "ashish.patel@gmail.com",
     contactNumber: "+91 7887907023",
   },
   {
     name: "Yash",
-    email: "yashmahajan@gmail.com",
+    email: "yashmishra@gmail.com",
     contactNumber: "+91 7887907023",
   },
 ];
