@@ -59,7 +59,7 @@ const Blog = () => {
               return (
                 <ImageListItem key={item.img} cols={cols} rows={rows}>
                   <img
-                    {...srcset(item.img, 450, 350, rows, cols)}
+                    {...srcset(item.img, 200, 150, rows, cols)}
                     alt={item.title}
                     loading="lazy"
                   />
@@ -108,7 +108,6 @@ const itemData = [
     img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
     title: "Office",
     author: "@helloimnik",
-    featured: true,
   },
   {
     img: "https://plus.unsplash.com/premium_photo-1680787308929-a071c1d33c0b",
@@ -124,7 +123,7 @@ const itemData = [
     img: "https://images.unsplash.com/photo-1516216628859-9bccecab13ca",
     title: "Handrail",
     author: "@arwinneil",
-    featured: true,
+    
   },
   {
     img: "https://images.unsplash.com/photo-1593436878396-e943a3cac98f",
@@ -160,7 +159,7 @@ const itemData = [
     img: "https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8",
     title: "Wood Work",
     author: "@southside_customs",
-    featured: true,
+    
   },
   {
     img: "https://img.freepik.com/free-photo/dirty-shirt-laundry-service_1098-13262.jpg",
@@ -206,7 +205,7 @@ const itemData = [
     img: "https://img.freepik.com/free-photo/people-taking-care-office-cleaning_23-2149374451.jpg",
     title: "Janitor",
     author: "@southside_customs",
-    featured: true,
+    
   },
   {
     img: "https://images.unsplash.com/photo-1623485101793-082c03565fa9",
@@ -217,6 +216,7 @@ const itemData = [
     img: "https://plus.unsplash.com/premium_photo-1682129168433-1f158473f3d2",
     title: "Vehicle Repairing",
     author: "@southside_customs",
+    featured: true,
   },
 ];
 export default Blog;
