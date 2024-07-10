@@ -16,9 +16,9 @@ import {
 import * as React from "react";
 import { TransitionProps } from "@mui/material/transitions";
 import pravin from "../components/assets/pravin.jpeg";
-import yogesh from "../components/assets/yogesh.jpg";
+import yogesh from "../components/assets/Worker/worker1.png";
 import shreyash from "../components/assets/shreyash1.jpg";
-import ashish from "../components/assets/ashish.jpeg";
+import ashish from "../components/assets/Worker/worker2.png";
 import carpenter from "../components/assets/home-slider/carpenter.jpg";
 import kitchen from "../components/assets/home-slider/kitchen.jpg";
 import glasscleaner from "../components/assets/home-slider/glasscleaner.jpg";
