@@ -374,11 +374,11 @@ const AboutPage = () => {
                   alignItems: "center",
                 }}
               >
-                <CustomText sx={{ mb: 2 }} variant="h6" label="Yash Mahajan" />
+                <CustomText sx={{ mb: 2 }} variant="h6" label="Yash Mishra" />
 
                 <Avatar
                   className="zoom-icon"
-                  alt="Yash Mahajan"
+                  alt="Yash Mishra"
                   sx={{ width: 100, height: 100 }}
                   src={yash}
                 />
