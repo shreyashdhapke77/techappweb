@@ -19,7 +19,7 @@ const Community = () => {
         variant="body1"
       />
       <CustomText
-        label="And you’ll get complimentary access to our signature Journal of Online Learning (formerly JALN), topical newsletters and a number of our exclusive online webinars."
+        label="And you’ll get complimentary access get work all over the world, topical newsletters and a number of our exclusive services."
         variant="body1"
       />
     </Box>

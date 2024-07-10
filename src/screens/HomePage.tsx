@@ -16,9 +16,9 @@ import {
 import * as React from "react";
 import { TransitionProps } from "@mui/material/transitions";
 import pravin from "../components/assets/pravin.jpeg";
-import yogesh from "../components/assets/yogesh.jpg";
+import yogesh from "../components/assets/Worker/worker1.png";
 import shreyash from "../components/assets/shreyash1.jpg";
-import ashish from "../components/assets/ashish.jpeg";
+import ashish from "../components/assets/Worker/worker2.png";
 import carpenter from "../components/assets/home-slider/carpenter.jpg";
 import kitchen from "../components/assets/home-slider/kitchen.jpg";
 import glasscleaner from "../components/assets/home-slider/glasscleaner.jpg";
@@ -57,24 +57,24 @@ const teamMemberDetails = [
       "I am passionate about my work and it helps me bring my best to the role. In my previous job, my passion motivated me daily to learn new skills and help the company grow.",
   },
   {
-    name: "Ashish Kachhawah",
+    name: "Ashish Mishra",
     category: "Plumber",
     profileImage: ashish,
     rate: "349",
     workImages: carpenter,
     mobileNumber: "+91 8371673142",
-    email: "ashish.kachawah@gmail.com",
+    email: "ashish.mishra@gmail.com",
     description:
       "I am a driven individual who focuses on results and works well under pressure. I have helped my team shorten our production time by two weeks.",
   },
   {
-    name: "Yash Mahajan",
+    name: "Yash Tiwari",
     category: "Carpenter",
     profileImage: ashish,
     rate: "149",
     workImages: kitchen,
     mobileNumber: "+91 8371673142",
-    email: "yash.mahajan@gmail.com",
+    email: "yash.tiwari@gmail.com",
     description:
       "I am a people's person. I enjoy working with teams and meeting new people as it inspires me to work on new ideas and collaborative methods.",
   },
@@ -85,18 +85,18 @@ const teamMemberDetails = [
     rate: "349",
     workImages: glasscleaner,
     mobileNumber: "+91 8371673142",
-    email: "ashish.kachawah@gmail.com",
+    email: "rahul.banginwar@gmail.com",
     description:
       "I am a perfectionist who pays attention to every detail. I ensure everything is in place for a project to be successful.",
   },
   {
-    name: "Yogesh Lolusare",
+    name: "Yogesh Panpaliya",
     category: "Painter",
     profileImage: yogesh,
     rate: "312",
     workImages: kitchen,
     mobileNumber: "+91 8371673142",
-    email: "yogesh.lolusare@gmail.com",
+    email: "yogesh.panpaliya@gmail.com",
     description:
       "I am a creative person. I do not limit my thoughts and explore different ways of solving problems through creative thinking.",
   },
