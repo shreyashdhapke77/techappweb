@@ -56,10 +56,12 @@ export const FooterLink = styled.a`
   color: #fff;
   margin-bottom: 20px;
   font-size: 18px;
-  text-decoration: none;
+  text-decoration: wavy;
+  height: 35px;
 
   &:hover {
-    color: green;
+    color: white;
+    font-size: 19px;
     transition: 200ms ease-in;
   }
 `;

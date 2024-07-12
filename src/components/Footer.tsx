@@ -10,7 +10,8 @@ import {
   FullColumn,
 } from "./FooterStyle";
 import tools2 from "../components/assets/toilers-logos/tools2.png";
-import mobileApp from "../components/assets/toilers-logos/mobileApp.png";
+import mobileAndroidApp from "../components/assets/toilers-logos/mobileAndroidApp.png";
+import mobileIOSApp from "../components/assets/toilers-logos/mobileIOSApp.png";
 import { SocialIcon } from "react-social-icons";
 import { Divider } from "@mui/material";
 
@@ -27,8 +28,9 @@ const Footer = () => {
           marginTop: "10px",
         }}
       >
-        <h1>For better experience,download the Toilers app now</h1>
-        <img src={mobileApp} alt="mobile" />
+        <h1>For better experience, download the Toilers app now</h1>
+        <img src={mobileAndroidApp} alt="Android" style={{ marginLeft: '4px', marginRight: '4px', width: "150px", objectFit: "contain" }}/>
+        <img src={mobileIOSApp} alt='iOS' style={{ marginLeft: '4px', width: "150px", objectFit: "contain" }} />
       </FullColumn>
       <Box>
         <FullRow>
